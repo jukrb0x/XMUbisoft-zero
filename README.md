@@ -1,8 +1,7 @@
-# swe305-project
-happy coding
+# SWE305-project
 
-test for GJX
+This repository is for the group project on Unity of SWE305.
 
-tes for ljz
+Unity Version: `2020.3.19f1`
 
-test for ljz_daddy
+
