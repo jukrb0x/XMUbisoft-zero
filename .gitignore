@@ -61,5 +61,6 @@ crashlytics-build.properties
 # macOS system files
 .DS_Store
 
-# JB idea
+# editor stuff
 .idea/
+.vsconfig
