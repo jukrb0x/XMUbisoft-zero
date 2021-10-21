@@ -10,4 +10,27 @@ To keep the project tidy and avoid conflicts, we use git branches to separate th
 
 We will have at least 6 levels of the game, the level assets are splitted into `Assets/Levels/Level {num}` (e.g. `Assets/Levels/Level 1` ) to keep a tidy environment for coding. Basically we copy the pure images into `Assets/Levels/Level X/Sprites/Floor` and create tilemaps in `Assets/Levels/Level X/Tilemaps/Floor` for example.
 
+```
+# This is an example
+.
+├── Assets
+│   ├── Levels
+│   │   ├── Level\ 1
+│   │   │   ├── Sprites
+│   │   │   ├── Tilemaps
+│   │   │   │   ├── Floor
+│   │   │   │   ├── Wall
+├── Plugins
+├── Prefabs
+├── Scenes
+│   ├── Level\ 1. unity
+├── Scripts
+├── Sprites
+└── *.meta
+```
+
+The sprites can be originated from `Assets/Sprites` but please do not use it directly from the directory otherwise it could lead to conflicts on editing sprites.
+
+The `Prefabs` directory is used to deposit all prefabs we defined such as `camera`, `characters`, etc.
+
 The C# style is not advised yet, will be added here once there is one.
