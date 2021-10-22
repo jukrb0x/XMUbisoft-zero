@@ -50,6 +50,9 @@ TextureImporter:
   - first:
       213: -5546479306137644216
     second: TileC_PHC_Winter-Office_15
+  - first:
+      213: 3654465372033024341
+    second: TileC_PHC_Winter-Office_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -378,7 +381,7 @@ TextureImporter:
         width: 56
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -399,7 +402,7 @@ TextureImporter:
         width: 56
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -420,7 +423,7 @@ TextureImporter:
         width: 56
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -441,7 +444,7 @@ TextureImporter:
         width: 60
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -462,7 +465,7 @@ TextureImporter:
         width: 60
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -470,6 +473,27 @@ TextureImporter:
       bones: []
       spriteID: 8435c932572f603b0800000000000000
       internalID: -5546479306137644216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileC_PHC_Winter-Office_16
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 226
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5518ef7c4e447b230800000000000000
+      internalID: 3654465372033024341
       vertices: []
       indices: 
       edges: []
