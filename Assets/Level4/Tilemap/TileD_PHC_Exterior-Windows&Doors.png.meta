@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: -2433202430828675474
     second: TileD_PHC_Exterior-Windows&Doors_1
+  - first:
+      213: 2758900514846024106
+    second: TileD_PHC_Exterior-Windows&Doors_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,7 +105,7 @@ TextureImporter:
         width: 28
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -123,7 +126,7 @@ TextureImporter:
         width: 61
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,6 +134,27 @@ TextureImporter:
       bones: []
       spriteID: e6ef6d3e7478b3ed0800000000000000
       internalID: -2433202430828675474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileD_PHC_Exterior-Windows&Doors_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 140
+        width: 92
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa12a06a665994620800000000000000
+      internalID: 2758900514846024106
       vertices: []
       indices: 
       edges: []
