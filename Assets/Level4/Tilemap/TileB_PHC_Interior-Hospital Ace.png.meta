@@ -227,6 +227,12 @@ TextureImporter:
   - first:
       213: 8930452795969338657
     second: TileB_PHC_Interior-Hospital Ace_74
+  - first:
+      213: 3271029217121280128
+    second: TileB_PHC_Interior-Hospital Ace_75
+  - first:
+      213: -7513021170504775310
+    second: TileB_PHC_Interior-Hospital Ace_76
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1886,6 +1892,48 @@ TextureImporter:
       bones: []
       spriteID: 12d752b90875feb70800000000000000
       internalID: 8930452795969338657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileB_PHC_Interior-Hospital Ace_75
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 302
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08020780eb7056d20800000000000000
+      internalID: 3271029217121280128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileB_PHC_Interior-Hospital Ace_76
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 252
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279c2161d036cb790800000000000000
+      internalID: -7513021170504775310
       vertices: []
       indices: 
       edges: []
