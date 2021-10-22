@@ -8,6 +8,21 @@ TextureImporter:
   - first:
       213: -570772870140263739
     second: TileC_PHC_Interior-Hospital-Alt Ace_1
+  - first:
+      213: -1300810101250198425
+    second: TileC_PHC_Interior-Hospital-Alt Ace_2
+  - first:
+      213: 5448562582222323386
+    second: TileC_PHC_Interior-Hospital-Alt Ace_3
+  - first:
+      213: 9054485959419705476
+    second: TileC_PHC_Interior-Hospital-Alt Ace_4
+  - first:
+      213: -458683044669013490
+    second: TileC_PHC_Interior-Hospital-Alt Ace_5
+  - first:
+      213: -3000699799955413768
+    second: TileC_PHC_Interior-Hospital-Alt Ace_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -126,7 +141,7 @@ TextureImporter:
         width: 33
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,6 +149,111 @@ TextureImporter:
       bones: []
       spriteID: 5c20cd349153418f0800000000000000
       internalID: -570772870140263739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileC_PHC_Interior-Hospital-Alt Ace_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 466
+        width: 62
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 764fdbada1892fde0800000000000000
+      internalID: -1300810101250198425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileC_PHC_Interior-Hospital-Alt Ace_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 466
+        width: 62
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abeb8d10dce2d9b40800000000000000
+      internalID: 5448562582222323386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileC_PHC_Interior-Hospital-Alt Ace_4
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 256
+        width: 30
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48839f2e10ff7ad70800000000000000
+      internalID: 9054485959419705476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileC_PHC_Interior-Hospital-Alt Ace_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 226
+        width: 32
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e02420a733e62a9f0800000000000000
+      internalID: -458683044669013490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileC_PHC_Interior-Hospital-Alt Ace_6
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 360
+        width: 60
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f4621a2e6f5b56d0800000000000000
+      internalID: -3000699799955413768
       vertices: []
       indices: 
       edges: []
