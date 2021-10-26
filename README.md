@@ -8,6 +8,8 @@ Unity Version: `2020.3.19f1` [Direct Download (Windows)](https://download.unity3
 
 **Keep commit simple but including details (use verb if possible), in English.**
 
+In principle, each commit should only maintain one subject, do not mix differenct types of changes together in one commit.
+
 Follow this syntax to commit as far as possible:
 
 ```
