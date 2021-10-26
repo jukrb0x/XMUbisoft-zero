@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/level-5/暗黑系列场景布置/candleA_01.png.meta
-guid: 8d01a5f6a1ade8447b132b0f5c95312d
-=======
-guid: e80d3c32f67f80f409de864fff4cc6a9
->>>>>>> 56efcb11ce9293055edd190cdb85dd6a2d260ae3:Assets/Level_6/Animation/DestroyEffect.png.meta
+guid: d42285929ca1fd24f86784cb48f32fda
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

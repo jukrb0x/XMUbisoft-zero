@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/level-5/暗黑系列场景布置/candleA_01.png.meta
-guid: 8d01a5f6a1ade8447b132b0f5c95312d
-=======
-guid: e80d3c32f67f80f409de864fff4cc6a9
->>>>>>> 56efcb11ce9293055edd190cdb85dd6a2d260ae3:Assets/Level_6/Animation/DestroyEffect.png.meta
+guid: 8a8d75b2a33bb5a48a47d0b55e9a1bf3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +65,19 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
