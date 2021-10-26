@@ -31,9 +31,9 @@ docs: add commit guidelines on readme
 More details refer to [this page](https://github.com/ubilabs/react-geosuggest/blob/master/CONVENTIONS.md)
 
 
-## Style Guide
+## Coding style guide
 
-To keep the project tidy and avoid conflicts, we use git branches to separate the different works, such as `level-1`,`weapons`, `HUD`. Big difference or small fix could be happended in branches.
+To keep the project tidy and avoid conflicts, we use git branches to separate the different works, such as `level-1`, `weapons`, `HUD`. Big difference or small fix could be happended in branches.
 
 We will have at least 6 levels of the game, the level assets are splitted into `Assets/Levels/Level {num}` (e.g. `Assets/Levels/Level 1` ) to keep a tidy environment for coding. Basically we copy the pure images into `Assets/Levels/Level X/Sprites/Floor` and create tilemaps in `Assets/Levels/Level X/Tilemaps/Floor` for example.
 
