@@ -16,6 +16,7 @@ Follow this syntax to commit as far as possible:
 <body>
 ```
 Commit description `<body>` is not a necessity but do provide if there is any outstanding detail.
+
 For example,
 ```
 feat(camera): add camera follow
