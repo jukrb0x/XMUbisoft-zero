@@ -15,6 +15,7 @@ Follow this syntax to commit as far as possible:
 <BLANK LINE>
 <body>
 ```
+Commit description `<body>` is not a necessity but do provide if there is any outstanding detail.
 For example,
 ```
 feat(camera): add camera follow
@@ -23,7 +24,7 @@ feat(camera): add camera follow
 fix(level-3): fix lost bathroom tiles
 ```
 ```
-docs: update readme
+docs: add commit guidelines on readme
 ```
 
 More details refer to [this page](https://github.com/ubilabs/react-geosuggest/blob/master/CONVENTIONS.md)
