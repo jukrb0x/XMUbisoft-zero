@@ -14,7 +14,7 @@ public class RubyController : MonoBehaviour
     void Start()
     {
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 45;
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
