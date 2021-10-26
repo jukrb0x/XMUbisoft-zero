@@ -1,26 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+namespace Core
 {
-    public enum CharacterTypes
+    public class Character : MonoBehaviour
     {
-        Player,
-        AI
-    }
-    
-    [SerializeField] private CharacterTypes characterType;
+        private enum CharacterTypes
+        {
+            Player,
+            AI
+        }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+        [SerializeField] private CharacterTypes characterType;
 
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+        // Update is called once per frame
+        void Update()
+        {
+        }
     }
 }
