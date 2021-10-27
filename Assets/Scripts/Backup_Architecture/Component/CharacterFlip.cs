@@ -1,37 +1,36 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterFlip : CharacterComponents
+namespace Component
 {
-    public enum FlipMode
+    public class CharacterFlip : CharacterComponents
     {
-        MovementDirection,
-        WeaponDirection
-    }
-    [SerializeField] private FlipMode flipMode = FlipMode.MovementDirection;
-    [SerializeField] private float threshold = 0.1f;
-
-    protected override void HandleAbility()
-    {
-        base.HandleAbility();
-
-        if (flipMode == FlipMode.MovementDirection)
+        private enum FlipMode
         {
-            FlipToMoveDirection();
+            MovementDirection,
+            WeaponDirection
         }
-        else
-        {
-            FlipToWeaponDirection();
-        }
-    }
 
-    //Flips our character by the direction we are moving
-    private void FlipToMoveDirection()
-    {
-        if (controller.CurrentMovement.normalized.magnitude > threshold)
+        [SerializeField] private FlipMode flipMode = FlipMode.MovementDirection;
+        [SerializeField] private float threshold = 0.1f;
+
+        protected override void HandleAbility()
         {
+            base.HandleAbility();
+
+            if (flipMode == FlipMode.MovementDirection)
+            {
+                FlipToMoveDirection();
+            }
+            else
+            {
+                FlipToWeaponDirection();
+            }
+        }
+
+        //Flips our character by the direction we are moving
+        private void FlipToMoveDirection()
+        {
+            if (!(controller.CurrentMovement.normalized.magnitude > threshold)) return;
             if (controller.CurrentMovement.normalized.x > 0)
             {
                 FaceDirection(1);
@@ -40,33 +39,32 @@ public class CharacterFlip : CharacterComponents
             {
                 FaceDirection(-1);
             }
-            else 
+            else
             {
-                FaceDirection((int)transform.localScale.x); //For Vertical movement
+                FaceDirection((int) transform.localScale.x); //For Vertical movement
             }
         }
-    }
 
-    //Flips our character by our Weapon Aiming
-    private void FlipToWeaponDirection()
-    {
-
-    }
-
-    //Make our character face the direction in which is moving
-    private void FaceDirection(int newDirection)
-    {
-        //Get player size
-        float OriginalX = System.Math.Abs(transform.localScale.x);
-        float OriginalY = System.Math.Abs(transform.localScale.y);
-
-        if (newDirection > 0)
+        //Flips our character by our Weapon Aiming
+        private void FlipToWeaponDirection()
         {
-            transform.localScale = new Vector3(OriginalX, OriginalY, 1);
         }
-        else
+
+        //Make our character face the direction in which is moving
+        private void FaceDirection(int newDirection)
         {
-            transform.localScale = new Vector3(-OriginalX, OriginalY, 1);
+            //Get player size
+            float OriginalX = System.Math.Abs(transform.localScale.x);
+            float OriginalY = System.Math.Abs(transform.localScale.y);
+
+            if (newDirection > 0)
+            {
+                transform.localScale = new Vector3(OriginalX, OriginalY, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(-OriginalX, OriginalY, 1);
+            }
         }
     }
 }
