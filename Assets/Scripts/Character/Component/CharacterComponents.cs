@@ -9,13 +9,17 @@ public class CharacterComponents : MonoBehaviour
 
     protected CharacterController controller;
     protected CharacterMovement characterMovement;
+    //protected CharacterWeapon characterWeapon;
     protected Animator animator;
-
+    protected Character character;
+    
     protected virtual void Start()
     {
         controller = GetComponent<CharacterController>();
+        character = GetComponent<Character>();
+        //characterWeapon = GetComponent<CharacterWeapon>();
         characterMovement = GetComponent<CharacterMovement>();
-        animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();        
     }
 
     protected virtual void Update()
@@ -26,20 +30,23 @@ public class CharacterComponents : MonoBehaviour
     // Main method. Here we put the logic of each ability
     protected virtual void HandleAbility()
     {
-        InternalInput();
-        HandleInput();
+        InternalInput();  
+        HandleInput();      
     }
-
+    
     // Here we get the necessary input we need to perform our actions    
     protected virtual void HandleInput()
     {
-
+        
     }
-
+    
     // Here get the main input we need to control our character
     protected virtual void InternalInput()
-    {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+    {        
+        if (character.CharacterType == Character.CharacterTypes.Player)
+        {
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            verticalInput = Input.GetAxisRaw("Vertical");
+        }
     }
 }

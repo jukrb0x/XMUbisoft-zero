@@ -11,16 +11,10 @@ public class Character : MonoBehaviour
     }
     
     [SerializeField] private CharacterTypes characterType;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    [SerializeField] private GameObject characterSprite;
+    [SerializeField] private Animator characterAnimator;
+    
+    public CharacterTypes CharacterType => characterType;
+    public GameObject CharacterSprite => characterSprite;
+    public Animator CharacterAnimator => characterAnimator;
 }
