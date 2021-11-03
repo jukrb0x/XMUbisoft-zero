@@ -15,7 +15,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Player
   - 
   - 
   - 
@@ -44,9 +44,15 @@ TagManager:
   - name: Map
     uniqueID: 3743299339
     locked: 0
+  - name: Player
+    uniqueID: 3906478867
+    locked: 0
+  - name: Enemy
+    uniqueID: 924170447
+    locked: 0
+  - name: Weapon
+    uniqueID: 1092262455
+    locked: 0
   - name: top
     uniqueID: 1746900937
-    locked: 0
-  - name: New Layer
-    uniqueID: 3906478867
     locked: 0
