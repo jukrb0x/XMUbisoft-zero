@@ -44,9 +44,9 @@ TagManager:
   - name: Map
     uniqueID: 3743299339
     locked: 0
-  - name: Player
-    uniqueID: 969438143
+  - name: top
+    uniqueID: 1746900937
     locked: 0
-  - name: Weapon
-    uniqueID: 81570657
+  - name: New Layer
+    uniqueID: 3906478867
     locked: 0
