@@ -6,7 +6,7 @@ using UnityEngine;
 public class BaseHealth : MonoBehaviour
 {
     private float hp;
-    [SerializeField] public float maxHp;
+    [SerializeField] public float maxHp=10f;
     [HideInInspector] public float invulnerabilityTimer = 0;
 
     public Action OnDie;
@@ -27,7 +27,6 @@ public class BaseHealth : MonoBehaviour
     {
         Hp = maxHp;
     }
-
     protected virtual void Update()
     {
         invulnerabilityTimer = Mathf.Max(invulnerabilityTimer - Time.deltaTime, 0);
