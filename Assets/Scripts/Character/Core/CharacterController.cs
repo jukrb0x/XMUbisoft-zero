@@ -12,7 +12,6 @@ namespace Core
         // Returns if this character can move normally (When dashing we can't)
         public bool NormalMovement { get; set; }
 
-
         // Internal
         private Rigidbody2D _rigidbody2D;
 
