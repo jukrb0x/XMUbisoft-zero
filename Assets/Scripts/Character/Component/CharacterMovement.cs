@@ -11,29 +11,26 @@ public class CharacterMovement : CharacterComponents
 
     // Internal
     private readonly int movingParamater = Animator.StringToHash("Moving");
-
-
+    
     protected override void Start()
     {
-        base.Start();
-        MoveSpeed = walkSpeed;
-    }
+        base.Start(); 
+        MoveSpeed = walkSpeed;		       
+    } 
 
     protected override void HandleAbility()
     {
         base.HandleAbility();
-        MoveCharacter();
-        UpdateAnimations();
-    }
+        MoveCharacter(); 
+        UpdateAnimations();	       
+    } 
 
     // Moves our character by our current speed
     private void MoveCharacter()
     {
-        Vector2 movement = new Vector2(horizontalInput, verticalInput);
-
-        //If we move in diagonally, e.g pressing A & W together, same 1 unit has been moved
-        Vector2 movementNormalized = movement.normalized;
-
+        Vector2 movement = new Vector2(x: horizontalInput, y: verticalInput);
+        Vector2 moveInput = movement;
+        Vector2 movementNormalized = moveInput.normalized;         
         Vector2 movementSpeed = movementNormalized * MoveSpeed;
         controller.SetMovement(movementSpeed);
     }
@@ -42,18 +39,34 @@ public class CharacterMovement : CharacterComponents
     private void UpdateAnimations()
     {
         if (Mathf.Abs(horizontalInput) > 0.1f || Mathf.Abs(verticalInput) > 0.1f)
-        {
-            animator.SetBool(movingParamater, value: true);
+        {            
+            if (character.CharacterAnimator != null)
+            {
+                character.CharacterAnimator.SetBool(movingParamater, true);
+            }
         }
         else
         {
-            animator.SetBool(movingParamater, value: false);
+            if (character.CharacterAnimator != null)
+            {
+                character.CharacterAnimator.SetBool(movingParamater, false);
+            }
         }
     }
 
-    // Reset our speed from the run speed to the walk speed
+    // Resets our speed from the run speed to the walk speed
     public void ResetSpeed()
     {
         MoveSpeed = walkSpeed;
+    }
+
+    public void SetHorizontal(float value)
+    {
+        horizontalInput = value;
+    }
+
+    public void SetVertical(float value)
+    {
+        verticalInput = value;
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Singleton<T> : MonoBehaviour where T : Component
+public class Singleton<T> : MonoBehaviour where T : UnityEngine.Component
 {
     // Variable of the instance
     private static T instance;

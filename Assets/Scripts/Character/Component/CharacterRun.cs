@@ -2,28 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterRun : CharacterComponents
+
+namespace Component
 {
-    [SerializeField] private float runSpeed = 10f;
+    public class CharacterRun : CharacterComponents
+    {
+        [SerializeField] private float runSpeed = 10f;
 
-    protected override void HandleInput()
-    {
-        if (Input.GetKey(KeyCode.LeftShift))
+        protected override void HandleInput()
         {
-            Run();
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                Run();
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                StopRun();
+            }
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            StopRun();
-        }
-    }
 
-    private void Run()
-    {
-        characterMovement.MoveSpeed = runSpeed;
-    }
-    private void StopRun()
-    {
-        characterMovement.ResetSpeed();
+        private void Run()
+        {
+            characterMovement.MoveSpeed = runSpeed;
+        }
+        private void StopRun()
+        {
+            characterMovement.ResetSpeed();
+        }
     }
 }
