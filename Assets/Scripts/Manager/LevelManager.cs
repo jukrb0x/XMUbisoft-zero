@@ -1,18 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Character playableCharacter;
+    [SerializeField] private Transform spawnPosition;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            ReviveCharacter();
+        }
     }
+
+    private void ReviveCharacter()
+    {
+        if (playableCharacter.GetComponent<Health>().Hp <= 0)
+        {
+            playableCharacter.GetComponent<Health>().Revive();
+            playableCharacter.transform.position = spawnPosition.position;
+        }
+    }
+
 }
