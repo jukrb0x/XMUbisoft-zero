@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 1306110543
+    locked: 0
+  - name: Carpet
+    uniqueID: 3353409467
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
