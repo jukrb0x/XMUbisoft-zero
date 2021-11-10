@@ -9,7 +9,7 @@ public class CharacterComponents : MonoBehaviour
 
     protected CharacterController controller;
     protected CharacterMovement characterMovement;
-    //protected CharacterWeapon characterWeapon;
+    protected CharacterWeapon characterWeapon;
     protected Animator animator;
     protected Character character;
     
