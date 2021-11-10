@@ -14,7 +14,6 @@ public class CharacterFlip : CharacterComponents
     [SerializeField] private FlipMode flipMode = FlipMode.MovementDirection;
     [SerializeField] private float threshold = 0.1f; 
 
-    // Returns if our character is facing Right
     public bool FacingRight { get; set; }
 
     private void Awake()
@@ -36,7 +35,6 @@ public class CharacterFlip : CharacterComponents
         }
     }
 
-    // Flips our character by the direction we are moving
     private void FlipToMoveDirection()
     {
         if (controller.CurrentMovement.normalized.magnitude > threshold)
@@ -45,17 +43,16 @@ public class CharacterFlip : CharacterComponents
             {
                 FaceDirection(1);
             }
-            else if(controller.CurrentMovement.normalized.x < 0)
+            else
             {
                 FaceDirection(-1);
             }
         }
     }
 
-    // Flips our character by our Weapon Aiming
     private void FlipToWeaponDirection()
     {
-        /*if (characterWeapon != null)
+        if (characterWeapon != null)
         {
             float weaponAngle = characterWeapon.WeaponAim.CurrentAimAngleAbsolute;
             if (weaponAngle > 90 || weaponAngle < -90)
@@ -66,10 +63,9 @@ public class CharacterFlip : CharacterComponents
             {
                 FaceDirection(1);
             }
-        }*/
+        }
     }
-
-    // Makes our character face the direction in which is moving
+    
     private void FaceDirection(int newDirection)
     {
         if (newDirection == 1)

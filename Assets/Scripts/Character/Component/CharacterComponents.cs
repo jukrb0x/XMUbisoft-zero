@@ -9,7 +9,7 @@ public class CharacterComponents : MonoBehaviour
 
     protected CharacterController controller;
     protected CharacterMovement characterMovement;
-    //protected CharacterWeapon characterWeapon;
+    protected CharacterWeapon characterWeapon;
     protected Animator animator;
     protected Character character;
     
@@ -17,7 +17,7 @@ public class CharacterComponents : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         character = GetComponent<Character>();
-        //characterWeapon = GetComponent<CharacterWeapon>();
+        characterWeapon = GetComponent<CharacterWeapon>();
         characterMovement = GetComponent<CharacterMovement>();
         animator = GetComponent<Animator>();        
     }
