@@ -17,7 +17,7 @@ public class CharacterComponents : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         character = GetComponent<Character>();
-        //characterWeapon = GetComponent<CharacterWeapon>();
+        characterWeapon = GetComponent<CharacterWeapon>();
         characterMovement = GetComponent<CharacterMovement>();
         animator = GetComponent<Animator>();        
     }

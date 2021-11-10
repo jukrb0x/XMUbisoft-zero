@@ -46,14 +46,14 @@ public class WeaponAim : MonoBehaviour
         RotateWeapon();
     }
 
-    // 获取精确的鼠标位置以达到目标
+    // Get the exact mouse position in order to aim
     private void GetMousePosition()
     {
-        // 获取鼠标位置
+        // Get Mouse Position
         mousePosition = Input.mousePosition;
         mousePosition.z = 5f;  // We set this value to ensure the camera always stays infront to view everything in game
 
-        // 获得世界空间位置
+        // Get World space position
         direction = mainCamera.ScreenToWorldPoint(mousePosition);
         direction.z = transform.position.z;
         reticlePosition = direction;
@@ -73,11 +73,11 @@ public class WeaponAim : MonoBehaviour
     {
         if (currentAim != Vector3.zero && direction != Vector3.zero)
         {
-            // 获得角度
+            // Get Angle
             CurrentAimAngle = Mathf.Atan2(currentAim.y, currentAim.x) * Mathf.Rad2Deg;
             CurrentAimAngleAbsolute = Mathf.Atan2(currentAimAbsolute.y, currentAimAbsolute.x) * Mathf.Rad2Deg;
 
-            // 制造旋转？
+            // Clamp our rotation
             if (weapon.WeaponOwner.GetComponent<CharacterFlip>().FacingRight)
             {
                 CurrentAimAngle = Mathf.Clamp(CurrentAimAngle, -180, 180);
@@ -87,21 +87,21 @@ public class WeaponAim : MonoBehaviour
                 CurrentAimAngle = Mathf.Clamp(CurrentAimAngle, -180, 180);
             }
             
-            // 应用角度
+            // Apply the angle
             lookRotation = Quaternion.Euler(CurrentAimAngle * Vector3.forward);
             transform.rotation = lookRotation;
         }
         else
         {
-            CurrentAimAngle = 0f;  // 如果鼠标在开始时根本无法移动
+            CurrentAimAngle = 0f;  // If the mouse is not moving at all at the beginning
             transform.rotation = initialRotation;
         }
     }
 
-    // 将瞄准镜移向鼠标位置
+    // Moves our reticle towards our Mouse Position
     private void MoveReticle()
     {
-        reticle.transform.rotation = Quaternion.identity; //设置正常旋转
+        reticle.transform.rotation = Quaternion.identity; //set the normal rotation
         reticle.transform.position = reticlePosition;
     }
 }
