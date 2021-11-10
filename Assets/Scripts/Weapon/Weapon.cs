@@ -33,7 +33,7 @@ public class Weapon : MonoBehaviour
     private float nextShotTime;
     private CharacterController controller; 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         WeaponAmmo = GetComponent<WeaponAmmo>();
         CurrentAmmo = magazineSize;
