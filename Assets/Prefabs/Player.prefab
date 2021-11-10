@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2552276365764917280}
   - component: {fileID: 2552276365764917281}
   - component: {fileID: 290099249989463939}
+  - component: {fileID: 2366739268618710121}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -252,6 +253,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipMode: 0
   threshold: 0.1
+--- !u!114 &2366739268618710121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552276365764917284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c5c34d45c3a0c748af08ea82995a36c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 10
+  invulnerabilityTimer: 0
+  initialHealth: 10
+  initialShield: 5
+  maxShield: 5
+  destroyObject: 0
+  CurrentShield: 0
 --- !u!1 &7722529107987351961
 GameObject:
   m_ObjectHideFlags: 0
