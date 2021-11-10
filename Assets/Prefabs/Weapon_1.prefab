@@ -72,13 +72,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e350f203827b84aacce1eb4607d3f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBtwShots: 0.5
+  timeBtwShots: 0.35
   useMagazine: 1
   magazineSize: 30
   autoReload: 1
   useRecoil: 0
   recoilForce: 30
   projectileSpawnPosition: {x: 1.08, y: 0.32, z: 0}
+  projectileSpread: {x: 0, y: 0, z: 5}
 --- !u!114 &7923057568456133336
 MonoBehaviour:
   m_ObjectHideFlags: 0

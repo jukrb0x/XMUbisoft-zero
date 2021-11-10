@@ -2,30 +2,29 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SingleShotWeapon : Weapon
 {
     [SerializeField] private Vector3 projectileSpawnPosition;
+    [SerializeField] private Vector3 projectileSpread;
 
     // 控制弹丸出生的位置
-	public Vector3 ProjectileSpawnPosition { get; set; }
+    public Vector3 ProjectileSpawnPosition { get; set; }
 
     // 在此游戏对象中返回对池的引用
-	public ObjectPooler Pooler { get; set; }
+    public ObjectPooler Pooler { get; set; }
 
     private Vector3 projectileSpawnValue;
+    private Vector3 randomProjectileSpread;
 
-    private void Start()
+    protected override void Awake()
     {
+    base.Awake();
         projectileSpawnValue = projectileSpawnPosition;
         projectileSpawnValue.y = -projectileSpawnPosition.y; 
 
         Pooler = GetComponent<ObjectPooler>();
-    }
-
-    protected override void Update ()
-    {
-	  base.Update();
     }
 
     protected override void RequestShot()
@@ -50,8 +49,12 @@ public class SingleShotWeapon : Weapon
         // 获取弹丸的参考
         Projectile projectile = projectilePooled.GetComponent<Projectile>();
 
+        // 发散
+        randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
+        Quaternion spread = Quaternion.Euler(randomProjectileSpread);
+
         // 设置方向和旋转
-        Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? transform.right : transform.right * -1;
+        Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? spread * transform.right : spread * transform.right * -1;
         projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
 
         CanShoot = false;  
@@ -62,12 +65,12 @@ public class SingleShotWeapon : Weapon
     {
         if (WeaponOwner.GetComponent<CharacterFlip>().FacingRight)
         {
-            // 朝向右边
+            // 朝右
             ProjectileSpawnPosition = transform.position + transform.rotation * projectileSpawnPosition;
         }
         else
         {
-            // 朝向左边
+            // 朝左
             ProjectileSpawnPosition = transform.position - transform.rotation * projectileSpawnValue;
         }       
     }

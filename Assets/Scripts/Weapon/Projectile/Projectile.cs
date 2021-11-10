@@ -70,4 +70,9 @@ public class Projectile : MonoBehaviour
 
         transform.rotation = rotation;
     }
+    
+    public void ResetProjectile()
+    {
+        spriteRenderer.flipX = false;
+    }
 }
