@@ -34,7 +34,7 @@ public class Health :BaseHealth
         collider2D = GetComponent<Collider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         CurrentShield = initialShield;
-        UIManager.Instance.UpdateHealth(Hp, maxHp, CurrentShield, maxShield);
+        UIManager.Instance.SetUIStates(Hp, maxHp, CurrentShield, maxShield);
     }
 
     private void Update()
@@ -47,6 +47,7 @@ public class Health :BaseHealth
 
     // Take the amount of damage we pass in parameters
     public void TakeDamage(int damage)
+    
     {
         if (Hp <= 0)
         {
@@ -56,7 +57,7 @@ public class Health :BaseHealth
         if (!shieldBroken )
         {
             CurrentShield -= damage;
-            UIManager.Instance.UpdateHealth(Hp, maxHp, CurrentShield, maxShield);
+            UIManager.Instance.SetUIStates(Hp, maxHp, CurrentShield, maxShield);
 
             if (CurrentShield <= 0)
             {
@@ -66,7 +67,7 @@ public class Health :BaseHealth
         }
 
         Hp -= damage;
-        UIManager.Instance.UpdateHealth(Hp, maxHp, CurrentShield, maxShield);
+        UIManager.Instance.SetUIStates(Hp, maxHp, CurrentShield, maxShield);
 
         if (Hp <= 0)
         {
@@ -111,7 +112,7 @@ public class Health :BaseHealth
 
         shieldBroken = false;
 
-        UIManager.Instance.UpdateHealth(Hp, maxHp, CurrentShield, maxShield);
+        UIManager.Instance.SetUIStates(Hp, maxHp, CurrentShield, maxShield);
     }
 
     // If destroyObject is selected, we destroy this game object
