@@ -19,9 +19,9 @@ public class LevelManager : MonoBehaviour
 
     private void ReviveCharacter()
     {
-        if (playableCharacter.GetComponent<Health>().Hp <= 0)
+        if (playableCharacter.GetComponent<PlayerHealth>().HealthPoint <= 0)
         {
-            playableCharacter.GetComponent<Health>().Revive();
+            playableCharacter.GetComponent<PlayerHealth>().Revive();
             playableCharacter.transform.position = spawnPosition.position;
         }
     }
