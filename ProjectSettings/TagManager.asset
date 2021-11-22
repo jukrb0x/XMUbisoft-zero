@@ -61,6 +61,12 @@ TagManager:
   - name: Weapon
     uniqueID: 1092262455
     locked: 0
+  - name: UI Sub Canvas
+    uniqueID: 116414427
+    locked: 0
+  - name: UI Canvas
+    uniqueID: 4101360305
+    locked: 0
   - name: top
     uniqueID: 1746900937
     locked: 0
