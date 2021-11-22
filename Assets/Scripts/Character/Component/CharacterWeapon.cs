@@ -50,7 +50,7 @@ public class CharacterWeapon : CharacterComponents
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
             // FIXME
-            // UIManager.Instance.UpdateAmmo(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
+            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
         }     
     }
 
@@ -75,8 +75,7 @@ public class CharacterWeapon : CharacterComponents
         CurrentWeapon.Reload();
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
-            // FIXME
-            // UIManager.Instance.UpdateAmmo(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
+            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
         }
 
     }
@@ -90,8 +89,7 @@ public class CharacterWeapon : CharacterComponents
 
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
-            // FIXME
-            // UIManager.Instance.UpdateAmmo(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
+            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
         }
     }
 }

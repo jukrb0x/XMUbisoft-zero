@@ -7,7 +7,6 @@ public class UIManager : Singleton<UIManager>
 {
     [Header("Settings")] // FIXME: what is this
     private Image healthBar;
-
     private Image shieldBar;
     private Image healthBarDelay;
     private Image shieldBarDelay;
@@ -18,6 +17,10 @@ public class UIManager : Singleton<UIManager>
     private float playerCurrentShield;
     private float playerMaxShield;
 
+    private int currentAmmo;
+    private int totalAmmo;
+    
+
     public void SetUIStates(float hp, float maxHp, float shield,
         float maxShield)
     {
@@ -25,6 +28,12 @@ public class UIManager : Singleton<UIManager>
         playerMaxHealth = maxHp;
         playerCurrentShield = shield;
         playerMaxShield = maxShield;
+    }
+
+    public void SetWeapon(int current, int magazineSize)
+    {
+        currentAmmo = current;
+        totalAmmo = magazineSize;
     }
 
     private void Start()
