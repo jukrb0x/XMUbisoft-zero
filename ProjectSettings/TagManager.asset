@@ -38,7 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Map
   m_SortingLayers:
   - name: Ground
     uniqueID: 1306110543

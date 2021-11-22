@@ -93,6 +93,7 @@ public class Health :BaseHealth
             controller.enabled = false;
             
             weapon.enabled = false;
+            Cursor.visible = true;
             weapons.SetActive(false);
             IsDie = true;
         }
@@ -115,8 +116,10 @@ public class Health :BaseHealth
             controller.enabled = true;
 
             weapon.enabled = true;
+            Cursor.visible = false;
             weapons.SetActive(true);
             IsDie = false;
+            
         }
 
         gameObject.SetActive(true);
