@@ -44,9 +44,8 @@ public class UIManager : Singleton<UIManager>
 
     private void UpdateBars()
     {
+        
         healthBar.fillAmount = playerCurrentHealth / playerMaxHealth;
-        // healthBar.fillAmount -= amountDelayRate * Time.deltaTime;
-        // todo: 
         shieldBar.fillAmount = playerCurrentShield / playerMaxShield;
 
 
