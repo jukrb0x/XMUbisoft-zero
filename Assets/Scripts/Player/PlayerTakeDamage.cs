@@ -10,11 +10,11 @@ public class PlayerTakeDamage : MonoBehaviour
     
     private bool PlayerCanTakeDamage = true;
 
-    private Health health;
+    private PlayerHealth _playerHealth;
 
     private void Awake()
     {
-        health = GetComponent<Health>();
+        _playerHealth = GetComponent<PlayerHealth>();
     }
     
     protected virtual void Update()
@@ -27,7 +27,7 @@ public class PlayerTakeDamage : MonoBehaviour
         
         if (other.collider.CompareTag("Enemy") && PlayerCanTakeDamage)
         {
-            health.TakeDamage(1);
+            _playerHealth.Damage(1);
             PlayerCanTakeDamage = false;
         }
     }

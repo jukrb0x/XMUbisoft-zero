@@ -7,6 +7,7 @@ public class UIManager : Singleton<UIManager>
 {
     [Header("Settings")] // FIXME: what is this
     private Image healthBar;
+
     private Image shieldBar;
     private Image healthBarDelay;
     private Image shieldBarDelay;
@@ -19,7 +20,7 @@ public class UIManager : Singleton<UIManager>
 
     private int currentAmmo;
     private int totalAmmo;
-    
+
 
     public void SetUIStates(float hp, float maxHp, float shield,
         float maxShield)
@@ -32,6 +33,7 @@ public class UIManager : Singleton<UIManager>
 
     public void SetWeapon(int current, int magazineSize)
     {
+        // TODO: Weapon Switch
         currentAmmo = current;
         totalAmmo = magazineSize;
     }
@@ -40,6 +42,7 @@ public class UIManager : Singleton<UIManager>
     {
         // Initialize status bars
         Transform statusBarsContainer = GameObject.Find("StatusBarsContainer").transform;
+        // TODO FIXME
         healthBar = statusBarsContainer.Find("HealthBarContainer").Find("HealthBar").GetComponent<Image>();
         shieldBar = statusBarsContainer.Find("ShieldBarContainer").Find("ShieldBar").GetComponent<Image>();
         healthBarDelay = statusBarsContainer.Find("HealthBarContainer").Find("HealthBarDelay").GetComponent<Image>();
@@ -53,10 +56,8 @@ public class UIManager : Singleton<UIManager>
 
     private void UpdateBars()
     {
-        
+        // TODO: Mathf.lerp
         healthBar.fillAmount = playerCurrentHealth / playerMaxHealth;
         shieldBar.fillAmount = playerCurrentShield / playerMaxShield;
-
-
     }
 }
