@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
 
     [Header("Weapon")] 
     [SerializeField] private bool useMagazine = true;
-    [SerializeField] private int magazineSize = 30;
+    [SerializeField] private int magazineSize = 30;  // TODO
     [SerializeField] private bool autoReload = true;
 
     [Header("Recoil")] 
@@ -19,10 +19,10 @@ public class Weapon : MonoBehaviour
     
     public Character WeaponOwner { get; set; }
 
-    public int CurrentAmmo { get; set; }
 
     public WeaponAmmo WeaponAmmo { get; set; }
     
+    public int CurrentAmmo { get; set; }
     public bool UseMagazine => useMagazine;
     
 	public int MagazineSize => magazineSize;
