@@ -12,8 +12,9 @@ public class LevelNavigator : MonoBehaviour
 
     private void Awake()
     {
-       mainMenu.SetActive(true); 
-       levelMenu.SetActive(false);
+        // reset menu components activity
+        mainMenu.SetActive(true);
+        levelMenu.SetActive(false);
     }
 
     public void PlayGame()
