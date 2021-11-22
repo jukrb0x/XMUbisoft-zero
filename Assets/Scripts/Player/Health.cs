@@ -18,6 +18,9 @@ public class Health :BaseHealth
     private CharacterController controller;
     private Collider2D collider2D;
     private SpriteRenderer spriteRenderer;
+    private CharacterWeapon weapon;
+    private GameObject weapons;
+    protected bool IsDie = false;
 
     private bool shieldBroken;
 
@@ -33,6 +36,9 @@ public class Health :BaseHealth
         controller = GetComponent<CharacterController>();
         collider2D = GetComponent<Collider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        weapon = GetComponent<CharacterWeapon>();
+        // weapons = GameObject.FindWithTag("Weapon");
+        weapons = GameObject.Find("WeaponHolder");
         CurrentShield = initialShield;
         UIManager.Instance.UpdateHealth(Hp, maxHp, CurrentShield, maxShield);
     }
@@ -84,6 +90,10 @@ public class Health :BaseHealth
 
             character.enabled = false;
             controller.enabled = false;
+            
+            weapon.enabled = false;
+            weapons.SetActive(false);
+            IsDie = true;
         }
 
         if (destroyObject)
@@ -101,7 +111,11 @@ public class Health :BaseHealth
             spriteRenderer.enabled = true;
 
             character.enabled = true;
-           
+            controller.enabled = true;
+
+            weapon.enabled = true;
+            weapons.SetActive(true);
+            IsDie = false;
         }
 
         gameObject.SetActive(true);
