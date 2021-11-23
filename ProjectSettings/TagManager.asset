@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Weapon
+  - Weapon1
   - Projectile
+  - Aim
   layers:
   - Default
   - TransparentFX
