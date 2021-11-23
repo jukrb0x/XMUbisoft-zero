@@ -13,6 +13,7 @@ public class LevelNavigator : MonoBehaviour
     private void Awake()
     {
         // reset menu components activity
+        if (!mainMenu || !levelMenu) return;
         mainMenu.SetActive(true);
         levelMenu.SetActive(false);
     }
@@ -40,6 +41,7 @@ public class LevelNavigator : MonoBehaviour
         // Level 1 --> 1
         SceneManager.LoadScene(chosenLevel);
     }
+
     public void BackMenu()
     {
         // Level 1 --> 1

@@ -17,6 +17,7 @@ public class NPCHealth : BaseHealth
     {
         MaxHealthPoint = initialHealth;
         base.Awake();
+        // find current NPC's health bar
         healthBarContainer = gameObject.transform.Find("HealthBarContainer").gameObject;
         healthBarImage = healthBarContainer.transform.Find("HealthBar").GetComponent<Image>();
         healthBarContainer.SetActive(false);
