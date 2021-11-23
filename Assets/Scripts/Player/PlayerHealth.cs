@@ -37,6 +37,11 @@ public class PlayerHealth : BaseHealth
         weapons = GameObject.Find("WeaponHolder");
         MaxHealthPoint = initialHealth;
         CurrentShield = initialShield;
+        if (!gameOverLabel)
+        {
+            gameOverLabel = GameObject.Find("GameOverLabel").GetComponent<TextMeshProUGUI>();
+
+        }
         base.Awake();
         UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
         gameOverLabel.gameObject.SetActive(false);
