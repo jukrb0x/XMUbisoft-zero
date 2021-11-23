@@ -7,7 +7,8 @@ using UnityEngine;
 public class ReturnToPool : MonoBehaviour
 {
     [Header("Settings")] 
-    [SerializeField] private LayerMask objectMask;
+    [SerializeField] private LayerMask WallMask;
+    [SerializeField] private LayerMask EnemyMask;
     [SerializeField] private float lifeTime = 2f;
 
     private Projectile projectile;    
@@ -30,7 +31,12 @@ public class ReturnToPool : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (CheckLayer(other.gameObject.layer, objectMask))
+        if (CheckLayer(other.gameObject.layer, WallMask))
+        {
+            Return();
+        }
+
+        if (CheckLayer(other.gameObject.layer, EnemyMask))
         {
             Return();
         }
