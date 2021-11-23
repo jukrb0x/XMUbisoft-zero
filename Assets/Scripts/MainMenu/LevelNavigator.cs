@@ -40,4 +40,9 @@ public class LevelNavigator : MonoBehaviour
         // Level 1 --> 1
         SceneManager.LoadScene(chosenLevel);
     }
+    public void BackMenu()
+    {
+        // Level 1 --> 1
+        SceneManager.LoadScene(0);
+    }
 }
