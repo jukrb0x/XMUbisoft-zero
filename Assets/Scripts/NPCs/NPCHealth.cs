@@ -9,7 +9,7 @@ public class NPCHealth : BaseHealth
     [SerializeField] private float initialHealth = 10f;
 
     // TODO: find health bar here
-    private GameObject healthBar;
+    private GameObject healthBarContainer;
     private Image healthBarImage;
     private Image healthBarImageDelay;
 
@@ -17,11 +17,9 @@ public class NPCHealth : BaseHealth
     {
         MaxHealthPoint = initialHealth;
         base.Awake();
-        healthBar = GameObject.Find("HealthBarContainer");
-        Transform healthBarContainer = GameObject.Find("HealthBarContainer").transform;
-        healthBarImage = healthBarContainer.Find("HealthBar").GetComponent<Image>();
-        healthBarImageDelay = healthBarContainer.Find("HealthBarDelay").GetComponent<Image>();
-        healthBar.SetActive(false);
+        healthBarContainer = gameObject.transform.Find("HealthBarContainer").gameObject;
+        healthBarImage = healthBarContainer.transform.Find("HealthBar").GetComponent<Image>();
+        healthBarContainer.SetActive(false);
     }
 
     private void Update()
@@ -42,7 +40,7 @@ public class NPCHealth : BaseHealth
     {
         if (!IsDead)
         {
-            healthBar.SetActive(true);
+            healthBarContainer.SetActive(true);
         }
 
         base.Damage(damage);
