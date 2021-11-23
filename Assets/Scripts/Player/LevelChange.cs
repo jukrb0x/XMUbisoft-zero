@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorToNextLevel : MonoBehaviour
+public class LevelChange : MonoBehaviour
 {
     [SerializeField] private LayerMask PassMask;
 
