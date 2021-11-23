@@ -5,24 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class DoorToNextLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private LayerMask PassMask;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player")
-            && other.GetType().ToString() == "UnityEngine.CapsuleCollider2D")
-        {
+        if (CheckLayer(other.gameObject.layer, PassMask))
+        { 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+
+    private bool CheckLayer(int layer,LayerMask objectMask)
+    {
+        return ((1 << layer) & objectMask )!= 0;
     }
 }
