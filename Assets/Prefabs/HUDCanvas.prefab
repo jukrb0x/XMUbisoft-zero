@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2603376387683762188}
   - component: {fileID: 2603376387683762189}
   - component: {fileID: 2603376387683762190}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HUDCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 2603376387792599041}
   - component: {fileID: 2603376387792599047}
   - component: {fileID: 2603376387792599040}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: WeaponContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2603376387879849229}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00009524316}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2603376389489502298}
@@ -337,7 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2603376388643763686}
   - component: {fileID: 2603376388643763685}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: StatusBarsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2603376388643763687}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -110.68699}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5921824, y: 0.5921824, z: 0.5921824}
   m_Children:
   - {fileID: 2603376389489502298}
@@ -399,7 +399,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2603376388657124118}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00009524316}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2603376389489502298}
@@ -457,7 +457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2603376388752395180}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ShieldBarContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 2603376389464702693}
   - component: {fileID: 2603376389464702699}
   - component: {fileID: 2603376389464702692}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +731,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2603376389489502299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 209.34344}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2816702, y: 1.2816702, z: 1.2816702}
   m_Children:
   - {fileID: 2603376389263895227}
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 2603376389575720088}
   - component: {fileID: 2603376389575720094}
   - component: {fileID: 2603376389575720095}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
