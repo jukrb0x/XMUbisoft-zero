@@ -35,6 +35,8 @@ public class PlayerHealth : BaseHealth
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         weapon = GetComponent<CharacterWeapon>();
         weapons = GameObject.Find("WeaponHolder");
+        // TODO: Fix Aim Disappear Problem
+        // weapons = GameObject.FindWithTag("Weapon1");
         MaxHealthPoint = initialHealth;
         CurrentShield = initialShield;
         if (!gameOverLabel)
