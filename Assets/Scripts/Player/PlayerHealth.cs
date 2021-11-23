@@ -34,12 +34,12 @@ public class PlayerHealth : BaseHealth
         collider2D = GetComponent<Collider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         weapon = GetComponent<CharacterWeapon>();
-        // weapons = GameObject.FindWithTag("Weapon");
         weapons = GameObject.Find("WeaponHolder");
         MaxHealthPoint = initialHealth;
         CurrentShield = initialShield;
         base.Awake();
         UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
+        gameOverLabel.gameObject.SetActive(false);
     }
 
     private void Update()
