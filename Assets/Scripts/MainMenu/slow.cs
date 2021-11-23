@@ -9,8 +9,8 @@ public class slow : MonoBehaviour
     private string words;
 
     private bool isActive = false; 
-    private float timer;//Timer
-    private Text myText;//get test
+    private float timer; //Timer
+    private Text myText; //get test
     private int currentPos = 0;
 
     // Use this for initialization
@@ -27,16 +27,18 @@ public class slow : MonoBehaviour
         myText = GetComponent<Text>();
         words = myText.text;
         myText.text = "";
+
     }
-    void Start()
+    private void Awake()
     {
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         OnStartWriter();
-    }
+    }   
     void OnStartWriter()
     {
 

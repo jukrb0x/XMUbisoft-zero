@@ -37,10 +37,6 @@ public class WeaponAim : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            Cursor.visible = true;
-        }
         GetMousePosition();                
         MoveReticle();
         RotateWeapon();
