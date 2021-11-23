@@ -42,10 +42,14 @@ public class PlayerHealth : BaseHealth
         if (!gameOverLabel)
         {
             gameOverLabel = GameObject.Find("GameOverLabel").GetComponent<TextMeshProUGUI>();
-
         }
+
         base.Awake();
         UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
+    }
+
+    private void Start()
+    {
         gameOverLabel.gameObject.SetActive(false);
     }
 
