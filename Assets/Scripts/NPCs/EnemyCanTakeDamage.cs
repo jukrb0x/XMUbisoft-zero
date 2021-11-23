@@ -5,25 +5,25 @@ using UnityEngine;
 
 public class EnemyCanTakeDamage : MonoBehaviour
 {
-    private NPCHealth npcHealth;
+    
+    [SerializeField] private LayerMask DamageMask;
+    private NPCHealth _npcHealth;
 
     private void Awake()
     {
-        npcHealth = GetComponent<NPCHealth>();
+        _npcHealth = GetComponent<NPCHealth>();
     }
     
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-        if (other.collider.CompareTag("Projectile"))
+        if (CheckLayer(other.gameObject.layer, DamageMask))
         {
-            npcHealth.Damage(1);
+            _npcHealth.Damage(1);
         }
     }
-    
-    
-    
-    
-    
-    
+
+    private bool CheckLayer(int layer,LayerMask objectMask)
+    {
+        return ((1 << layer) & objectMask )!= 0;
+    }
 }
