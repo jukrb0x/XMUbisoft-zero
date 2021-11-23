@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerHealth : BaseHealth
@@ -8,6 +9,7 @@ public class PlayerHealth : BaseHealth
     [Header("Health")] [SerializeField] private float initialHealth = 10f;
     [Header("Shield")] [SerializeField] private float initialShield = 5f;
     [SerializeField] private float maxShield = 5f;
+    [SerializeField] TextMeshProUGUI gameOverLabel;
 
     [Header("Settings")] [SerializeField] private bool destroyObject;
 
@@ -63,6 +65,7 @@ public class PlayerHealth : BaseHealth
 
             return;
         }
+
         base.Damage(damage);
         UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
         if (IsDead)
@@ -91,6 +94,9 @@ public class PlayerHealth : BaseHealth
         {
             DestroyObject();
         }
+
+        // show Game Over label
+        gameOverLabel.gameObject.SetActive(true);
     }
 
     // Revive this game object    
