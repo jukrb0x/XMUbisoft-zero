@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 194535734}
   - component: {fileID: 194535733}
   - component: {fileID: 194535732}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6984,7 +6984,7 @@ GameObject:
   - component: {fileID: 906958203}
   - component: {fileID: 906958202}
   - component: {fileID: 906958201}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80263,7 +80263,7 @@ GameObject:
   - component: {fileID: 963733569}
   - component: {fileID: 963733568}
   - component: {fileID: 963733567}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
