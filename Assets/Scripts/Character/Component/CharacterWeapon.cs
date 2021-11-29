@@ -4,16 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterWeapon : CharacterComponents
-{   	
-    [Header("Weapon Settings")]
-    [SerializeField] private Weapon weaponToUse;
+{
+    [Header("Weapon Settings")] [SerializeField]
+    private Weapon weaponToUse;
+
     [SerializeField] private Transform weaponHolderPosition;
 
     // Reference of the Weapon we are using
-	public Weapon CurrentWeapon  { get; set; }
+    public Weapon CurrentWeapon { get; set; }
 
-	// Returns the reference to our Current Weapon Aim
+    // Returns the reference to our Current Weapon Aim
     public WeaponAim WeaponAim { get; set; }
+
+    private int mouseLeftBtn = 0;
 
     protected override void Start()
     {
@@ -23,35 +26,36 @@ public class CharacterWeapon : CharacterComponents
 
     protected override void HandleInput()
     {
-        if (Input.GetMouseButton(0))
+        base.HandleInput();
+        if (Input.GetMouseButton(mouseLeftBtn))
+            // TODO judge if can shoot here
         {
-        	Shoot();
+            BeforeShoot();
         }
 
-        if (Input.GetMouseButtonUp(0))  // If we stop shooting
+        if (Input.GetMouseButtonUp(mouseLeftBtn)) // If we stop shooting
         {
-        	StopWeapon();    
+            StopWeapon();
         }
-        
+
         if (Input.GetKeyDown(KeyCode.R))
         {
-	      Reload();
-        }    
+            Reload();
+        }
     }
-    
-    public void Shoot()
+
+    public void BeforeShoot()
     {
-        if (CurrentWeapon == null)
-        {
-            return;
-        } 
+        if (!CurrentWeapon.CanShoot) return;
 
         CurrentWeapon.TriggerShot();
+        
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
             // FIXME
+            // TODO: weapon to UI canvas
             UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
-        }     
+        }
     }
 
     // When we stop shooting we stop using our Weapon
@@ -61,31 +65,30 @@ public class CharacterWeapon : CharacterComponents
         {
             return;
         }
-        
+
         CurrentWeapon.StopWeapon();
     }
 
     public void Reload()
-    {         
+    {
         if (CurrentWeapon == null)
         {
             return;
         }
-        
+
         CurrentWeapon.Reload();
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
             UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
         }
-
     }
 
     public void EquipWeapon(Weapon weapon, Transform weaponPosition)
     {
         CurrentWeapon = Instantiate(weapon, weaponPosition.position, weaponPosition.rotation);
         CurrentWeapon.transform.parent = weaponPosition;
-        CurrentWeapon.SetOwner(character);     
-        WeaponAim = CurrentWeapon.GetComponent<WeaponAim>(); 
+        CurrentWeapon.SetOwner(character);
+        WeaponAim = CurrentWeapon.GetComponent<WeaponAim>();
 
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
