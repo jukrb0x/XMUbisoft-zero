@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
-    [Header("Settings")] // FIXME: what is this
     private Image healthBar;
 
     private Image shieldBar;
