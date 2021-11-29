@@ -31,7 +31,7 @@ public class SingleShotWeapon : Weapon
     {
         base.RequestShot();
 
-        if (CanShoot)
+        if (CanShoot && Input.GetMouseButtonDown(0))
         {
             EvaluateProjectileSpawnPosition();
             SpawnProjectile(ProjectileSpawnPosition);
