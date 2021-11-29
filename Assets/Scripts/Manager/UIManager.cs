@@ -8,7 +8,7 @@ public class UIManager : Singleton<UIManager>
     private Image shieldBar;
     private Image healthBarDelay;
     private Image shieldBarDelay;
-    [SerializeField] private float amountDelayRate = 1;
+    [SerializeField] private float amountDelayRate = 0.0005f;
 
     private float playerCurrentHealth;
     private float playerMaxHealth;
@@ -55,6 +55,24 @@ public class UIManager : Singleton<UIManager>
     {
         // TODO: Mathf.lerp
         healthBar.fillAmount = playerCurrentHealth / playerMaxHealth;
+        if (healthBarDelay.fillAmount > healthBar.fillAmount)
+        {
+            healthBarDelay.fillAmount -= amountDelayRate;
+        }
+        else
+        {
+            healthBarDelay.fillAmount = healthBar.fillAmount;
+        }
         shieldBar.fillAmount = playerCurrentShield / playerMaxShield;
+
+        if (shieldBarDelay.fillAmount > shieldBar.fillAmount)
+        {
+            shieldBarDelay.fillAmount -= amountDelayRate;
+        }
+        else
+        {
+            shieldBarDelay.fillAmount = shieldBar.fillAmount;
+        }
     }
+
 }
