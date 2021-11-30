@@ -76,12 +76,12 @@ MonoBehaviour:
   timeBtwShots: 0.6
   useMagazine: 1
   magazineSize: 30
-  autoReload: 1
+  autoReload: 0
   useRecoil: 0
   recoilForce: 30
   nextShotTime: 0
-  projectileSpawnPosition: {x: 0, y: 0, z: 0}
-  projectileSpread: {x: 0, y: 0, z: 30}
+  projectileSpawnPosition: {x: 1.5, y: 0.15, z: 0}
+  projectileSpread: {x: 0, y: 0, z: 0}
 --- !u!114 &-2506645290724319967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,8 +122,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7040016992252300296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.11, y: -0.001, z: 0.4383}
-  m_LocalScale: {x: 0.35977998, y: 0.40352923, z: 0.059615545}
+  m_LocalPosition: {x: 0.151, y: 0.001, z: 0.4383}
+  m_LocalScale: {x: 0.4539704, y: 0.5091732, z: 0.075222895}
   m_Children: []
   m_Father: {fileID: 2338738130631955995}
   m_RootOrder: 0
