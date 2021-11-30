@@ -6,7 +6,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {   
     [Header("Settings")] 
-    [SerializeField] private float timeBtwShots = 0.5f;
+    [SerializeField] public float timeBtwShots = 0.5f;
 
     [Header("Weapon")] 
     [SerializeField] private bool useMagazine = true;
@@ -30,7 +30,7 @@ public class Weapon : MonoBehaviour
     public bool CanShoot { get; set; }
 
     // Internal
-    private float nextShotTime;
+    public float nextShotTime;
     private CharacterController controller; 
 
     protected virtual void Awake()
@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
         CurrentAmmo = magazineSize;
     }
 
-    protected virtual void Update()
+    public virtual void Update()
     {
         WeaponCanShoot();
         RotateWeapon();   
@@ -67,6 +67,7 @@ public class Weapon : MonoBehaviour
                 if (WeaponAmmo.CanUseWeapon())
                 {
                     RequestShot();
+                    
                 }
                 else
                 {
@@ -80,10 +81,11 @@ public class Weapon : MonoBehaviour
         else
         {
             RequestShot();
+            
 		}
     }
 
-    protected virtual void RequestShot()
+    public virtual void RequestShot()
     {
         if (!CanShoot)
         {
@@ -113,12 +115,13 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    protected virtual void WeaponCanShoot()
+    public void WeaponCanShoot()
     {
+        // TODO: Fix double shoot
         if (Time.time > nextShotTime)  
         {
             CanShoot = true;
-            nextShotTime = Time.time + timeBtwShots;
+            
         }
     }
 

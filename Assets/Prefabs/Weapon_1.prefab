@@ -74,11 +74,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBtwShots: 0.4
-  useMagazine: 1
+  useMagazine: 0
   magazineSize: 30
   autoReload: 1
   useRecoil: 0
   recoilForce: 30
+  nextShotTime: 0
   projectileSpawnPosition: {x: 1.08, y: 0.32, z: 0}
   projectileSpread: {x: 0, y: 0, z: 5}
 --- !u!114 &7923057568456133336
