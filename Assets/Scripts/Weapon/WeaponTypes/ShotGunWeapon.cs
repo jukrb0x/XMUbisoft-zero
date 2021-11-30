@@ -27,7 +27,7 @@ public class ShotGunWeapon : Weapon
     public override void RequestShot()
     {
         base.RequestShot();
-        if (CanShoot && Input.GetMouseButtonDown(0))
+        if (CanShoot)
         {
             EvaluateProjectileSpawnPosition();
             SpawnProjectile(ProjectileSpawnPosition);
@@ -46,8 +46,8 @@ public class ShotGunWeapon : Weapon
         Projectile projectile = projectilePooled.GetComponent<Projectile>();
 
         // 发散
-        // randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
-        randomProjectileSpread.z = projectileSpread.z;
+        randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
+        //randomProjectileSpread.z = projectileSpread.z;
         Quaternion spread = Quaternion.Euler(randomProjectileSpread);
 
         // 设置方向和旋转
