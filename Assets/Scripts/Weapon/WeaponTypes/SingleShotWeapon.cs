@@ -20,17 +20,15 @@ public class SingleShotWeapon : Weapon
 
     protected override void Awake()
     {
-    base.Awake();
+        base.Awake();
         projectileSpawnValue = projectileSpawnPosition;
-        projectileSpawnValue.y = -projectileSpawnPosition.y; 
-
+        projectileSpawnValue.y = -projectileSpawnPosition.y;
         Pooler = GetComponent<ObjectPooler>();
     }
-
-    protected override void RequestShot()
+    
+    public override void RequestShot()
     {
         base.RequestShot();
-
         if (CanShoot && Input.GetMouseButtonDown(0))
         {
             EvaluateProjectileSpawnPosition();
@@ -56,8 +54,9 @@ public class SingleShotWeapon : Weapon
         // 设置方向和旋转
         Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? spread * transform.right : spread * transform.right * -1;
         projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
-
+        
         CanShoot = false;  
+        nextShotTime = Time.time + timeBtwShots;
     }
 
     // 计算弹丸发射位置
