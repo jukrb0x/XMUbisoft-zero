@@ -6,7 +6,9 @@ public class ShotGunWeapon : Weapon
 {
     [SerializeField] private Vector3 projectileSpawnPosition;
     [SerializeField] private Vector3 projectileSpread;
+    [SerializeField] private int maxProjectileOneShot = 3;
 
+    private int projectileOneShot = 0;
     // 控制弹丸出生的位置
     public Vector3 ProjectileSpawnPosition { get; set; }
 
@@ -15,6 +17,7 @@ public class ShotGunWeapon : Weapon
 
     private Vector3 projectileSpawnValue;
     private Vector3 randomProjectileSpread;
+    private Vector3 rotationGun;
 
     protected override void Awake()
     {
@@ -44,18 +47,44 @@ public class ShotGunWeapon : Weapon
 
         // 获取弹丸的参考
         Projectile projectile = projectilePooled.GetComponent<Projectile>();
-
+        Quaternion rotation;
         // 发散
-        randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
+        if (projectileOneShot == 1)
+        {
+            rotationGun = transform.position;
+            rotationGun.z += 10;
+            rotation = Quaternion.Euler(rotationGun);
+        }
+        else if (projectileOneShot == 2)
+        {
+            rotationGun = transform.position;
+            rotationGun.z -= 10;
+            rotation = Quaternion.Euler(rotationGun);
+        }
+        else
+        {
+            rotationGun = transform.position;
+            rotation = Quaternion.Euler(rotationGun);
+            
+        }
+        
+        // randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
         //randomProjectileSpread.z = projectileSpread.z;
-        Quaternion spread = Quaternion.Euler(randomProjectileSpread);
+        // Quaternion spread = Quaternion.Euler(randomProjectileSpread);
+        
 
         // 设置方向和旋转
-        Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? spread * transform.right : spread * transform.right * -1;
-        projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
-        
-        CanShoot = false;  
-        nextShotTime = Time.time + timeBtwShots;
+        Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? rotation * transform.right : rotation * transform.right * -1;
+        projectile.SetDirection(newDirection, rotation, WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
+
+        projectileOneShot++;
+        if (projectileOneShot >= maxProjectileOneShot)
+        {
+            projectileOneShot = 0;
+            CanShoot = false;  
+            nextShotTime = Time.time + timeBtwShots;
+        }
+
     }
 
     // 计算弹丸发射位置

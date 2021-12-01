@@ -82,6 +82,7 @@ MonoBehaviour:
   nextShotTime: 0
   projectileSpawnPosition: {x: 1.5, y: 0.15, z: 0}
   projectileSpread: {x: 0, y: 0, z: 0}
+  maxProjectileOneShot: 3
 --- !u!114 &-2506645290724319967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91b3ceab8c211f409cf74de9290f3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 8137644099906661219, guid: ca0038cbd29355844bd24713a276e60e, type: 3}
+  objectPrefab: {fileID: 7029911413628908680, guid: d8be2c1b737d27d44a802ffaa1bd744c, type: 3}
   poolSize: 10
   poolCanExpand: 1
 --- !u!1 &7040016992252300296
