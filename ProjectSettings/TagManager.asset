@@ -10,6 +10,7 @@ TagManager:
   - Aim
   - Damage_Spike
   - Debuff_Slow
+  - Debuff_Poison
   layers:
   - Default
   - TransparentFX

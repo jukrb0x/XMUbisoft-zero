@@ -35,7 +35,7 @@ public class PlayerTakeDamage : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Damage_Spike") && PlayerCanTakeDamage)
+        if ((other.CompareTag("Damage_Spike")||other.CompareTag("Debuff_Poison"))&& PlayerCanTakeDamage)
         {
             _playerHealth.Damage(1);
             PlayerCanTakeDamage = false;
