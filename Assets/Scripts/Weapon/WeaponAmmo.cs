@@ -23,16 +23,12 @@ public class WeaponAmmo : MonoBehaviour
     
     public bool CanUseWeapon()
     {
-        if (weapon.CurrentAmmo > 0)
-        {
-            return true;
-        }
-
-        return false;
+        return weapon.CurrentAmmo > 0;
     }
     
     public void RefillAmmo()
     {
+        // TODO: refill time
         if (weapon.UseMagazine)
         {
             weapon.CurrentAmmo = weapon.MagazineSize;
