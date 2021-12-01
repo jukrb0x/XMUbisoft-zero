@@ -24,20 +24,30 @@ public class PlayerTakeDamage : MonoBehaviour
     
     private void OnCollisionStay2D(Collision2D other)
     {
-        
+    
         if (other.collider.CompareTag("Enemy") && PlayerCanTakeDamage)
         {
             _playerHealth.Damage(1);
             PlayerCanTakeDamage = false;
+            nextDamageTime = Time.time + timeBtwDamage;
         }
     }
-    
-    protected void CanTakeDamage()
+
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (Time.time > nextDamageTime)  
+        if (other.CompareTag("Damage_Spike") && PlayerCanTakeDamage)
+        {
+            _playerHealth.Damage(1);
+            PlayerCanTakeDamage = false;
+            nextDamageTime = Time.time + timeBtwDamage;
+        }
+    }
+
+    private void CanTakeDamage()
+    {
+        if (Time.time > nextDamageTime)
         {
             PlayerCanTakeDamage = true;
-            nextDamageTime = Time.time + timeBtwDamage;
         }
     }
 }
