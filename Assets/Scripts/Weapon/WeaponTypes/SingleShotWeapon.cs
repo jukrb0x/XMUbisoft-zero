@@ -20,20 +20,20 @@ public class SingleShotWeapon : Weapon
 
     protected override void Awake()
     {
-    base.Awake();
+        base.Awake();
         projectileSpawnValue = projectileSpawnPosition;
-        projectileSpawnValue.y = -projectileSpawnPosition.y; 
-
+        projectileSpawnValue.y = -projectileSpawnPosition.y;
         Pooler = GetComponent<ObjectPooler>();
     }
-
-    protected override void RequestShoot()
+    
+    public override void RequestShot()
     {
-        if (!Input.GetMouseButtonDown(0)) return;
-        base.RequestShoot();
-        EvaluateProjectileSpawnPosition();
-        SpawnProjectile(ProjectileSpawnPosition);
-        Debug.Log("shooting!");
+        base.RequestShot();
+        if (CanShoot && Input.GetMouseButtonDown(0))
+        {
+            EvaluateProjectileSpawnPosition();
+            SpawnProjectile(ProjectileSpawnPosition);
+        }
     }
 
     // 从池中生成弹丸，根据角色的方向设置新方向（武器所有者）
@@ -42,7 +42,6 @@ public class SingleShotWeapon : Weapon
         // 从池中获取对象
         GameObject projectilePooled = Pooler.GetObjectFromPool();
         projectilePooled.transform.position = spawnPosition;
-        // active object returned from pool
         projectilePooled.SetActive(true);
 
         // 获取弹丸的参考
@@ -55,7 +54,9 @@ public class SingleShotWeapon : Weapon
         // 设置方向和旋转
         Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? spread * transform.right : spread * transform.right * -1;
         projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
-
+        
+        CanShoot = false;  
+        nextShotTime = Time.time + timeBtwShots;
     }
 
     // 计算弹丸发射位置
