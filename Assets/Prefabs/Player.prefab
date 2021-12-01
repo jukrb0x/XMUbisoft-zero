@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d336e4f5fee3241ba8a547eb728e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponToUse: {fileID: 4919920270245964967, guid: 6827e30c70cc0ff46a97158384df403b, type: 3}
+  weaponToUse: {fileID: 7072510230139113838, guid: d032c00f0cbbd7342bf9b592fcedb0e1, type: 3}
   weaponHolderPosition: {fileID: 129755786265710325}
 --- !u!114 &-2951197592439426042
 MonoBehaviour:
@@ -304,7 +304,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -388488429
   m_SortingLayer: 2
-  m_SortingOrder: 10
+  m_SortingOrder: 2
   m_Sprite: {fileID: 8906951933893973859, guid: 63919541b45e510439a52a7c32f8d7b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1

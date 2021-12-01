@@ -23,6 +23,7 @@ public class CharacterWeapon : CharacterComponents
         base.Start();
         EquipWeapon(weaponToUse, weaponHolderPosition);
     }
+    
 
     protected override void HandleInput()
     {
