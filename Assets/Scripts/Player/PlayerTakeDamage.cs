@@ -31,7 +31,7 @@ public class PlayerTakeDamage : MonoBehaviour
             PlayerCanTakeDamage = false;
         }
     }
-
+    
     protected void CanTakeDamage()
     {
         if (Time.time > nextDamageTime)  
