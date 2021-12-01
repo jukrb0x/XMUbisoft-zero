@@ -6,7 +6,9 @@ public class ShotGunWeapon : Weapon
 {
     [SerializeField] private Vector3 projectileSpawnPosition;
     [SerializeField] private Vector3 projectileSpread;
+    [SerializeField] private int maxProjectileOneShot = 3;
 
+    private int projectileOneShot = 0;
     // 控制弹丸出生的位置
     public Vector3 ProjectileSpawnPosition { get; set; }
 
@@ -49,13 +51,20 @@ public class ShotGunWeapon : Weapon
         randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
         //randomProjectileSpread.z = projectileSpread.z;
         Quaternion spread = Quaternion.Euler(randomProjectileSpread);
+        
 
         // 设置方向和旋转
         Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? spread * transform.right : spread * transform.right * -1;
         projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
-        
-        CanShoot = false;  
-        nextShotTime = Time.time + timeBtwShots;
+
+        projectileOneShot++;
+        if (projectileOneShot >= maxProjectileOneShot)
+        {
+            projectileOneShot = 0;
+            CanShoot = false;  
+            nextShotTime = Time.time + timeBtwShots;
+        }
+
     }
 
     // 计算弹丸发射位置
