@@ -8,6 +8,9 @@ TagManager:
   - Weapon1
   - Projectile
   - Aim
+  - Damage_Spike
+  - Debuff_Slow
+  - Debuff_Poison
   layers:
   - Default
   - TransparentFX
