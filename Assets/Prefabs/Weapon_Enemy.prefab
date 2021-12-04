@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7833921765853209745}
-  - component: {fileID: 4891073644580149546}
   - component: {fileID: 8235477867380026315}
   - component: {fileID: 3578558282674721359}
   - component: {fileID: -3572982968195491505}
+  - component: {fileID: 1845851281785617037}
   m_Layer: 0
   m_Name: Weapon_Enemy
   m_TagString: Weapon1
@@ -36,27 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4891073644580149546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925515572638693121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b491159421655414e96d5db893989143, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBtwShots: 0.3
-  useMagazine: 0
-  magazineSize: 30
-  autoReload: 0
-  useRecoil: 0
-  recoilForce: 30
-  nextShotTime: 0
-  projectileSpawnPosition: {x: 0.4, y: 0.5, z: 0}
-  projectileSpread: {x: 0, y: 0, z: 3}
 --- !u!114 &8235477867380026315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +76,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f07e754dd0cad540a12579f881fb4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1845851281785617037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925515572638693121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f670c681bb2421144ad10aa93e2f7b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBtwShots: 1
+  useMagazine: 0
+  magazineSize: 30
+  autoReload: 0
+  useRecoil: 0
+  recoilForce: 30
+  nextShotTime: 0
+  projectileSpawnPosition: {x: 0.4, y: 0.5, z: 0}
+  projectileSpread: {x: 0, y: 0, z: 0}
 --- !u!1 &3274215339599249026
 GameObject:
   m_ObjectHideFlags: 0
