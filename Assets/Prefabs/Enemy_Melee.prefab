@@ -511,7 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageMask:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 8192
 --- !u!70 &1998664776449385615
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
