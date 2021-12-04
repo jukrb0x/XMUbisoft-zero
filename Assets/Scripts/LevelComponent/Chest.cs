@@ -73,5 +73,5 @@ public class Chest : MonoBehaviour
         {
             canReward = false;
         }
-    }
+}
 }
