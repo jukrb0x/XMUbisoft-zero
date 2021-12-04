@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6356bd50bc50946ae9986fec4850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponToUse: {fileID: 4891073644580149546, guid: 1289153a84356ae408418ceeaff472c4, type: 3}
+  weaponToUse: {fileID: 1845851281785617037, guid: 1289153a84356ae408418ceeaff472c4, type: 3}
   weaponHolderPosition: {fileID: 2759821686374989983}
 --- !u!70 &5938825230132076408
 CapsuleCollider2D:
