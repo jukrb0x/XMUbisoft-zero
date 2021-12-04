@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,11 +28,7 @@ public class EnemyWeapon : CharacterComponents
     protected override void HandleInput()
     {
         base.HandleInput();
-        if (Input.GetMouseButton(mouseLeftBtn))
-        {
-            BeforeShoot();
-        }
-
+        BeforeShoot();
         if (Input.GetMouseButtonUp(mouseLeftBtn)) // If we stop shooting
         {
             StopWeapon();
