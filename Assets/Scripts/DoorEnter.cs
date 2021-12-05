@@ -3,13 +3,13 @@ using UnityEngine;
 public class DoorEnter : MonoBehaviour
 {
     public Transform backDoor;
+    [SerializeField] private float timeBtwTransform = 0.01f;
 
 
     private bool CanTransform = true;
-    private Transform playerTransform;
-    [SerializeField] private float timeBtwTransform = 0.01f;
 
     private float nextTransformTime;
+    private Transform playerTransform;
 
 
     // Start is called before the first frame update
@@ -24,11 +24,6 @@ public class DoorEnter : MonoBehaviour
         PlayerCanTransform();
     }
 
-    private void EnterDoor()
-    {
-        playerTransform.position = backDoor.position;
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player")
@@ -41,6 +36,11 @@ public class DoorEnter : MonoBehaviour
                 CanTransform = false;
             }
         }
+    }
+
+    private void EnterDoor()
+    {
+        playerTransform.position = backDoor.position;
     }
 
     protected void PlayerCanTransform()

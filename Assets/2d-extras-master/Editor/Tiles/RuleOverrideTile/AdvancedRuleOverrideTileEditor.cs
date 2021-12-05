@@ -8,10 +8,10 @@ namespace UnityEditor
     [CustomEditor(typeof(AdvancedRuleOverrideTile))]
     public class AdvancedRuleOverrideTileEditor : RuleOverrideTileEditor
     {
-        private ReorderableList m_RuleList;
-
         private readonly List<KeyValuePair<RuleTile.TilingRule, RuleTile.TilingRuleOutput>> m_Rules =
             new List<KeyValuePair<RuleTile.TilingRule, RuleTile.TilingRuleOutput>>();
+
+        private ReorderableList m_RuleList;
 
         public new AdvancedRuleOverrideTile overrideTile => target as AdvancedRuleOverrideTile;
 
