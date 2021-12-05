@@ -8253,6 +8253,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4178b93ef2a8246db8ed7fbd518f832f, type: 3}
+--- !u!1 &798697041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7077902278289635610, guid: 8df03ee2bc4181c4987700c8f81e6d94, type: 3}
+  m_PrefabInstance: {fileID: 1847948839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &798697048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798697041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831ecbb84779cb84583fe0140c5a9898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagedSprite: {fileID: 0}
+  initialHealth: 0
+  damagePoint: 0
+  xRandomPosition: 2
+  yRandomPosition: 2
+  rewards:
+  - {fileID: 4157275756867382003, guid: b0c93d750f80a3d48b1cff5578292686, type: 3}
+  - {fileID: 273326986479357074, guid: bf4ddae8b28dc7543b011b6807aba1d3, type: 3}
+  canReward: 1
 --- !u!1 &803610642
 GameObject:
   m_ObjectHideFlags: 0
@@ -83633,6 +83659,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4022652194498732272, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
+      propertyPath: damagePoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4022652194498732272, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
+      propertyPath: damagedSprite
+      value: 
+      objectReference: {fileID: -3530757283899592571, guid: 8a9c0e74737afed4195ea3d066e0fdfd, type: 3}
+    - target: {fileID: -4022652194498732272, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
+      propertyPath: rewards.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4022652194498732272, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
+      propertyPath: rewards.Array.data[0]
+      value: 
+      objectReference: {fileID: 4157275756867382003, guid: b0c93d750f80a3d48b1cff5578292686, type: 3}
+    - target: {fileID: -4022652194498732272, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
+      propertyPath: rewards.Array.data[1]
+      value: 
+      objectReference: {fileID: 273326986479357074, guid: bf4ddae8b28dc7543b011b6807aba1d3, type: 3}
     - target: {fileID: 507770662925547520, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
       propertyPath: isDamageable
       value: 1
@@ -83710,7 +83756,8 @@ PrefabInstance:
       value: -551667957
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: -2519512428969579210, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
+    - {fileID: 0}
+    - {fileID: 507770662925547520, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
 --- !u!1001 &1136899015
 PrefabInstance:
@@ -104267,6 +104314,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1953002988882627796, guid: 8df03ee2bc4181c4987700c8f81e6d94, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 180519395, guid: 8df03ee2bc4181c4987700c8f81e6d94, type: 3}
       propertyPath: m_Size.x
       value: 1.875

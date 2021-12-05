@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterComponents : MonoBehaviour
 {
-    protected float horizontalInput;
-    protected float verticalInput;
-
-    protected CharacterController controller;
-    protected CharacterMovement characterMovement;
-    protected CharacterWeapon characterWeapon;
     protected Animator animator;
     protected Character character;
+    protected CharacterMovement characterMovement;
+    protected CharacterWeapon characterWeapon;
+
+    protected CharacterController controller;
+    protected float horizontalInput;
+    protected float verticalInput;
 
     protected virtual void Start()
     {

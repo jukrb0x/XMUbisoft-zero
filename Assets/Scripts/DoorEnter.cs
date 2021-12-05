@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorEnter : MonoBehaviour
@@ -9,45 +7,39 @@ public class DoorEnter : MonoBehaviour
 
     private bool CanTransform = true;
     private Transform playerTransform;
-    [SerializeField] private float timeBtwTransform =0.01f;
+    [SerializeField] private float timeBtwTransform = 0.01f;
 
     private float nextTransformTime;
 
 
-
-
-
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         PlayerCanTransform();
     }
 
-    void EnterDoor()
+    private void EnterDoor()
     {
-       
-            playerTransform.position = backDoor.position;
+        playerTransform.position = backDoor.position;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player")
-           )
+        )
         {
-
-            Debug.Log("´¥Åöµ½ÃÅÁË");
+            Debug.Log("è§¦ç¢°åˆ°é—¨äº†");
             if (CanTransform)
             {
                 EnterDoor();
                 CanTransform = false;
             }
-            
         }
     }
 
@@ -59,17 +51,15 @@ public class DoorEnter : MonoBehaviour
             nextTransformTime = Time.time + timeBtwTransform;
         }
     }
-    
-   /* void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player")
-           )
-        {
-            Debug.Log;
-            CanTransform = false;
-        }
-    }
-   */
-   
-    
+
+    /* void OnTriggerExit2D(Collider2D other)
+     {
+         if (other.gameObject.CompareTag("Player")
+            )
+         {
+             Debug.Log;
+             CanTransform = false;
+         }
+     }
+    */
 }

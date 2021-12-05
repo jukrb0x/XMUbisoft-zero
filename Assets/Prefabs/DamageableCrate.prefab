@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2304224248690586218}
   - component: {fileID: 7611576695676538865}
   - component: {fileID: 507770662925547520}
-  - component: {fileID: -2519512428969579210}
   - component: {fileID: 1650031541750665946}
   - component: {fileID: 1101524053056621588}
+  - component: {fileID: -4022652194498732272}
   m_Layer: 0
   m_Name: DamageableCrate
   m_TagString: Untagged
@@ -102,19 +102,6 @@ MonoBehaviour:
   initialHealth: 0
   damage: 1
   isDamageable: 0
---- !u!114 &-2519512428969579210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4835464515515946325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74921990018740c2a7489a905817e41c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 3
 --- !u!61 &1650031541750665946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -162,3 +149,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4022652194498732272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835464515515946325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831ecbb84779cb84583fe0140c5a9898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagedSprite: {fileID: 0}
+  initialHealth: 10
+  damage: 1
+  isDamageable: 1
+  xRandomPosition: 2
+  yRandomPosition: 2
+  rewards: []
