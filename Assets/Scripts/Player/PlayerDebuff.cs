@@ -16,7 +16,7 @@ public class PlayerDebuff : MonoBehaviour
     {
         if (other.CompareTag("Debuff_Slow"))
         {
-            _characterMovement.MoveSpeed = 2f;
+            _characterMovement.MoveSpeed = SlowSpeed;
         }
 
     }

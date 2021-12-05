@@ -12,7 +12,7 @@ public class Spike : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerHealth>().Damage(1);
+            other.GetComponent<PlayerHealth>().Damage(damage);
         }
     }
 }
