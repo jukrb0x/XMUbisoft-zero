@@ -65,6 +65,11 @@ public class WeaponAim : MonoBehaviour
         }
 	}
 
+    public void SetAim(Vector2 newAim)
+    {
+        currentAim = newAim;
+    }
+    
     public void RotateWeapon()
     {
         if (currentAim != Vector3.zero && direction != Vector3.zero)

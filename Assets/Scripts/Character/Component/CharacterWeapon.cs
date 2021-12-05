@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class CharacterWeapon : CharacterComponents
 {
-    [Header("Weapon Settings")] [SerializeField]
-    private Weapon weaponToUse;
-
+    public static Action OnStartShooting;
+    [Header("Weapon Settings")] 
+    [SerializeField] private Weapon weaponToUse;
     [SerializeField] private Transform weaponHolderPosition;
 
     // Reference of the Weapon we are using
@@ -27,21 +27,32 @@ public class CharacterWeapon : CharacterComponents
 
     protected override void HandleInput()
     {
-        base.HandleInput();
-        if (Input.GetMouseButton(mouseLeftBtn))
-            // TODO judge if can shoot here
+        if (character.CharacterType == Character.CharacterTypes.Player)
         {
-            BeforeShoot();
-        }
+            if (Input.GetMouseButton(0))
+            {
+                BeforeShoot();
+            }
 
-        if (Input.GetMouseButtonUp(mouseLeftBtn)) // If we stop shooting
-        {
-            StopWeapon();
-        }
+            if (Input.GetMouseButtonUp(0))
+            {
+                StopWeapon();
+            }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Reload();
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Reload();
+            }
+
+            // if (Input.GetKeyDown(KeyCode.Alpha1) && SecondaryWeapon != null)
+            // {
+            //     EquipWeapon(weaponToUse, weaponHolderPosition);
+            // }
+            //
+            // if (Input.GetKeyDown(KeyCode.Alpha2) && SecondaryWeapon != null)
+            // {
+            //     EquipWeapon(SecondaryWeapon, weaponHolderPosition);
+            // }
         }
     }
 
