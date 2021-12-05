@@ -17,17 +17,22 @@ public class BaseHealth : MonoBehaviour
         get => healthPoint;
         set
         {
+            // TODO: buggy code
             healthPoint = (int) Mathf.Clamp(value, 0, maxHealthPoint);
             if (healthPoint == 0)
                 OnDie?.Invoke();
         }
     }
 
-    protected float MaxHealthPoint
+    public float MaxHealthPoint
     {
         get => maxHealthPoint;
-        
-        set => maxHealthPoint = value;
+
+        set
+        {
+            maxHealthPoint = value;
+            healthPoint = maxHealthPoint;
+        }
     }
 
     // Use this for initialization
@@ -40,6 +45,7 @@ public class BaseHealth : MonoBehaviour
     {
         // do not change this
         healthPoint -= damage;
+        // TODO invoke onDie when damage
     }
 
     protected void DestroyObject()
