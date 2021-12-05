@@ -9,6 +9,9 @@ public class UIManager : Singleton<UIManager>
     private Image healthBarDelay;
     private Image shieldBarDelay;
     [SerializeField] private float amountDelayRate = 0.0005f;
+    [Header("Weapon")]
+    [SerializeField] private Image weaponImage;
+
 
     private float playerCurrentHealth;
     private float playerMaxHealth;
@@ -74,5 +77,11 @@ public class UIManager : Singleton<UIManager>
             shieldBarDelay.fillAmount = shieldBar.fillAmount;
         }
     }
+    public void UpdateWeaponSprite(Sprite weaponSprite)
+    {
+        weaponImage.sprite = weaponSprite;
+        weaponImage.SetNativeSize();
+    }
+
 
 }
