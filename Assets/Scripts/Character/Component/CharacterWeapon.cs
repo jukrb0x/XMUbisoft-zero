@@ -7,7 +7,6 @@ public class CharacterWeapon : CharacterComponents
 
     [SerializeField] private Transform weaponHolderPosition;
 
-    private readonly int mouseLeftBtn = 0;
 
     // Reference of the Weapon we are using
     public Weapon CurrentWeapon { get; set; }
@@ -40,6 +39,7 @@ public class CharacterWeapon : CharacterComponents
         {
             Reload();
         }
+
         if (Input.GetKeyDown(KeyCode.Q) && SecondaryWeapon != null)
         {
             EquipWeapon(weaponToUse, weaponHolderPosition);
@@ -49,9 +49,6 @@ public class CharacterWeapon : CharacterComponents
         {
             EquipWeapon(SecondaryWeapon, weaponHolderPosition);
         }
-      
-
-
     }
 
 
@@ -88,7 +85,7 @@ public class CharacterWeapon : CharacterComponents
     {
         if (CurrentWeapon != null)
         {
-            WeaponAim.DestroyReticle();       // Each weapon has its own Reticle component
+            WeaponAim.DestroyReticle(); // Each weapon has its own Reticle component
             Destroy(GameObject.Find("Pool"));
             Destroy(CurrentWeapon.gameObject);
         }
@@ -99,6 +96,7 @@ public class CharacterWeapon : CharacterComponents
         WeaponAim = CurrentWeapon.GetComponent<WeaponAim>();
 
         if (character.CharacterType == Character.CharacterTypes.Player)
+        {
             UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
             UIManager.Instance.UpdateWeaponSprite(CurrentWeapon.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
         }
