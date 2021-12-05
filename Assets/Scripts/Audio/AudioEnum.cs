@@ -1,5 +1,6 @@
 ﻿public enum AudioEnum
 {
 	NoAudio,
-	ShotGunShoot
+	ShotGunShoot,
+	GlassBroken
 }
