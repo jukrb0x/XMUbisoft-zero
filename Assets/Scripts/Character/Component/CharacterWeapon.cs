@@ -15,6 +15,10 @@ public class CharacterWeapon : CharacterComponents
     // Returns the reference to our Current Weapon Aim
     public WeaponAim WeaponAim { get; set; }
 
+    private int mouseLeftBtn = 0;
+    public Weapon SecondaryWeapon { get; set; }
+
+
     protected override void Start()
     {
         base.Start();
@@ -32,8 +36,24 @@ public class CharacterWeapon : CharacterComponents
         if (Input.GetMouseButtonUp(mouseLeftBtn)) // If we stop shooting
             StopWeapon();
 
-        if (Input.GetKeyDown(KeyCode.R)) Reload();
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+        }
+        if (Input.GetKeyDown(KeyCode.Q) && SecondaryWeapon != null)
+        {
+            EquipWeapon(weaponToUse, weaponHolderPosition);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && SecondaryWeapon != null)
+        {
+            EquipWeapon(SecondaryWeapon, weaponHolderPosition);
+        }
+      
+
+
     }
+
 
     public void BeforeShoot()
     {
@@ -66,6 +86,13 @@ public class CharacterWeapon : CharacterComponents
 
     public void EquipWeapon(Weapon weapon, Transform weaponPosition)
     {
+        if (CurrentWeapon != null)
+        {
+            WeaponAim.DestroyReticle();       // Each weapon has its own Reticle component
+            Destroy(GameObject.Find("Pool"));
+            Destroy(CurrentWeapon.gameObject);
+        }
+
         CurrentWeapon = Instantiate(weapon, weaponPosition.position, weaponPosition.rotation);
         CurrentWeapon.transform.parent = weaponPosition;
         CurrentWeapon.SetOwner(character);
@@ -73,5 +100,7 @@ public class CharacterWeapon : CharacterComponents
 
         if (character.CharacterType == Character.CharacterTypes.Player)
             UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
+            UIManager.Instance.UpdateWeaponSprite(CurrentWeapon.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
+        }
     }
 }
