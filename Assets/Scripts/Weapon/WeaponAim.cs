@@ -89,4 +89,9 @@ public class WeaponAim : MonoBehaviour
         reticle.transform.rotation = Quaternion.identity; //set the normal rotation
         reticle.transform.position = reticlePosition;
     }
+    public void DestroyReticle()
+    {
+        Destroy(reticle.gameObject);
+    }
+
 }
