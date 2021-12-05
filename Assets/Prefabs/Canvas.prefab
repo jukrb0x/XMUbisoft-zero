@@ -521,6 +521,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a496b6f0718540098971c5a5a58fae35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 0}
+  slider: {fileID: 0}
+  progressText: {fileID: 0}
   mainMenu: {fileID: 6547175551811959304}
   levelMenu: {fileID: 6547175550884050640}
 --- !u!114 &6547175550429930195

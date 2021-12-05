@@ -266,6 +266,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3751507729424447919, guid: 1d779d1e7ebfeb944bb9859ca70104b2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751507729424447919, guid: 1d779d1e7ebfeb944bb9859ca70104b2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6547175550429930192, guid: 1d779d1e7ebfeb944bb9859ca70104b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -354,9 +362,37 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 158788512}
+    - target: {fileID: 6547175550429930194, guid: 1d779d1e7ebfeb944bb9859ca70104b2, type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547175550429930194, guid: 1d779d1e7ebfeb944bb9859ca70104b2, type: 3}
+      propertyPath: progressText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547175550429930194, guid: 1d779d1e7ebfeb944bb9859ca70104b2, type: 3}
+      propertyPath: loadingScreen
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6547175550429930196, guid: 1d779d1e7ebfeb944bb9859ca70104b2, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547175550884050640, guid: 1d779d1e7ebfeb944bb9859ca70104b2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547175550970128998, guid: 1d779d1e7ebfeb944bb9859ca70104b2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 135.00006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738256047768975535, guid: 1d779d1e7ebfeb944bb9859ca70104b2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 117.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738256047768975535, guid: 1d779d1e7ebfeb944bb9859ca70104b2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 32.92
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d779d1e7ebfeb944bb9859ca70104b2, type: 3}
