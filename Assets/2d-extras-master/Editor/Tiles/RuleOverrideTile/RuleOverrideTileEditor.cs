@@ -11,16 +11,16 @@ namespace UnityEditor
         private static readonly float k_SpriteElementHeight = 48;
         private static readonly float k_GameObjectElementHeight = 16;
         private static readonly float k_PaddingBetweenRules = 4;
-        private ReorderableList m_GameObjectList;
 
         private readonly List<KeyValuePair<GameObject, GameObject>> m_GameObjects =
             new List<KeyValuePair<GameObject, GameObject>>();
 
+        private readonly List<KeyValuePair<Sprite, Sprite>> m_Sprites = new List<KeyValuePair<Sprite, Sprite>>();
+        private ReorderableList m_GameObjectList;
+
         private RuleTileEditor m_RuleTileEditor;
         private RuleTile m_RuleTileEditorTarget;
         private ReorderableList m_SpriteList;
-
-        private readonly List<KeyValuePair<Sprite, Sprite>> m_Sprites = new List<KeyValuePair<Sprite, Sprite>>();
 
         public RuleOverrideTile overrideTile => target as RuleOverrideTile;
 
