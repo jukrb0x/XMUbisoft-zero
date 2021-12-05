@@ -10,9 +10,6 @@ public class PlayerHealth : BaseHealth
 
     [Header("Settings")] [SerializeField] private bool destroyObject;
 
-    // Controls the current health of the object    
-
-    // Returns the current health of this character
     public float CurrentShield;
 
     private Character character;
@@ -52,13 +49,19 @@ public class PlayerHealth : BaseHealth
         if (Input.GetKeyDown(KeyCode.L)) Damage(1);
     }
 
+    private void UpdateUI()
+    {
+        UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
+    }
+    
     // Take the amount of damage we pass in parameters
     public override void Damage(float damage)
     {
         if (!IsShieldBroken)
         {
             CurrentShield -= damage;
-            UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
+            // UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
+            UpdateUI();
 
             if (CurrentShield <= 0) IsShieldBroken = true;
 
@@ -66,9 +69,39 @@ public class PlayerHealth : BaseHealth
         }
 
         base.Damage(damage);
-        UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
+        // UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
+        UpdateUI();
         if (IsDead) Die();
     }
+
+    // Improve Health Point of character
+    public void AddHealth(float hp)
+    {
+        if (MaxHealthPoint - HealthPoint >= hp)
+        {
+            HealthPoint += hp;
+        }
+        else
+        {
+            HealthPoint = MaxHealthPoint;
+        }
+        UpdateUI();
+    }
+
+    // Reinforce Shield Point of character
+    public void AddShield(float shield)
+    {
+        if (maxShield - CurrentShield >= shield)
+        {
+            CurrentShield += shield;
+        }
+        else
+        {
+            CurrentShield = shield;
+        }
+        UpdateUI();
+    }
+
 
     // Kills the game object
     private void Die()
@@ -94,28 +127,28 @@ public class PlayerHealth : BaseHealth
 
     // Revive this game object    
     // FIXME: awake --> start
-    public void Revive()
-    {
-        if (character != null)
-        {
-            collider2D.enabled = true;
-            spriteRenderer.enabled = true;
-
-            character.enabled = true;
-            controller.enabled = true;
-
-            weapon.enabled = true;
-            Cursor.visible = false;
-            weapons.SetActive(true);
-        }
-
-        gameObject.SetActive(true);
-
-        HealthPoint = initialHealth;
-        CurrentShield = initialShield;
-
-        IsShieldBroken = false;
-
-        UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
-    }
+    // public void Revive()
+    // {
+    //     if (character != null)
+    //     {
+    //         collider2D.enabled = true;
+    //         spriteRenderer.enabled = true;
+    //
+    //         character.enabled = true;
+    //         controller.enabled = true;
+    //
+    //         weapon.enabled = true;
+    //         Cursor.visible = false;
+    //         weapons.SetActive(true);
+    //     }
+    //
+    //     gameObject.SetActive(true);
+    //
+    //     HealthPoint = initialHealth;
+    //     CurrentShield = initialShield;
+    //
+    //     IsShieldBroken = false;
+    //
+    //     UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
+    // }
 }
