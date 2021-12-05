@@ -83519,6 +83519,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1032927391056769564, guid: 7263135bf5a029c48a5d5eaaf0e8598f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3996371345579572987, guid: 7263135bf5a029c48a5d5eaaf0e8598f, type: 3}
       propertyPath: m_Name
       value: Spike
