@@ -33,6 +33,7 @@ public class CharacterFlip : CharacterComponents
         {
             FlipToWeaponDirection();
         }
+        
     }
 
     private void FlipToMoveDirection()
@@ -43,10 +44,16 @@ public class CharacterFlip : CharacterComponents
             {
                 FaceDirection(1);
             }
-            else
+            else if (controller.CurrentMovement.normalized.x < 0)
             {
                 FaceDirection(-1);
             }
+            else
+            {
+                FaceDirection((int)transform.localScale.x);
+            }
+            
+            
         }
     }
 
@@ -68,14 +75,18 @@ public class CharacterFlip : CharacterComponents
     
     private void FaceDirection(int newDirection)
     {
-        if (newDirection == 1)
+        Vector3 localScale = character.CharacterSprite.transform.localScale;
+        float originalX = System.Math.Abs(localScale.x);
+        float originalY = System.Math.Abs(localScale.y);
+        
+        if (newDirection > 0)
         { 
-            character.CharacterSprite.transform.localScale = new Vector3(1,1,1);
+            character.CharacterSprite.transform.localScale = new Vector3(originalX,originalY,1);
             FacingRight = true;            
         }
         else
         {
-            character.CharacterSprite.transform.localScale = new Vector3(-1,1,1);
+            character.CharacterSprite.transform.localScale = new Vector3(-originalX,originalY,1);
             FacingRight = false;            
         }
     }
