@@ -11,12 +11,18 @@ public class PlayerTakeDamage : MonoBehaviour
     private bool PlayerCanTakeDamage = true;
 
     private PlayerHealth _playerHealth;
+    private Renderer myRender;
+  
+    
 
     private void Awake()
     {
         _playerHealth = GetComponent<PlayerHealth>();
+      
+
     }
-    
+ 
+
     protected virtual void Update()
     {
         CanTakeDamage();
@@ -27,10 +33,13 @@ public class PlayerTakeDamage : MonoBehaviour
     
         if (other.collider.CompareTag("Enemy") && PlayerCanTakeDamage)
         {
+            
             _playerHealth.Damage(1);
             PlayerCanTakeDamage = false;
             nextDamageTime = Time.time + timeBtwDamage;
         }
+     
+
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -50,4 +59,5 @@ public class PlayerTakeDamage : MonoBehaviour
             PlayerCanTakeDamage = true;
         }
     }
+
 }
