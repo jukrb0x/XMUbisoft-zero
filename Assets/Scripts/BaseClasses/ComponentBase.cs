@@ -1,43 +1,41 @@
 using UnityEngine;
 
+// Component base defines the rewardable level components
 public class ComponentBase : MonoBehaviour
 {
-    [Header("Sprite")] [SerializeField] private Sprite damagedSprite;
+    [SerializeField] protected GameObject[] rewards;
 
-    [Header("Settings")] [SerializeField] private float initialHealth;
+    [Header("Reward Position")] [SerializeField]
+    private float xRandomPosition = 2f;
 
-    [SerializeField] protected int damagePoint = 0;
-    protected bool isDamageable;
+    [SerializeField] private float yRandomPosition = 2f;
 
-    private BaseHealth health;
-    private SpriteRenderer spriteRenderer;
+    [Header("Settings")] protected bool canReward = false;
+
+    private bool rewardDelivered;
+    private Vector3 rewardRandomPosition;
+    protected SpriteRenderer spriteRenderer;
+
 
     protected virtual void Start()
     {
-        // TODO cannot get component 
-        if (GetComponent<BaseHealth>())
-        {
-            health = GetComponent<BaseHealth>();
-
-        }
-        health.MaxHealthPoint = initialHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        isDamageable = damagePoint != 0;
     }
 
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("Projectile")) TakeDamage();
-    // }
-
-    protected void TakeDamage()
+    protected virtual void RewardPlayer()
     {
-        if (!isDamageable) return;
-        health.Damage(damagePoint);
+        if (canReward && !rewardDelivered)
+        {
+            rewardRandomPosition.x = Random.Range(-xRandomPosition, xRandomPosition);
+            rewardRandomPosition.y = Random.Range(-yRandomPosition, yRandomPosition);
+            Instantiate(SelectReward(), transform.position + rewardRandomPosition, Quaternion.identity);
+            rewardDelivered = true;
+        }
+    }
 
-        if (health.HealthPoint > 0)
-            spriteRenderer.sprite = damagedSprite;
-        else
-            Destroy(gameObject);
+    private GameObject SelectReward()
+    {
+        var randomRewardIndex = Random.Range(0, rewards.Length);
+        return rewards[randomRewardIndex];
     }
 }
