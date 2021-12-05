@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CWeapon : Collectables
+public class CollectWeapon : Collectables
 {
     [SerializeField] private ItemData itemWeaponData;
 
-    protected override void Pick()
+    protected override void Collect()
     {
         EquipWeapon();
     }
