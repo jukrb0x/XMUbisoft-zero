@@ -29,7 +29,7 @@ public class SingleShotWeapon : Weapon
     public override void RequestShot()
     {
         base.RequestShot();
-        if (CanShoot && Input.GetMouseButtonDown(0))
+        if (CanShoot && Input.GetMouseButton(0))
         {
             EvaluateProjectileSpawnPosition();
             SpawnProjectile(ProjectileSpawnPosition);
@@ -54,7 +54,8 @@ public class SingleShotWeapon : Weapon
         // 设置方向和旋转
         Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? spread * transform.right : spread * transform.right * -1;
         projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
-        
+
+        AudioManager.Instance.Play(AudioEnum.ShotGunShoot);
         CanShoot = false;  
         nextShotTime = Time.time + timeBtwShots;
     }
