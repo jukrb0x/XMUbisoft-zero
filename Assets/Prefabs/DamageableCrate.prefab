@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2304224248690586218}
   - component: {fileID: 7611576695676538865}
-  - component: {fileID: 507770662925547520}
   - component: {fileID: 1650031541750665946}
   - component: {fileID: 1101524053056621588}
   - component: {fileID: -4022652194498732272}
@@ -86,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &507770662925547520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4835464515515946325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e15d1fa972d259d45b8e3a399c4b5bca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damagedSprite: {fileID: -3530757283899592571, guid: 8a9c0e74737afed4195ea3d066e0fdfd, type: 3}
-  initialHealth: 0
-  damage: 1
-  isDamageable: 0
 --- !u!61 &1650031541750665946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112,7 +95,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -161,10 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831ecbb84779cb84583fe0140c5a9898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagedSprite: {fileID: 0}
-  initialHealth: 10
-  damage: 1
-  isDamageable: 1
+  rewards: []
   xRandomPosition: 2
   yRandomPosition: 2
-  rewards: []
+  initialHealth: 10
+  damagePoint: 0
+  damagedSprite: {fileID: 0}

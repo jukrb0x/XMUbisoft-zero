@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d336e4f5fee3241ba8a547eb728e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponToUse: {fileID: 7072510230139113838, guid: d032c00f0cbbd7342bf9b592fcedb0e1, type: 3}
+  weaponToUse: {fileID: 4919920270245964967, guid: 6827e30c70cc0ff46a97158384df403b, type: 3}
   weaponHolderPosition: {fileID: 129755786265710325}
 --- !u!114 &-2951197592439426042
 MonoBehaviour:
