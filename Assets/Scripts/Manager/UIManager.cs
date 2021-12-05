@@ -3,12 +3,9 @@ using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
-    [SerializeField] private float amountDelayRate = 0.0005f;
-
     private int currentAmmo;
     private Image healthBar;
     private Image healthBarDelay;
-    private Image shieldBarDelay;
     [SerializeField] private float amountDelayRate = 0.0005f;
     [Header("Weapon")]
     [SerializeField] private Image weaponImage;
