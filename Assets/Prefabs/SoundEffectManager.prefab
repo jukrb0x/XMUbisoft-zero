@@ -50,3 +50,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - audioEnum: 2
+    clip: {fileID: 8300000, guid: c0aeed73e686fe740a302289b11626ba, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
