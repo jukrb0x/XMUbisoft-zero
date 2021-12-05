@@ -1,16 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class BaseHealth : MonoBehaviour
 {
     private float healthPoint;
     private float maxHealthPoint;
-    public bool IsDead => HealthPoint <= 0;
 
     public Action OnDie;
+    public bool IsDead => HealthPoint <= 0;
 
     public float HealthPoint
     {
