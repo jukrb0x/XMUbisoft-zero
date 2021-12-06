@@ -27,7 +27,6 @@ public class AnimatorTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             anim.SetTrigger("Opening");
-            anim.SetTrigger("Open");
         }
         
 
