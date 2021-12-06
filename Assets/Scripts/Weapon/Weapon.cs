@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
 
     [Header("Weapon")] 
     [SerializeField] private bool useMagazine = true;
-    [SerializeField] private int magazineSize = 30;  // TODO
+    [SerializeField] private int magazineSize = 30; 
     [SerializeField] private bool autoReload = true;
 
     [Header("Recoil")] 
@@ -18,7 +18,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int recoilForce = 30;
     
     [Header("Effects")] 
-    [SerializeField] public ParticleSystem muzzlePS;
+    [SerializeField] protected ParticleSystem muzzlePS;
     
     public Character WeaponOwner { get; set; }
 
@@ -100,8 +100,8 @@ public class Weapon : MonoBehaviour
             Recoil();
         }
         
-        muzzlePS.Play();
-        Debug.Log("True");
+        
+        // Debug.Log("True");
         WeaponAmmo.ConsumeAmmo();   
         
 	}
