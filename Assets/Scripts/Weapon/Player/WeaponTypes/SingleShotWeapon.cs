@@ -29,8 +29,10 @@ public class SingleShotWeapon : Weapon
     public override void RequestShot()
     {
         base.RequestShot();
-        if (CanShoot && Input.GetMouseButton(0))
+        
+        if (CanShoot && Input.GetMouseButtonDown(0))
         {
+            
             EvaluateProjectileSpawnPosition();
             SpawnProjectile(ProjectileSpawnPosition);
         }
