@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
     private void Audios()
     {
         _audioSource = AudioManager.Instance.Play(audioEnum);
-        Debug.Log("True");
+        
     }
 
     // TODO: remove revive
