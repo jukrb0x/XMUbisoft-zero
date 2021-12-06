@@ -4,14 +4,18 @@ public class Weapon : MonoBehaviour
 {
     [Header("Settings")] [SerializeField] public float timeBtwShots = 0.5f;
 
-    [Header("Weapon")] [SerializeField] private bool useMagazine = true;
-
-    [SerializeField] private int magazineSize = 30; // TODO
+    [Header("Weapon")] 
+    [SerializeField] private bool useMagazine = true;
+    [SerializeField] private int magazineSize = 30; 
     [SerializeField] private bool autoReload = true;
 
     [Header("Recoil")] [SerializeField] private bool useRecoil = true;
 
     [SerializeField] private int recoilForce = 30;
+    
+    [Header("Effects")] 
+    [SerializeField] protected ParticleSystem muzzlePS;
+    
 
     // Internal
     public float nextShotTime;
@@ -77,10 +81,16 @@ public class Weapon : MonoBehaviour
     {
         if (!CanShoot) return;
 
-        if (useRecoil) Recoil();
-
-        WeaponAmmo.ConsumeAmmo();
-    }
+        if (useRecoil)
+        {
+            Recoil();
+        }
+        
+        
+        // Debug.Log("True");
+        WeaponAmmo.ConsumeAmmo();   
+        
+	}
 
     private void Recoil()
     {

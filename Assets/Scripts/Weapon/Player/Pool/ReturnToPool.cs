@@ -1,46 +1,77 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class ReturnToPool : MonoBehaviour
 {
-    [Header("Settings")] [SerializeField] private LayerMask WallMask;
-
+    [Header("Settings")] 
+    [SerializeField] private LayerMask WallMask;
     [SerializeField] private LayerMask EnemyMask;
     [SerializeField] private float lifeTime = 2f;
+    
+    [Header("Effects")]
+    [SerializeField] private ParticleSystem impactPS;
 
-    private Projectile projectile;
+
+    private Projectile projectile;    
 
     private void Start()
     {
         projectile = GetComponent<Projectile>();
     }
 
+    // Returns this object to the pool
+    private void Return()
+    {
+        if (projectile != null)
+        {
+            projectile.ResetProjectile();
+        }  
+      
+        gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (CheckLayer(other.gameObject.layer, WallMask))
+        {
+            if (projectile != null)
+            {
+                projectile.DisableProjectile();
+            }
+
+            impactPS.Play();
+            Invoke(nameof(Return), impactPS.main.duration);
+
+        }
+
+        if (CheckLayer(other.gameObject.layer, EnemyMask))
+        {
+            if (projectile != null)
+            {
+                projectile.DisableProjectile();
+            }
+
+            impactPS.Play();
+            Invoke(nameof(Return), impactPS.main.duration);
+
+        }
+    }
+
+    private bool CheckLayer(int layer,LayerMask objectMask)
+    {
+        return ((1 << layer) & objectMask )!= 0;
+    }
+    
     private void OnEnable()
     {
-        Invoke(nameof(Return), lifeTime);
+        Invoke(nameof(Return), lifeTime);       
     }
 
     private void OnDisable()
     {
         CancelInvoke();
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (CheckLayer(other.gameObject.layer, WallMask)) Return();
-
-        if (CheckLayer(other.gameObject.layer, EnemyMask)) Return();
-    }
-
-    // Returns this object to the pool
-    private void Return()
-    {
-        if (projectile != null) projectile.ResetProjectile();
-
-        gameObject.SetActive(false);
-    }
-
-    private bool CheckLayer(int layer, LayerMask objectMask)
-    {
-        return ((1 << layer) & objectMask) != 0;
-    }
-}
+} 
