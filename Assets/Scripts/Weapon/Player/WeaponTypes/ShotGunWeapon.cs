@@ -49,35 +49,32 @@ public class ShotGunWeapon : Weapon
         // 获取弹丸的参考
         Projectile projectile = projectilePooled.GetComponent<Projectile>();
         projectile.EnableProjectile();
-        Quaternion rotation;
+        Quaternion spread;
         // 发散
         if (projectileOneShot == 1)
         {
-            rotationGun = transform.position;
-            rotationGun.z += 10;
-            rotation = Quaternion.Euler(rotationGun);
+            randomProjectileSpread.z = projectileSpread.z;
+            spread = Quaternion.Euler(randomProjectileSpread);
         }
         else if (projectileOneShot == 2)
         {
-            rotationGun = transform.position;
-            rotationGun.z -= 10;
-            rotation = Quaternion.Euler(rotationGun);
+            randomProjectileSpread.z = -projectileSpread.z;
+            spread = Quaternion.Euler(randomProjectileSpread);
         }
         else
         {
-            rotationGun = transform.position;
-            rotation = Quaternion.Euler(rotationGun);
-            
+            randomProjectileSpread.z = 0;
+            spread = Quaternion.Euler(randomProjectileSpread);
         }
         
         // randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
-        //randomProjectileSpread.z = projectileSpread.z;
+        // randomProjectileSpread.z = projectileSpread.z;
         // Quaternion spread = Quaternion.Euler(randomProjectileSpread);
         
 
         // 设置方向和旋转
-        Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? rotation * transform.right : rotation * transform.right * -1;
-        projectile.SetDirection(newDirection, rotation, WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
+        Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? spread * transform.right : spread * transform.right * -1;
+        projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
 
         projectileOneShot++;
         if (projectileOneShot >= maxProjectileOneShot)
