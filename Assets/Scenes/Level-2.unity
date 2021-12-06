@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &12597025 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3985511725265708853, guid: b46e3f74ae9ff40649d4806b365c3222, type: 3}
+  m_PrefabInstance: {fileID: 1664714020}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &246928084
 GameObject:
   m_ObjectHideFlags: 0
@@ -58817,6 +58822,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUDCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2603376387683762188, guid: 4178b93ef2a8246db8ed7fbd518f832f, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 12597025}
     - target: {fileID: 2603376387683762191, guid: 4178b93ef2a8246db8ed7fbd518f832f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
