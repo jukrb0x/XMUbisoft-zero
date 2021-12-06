@@ -17,6 +17,6 @@ public class PlayerDebuff : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Debuff_Slow")) _characterMovement.MoveSpeed = 2f;
+        if (other.CompareTag("Debuff_Slow")) _characterMovement.MoveSpeed = SlowSpeed;
     }
 }

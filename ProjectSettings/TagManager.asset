@@ -11,6 +11,7 @@ TagManager:
   - Damage_Spike
   - Debuff_Slow
   - Debuff_Poison
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - 
   - Player
   - Enemy
-  - Projectile
-  - 
+  - EnemyProjectile
+  - PlayerProjectile
   - 
   - 
   - 

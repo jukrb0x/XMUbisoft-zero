@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544ff67eeb495cd4d8e87f6d323738ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 3
+  walkSpeed: 3.5
 --- !u!114 &1849417813132875118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,7 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageMask:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 8192
 --- !u!70 &1998664776449385615
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

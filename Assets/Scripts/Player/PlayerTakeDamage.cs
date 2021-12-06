@@ -27,7 +27,18 @@ public class PlayerTakeDamage : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.collider.CompareTag("Enemy") && PlayerCanTakeDamage)
+    
+        if ((other.collider.CompareTag("Enemy") || other.collider.CompareTag("EnemyProjectile")) && PlayerCanTakeDamage)
+        {
+            _playerHealth.Damage(1);
+            PlayerCanTakeDamage = false;
+            nextDamageTime = Time.time + timeBtwDamage;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("EnemyProjectile") && PlayerCanTakeDamage)
         {
             
             _playerHealth.Damage(1);
