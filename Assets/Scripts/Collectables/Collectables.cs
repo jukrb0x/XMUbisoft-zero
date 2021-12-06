@@ -22,9 +22,9 @@ public class Collectables : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         objectCollided = other.gameObject;
-        if (IsPickable())
+        if (IsCollectable())
         {
-            Pick();
+            Collect();
             PlayEffects();
 
             if (canDestroyItem)
@@ -39,7 +39,7 @@ public class Collectables : MonoBehaviour
         }
     }
 
-    protected virtual bool IsPickable()
+    protected virtual bool IsCollectable()
     {
         character = objectCollided.GetComponent<Character>();
         if (character == null)
@@ -50,14 +50,12 @@ public class Collectables : MonoBehaviour
         return character.CharacterType == Character.CharacterTypes.Player;
     }
 
-    protected virtual void Pick()
+    protected virtual void Collect()
     {
-        // ---
     }
 
     protected virtual void PlayEffects()
     {
-        // -------        
     }
 }
 
