@@ -198,28 +198,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: "\u590D\u53E4\u50CF\u7D20\u6A2A\u7248\u52A8\u4F5C\u95EF\u5173\u6E38\u620F\u7D20\u6750-PunchQuest
-        \u91CD\u62F3\u51FA\u51FB_\u7231\u7ED9\u7F51_aigei_com_4"
-      rect:
-        serializedVersion: 2
-        x: 402
-        y: 24
-        width: 66
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ff49df328c7d84c0800000000000000
-      internalID: -4283630771700674570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
