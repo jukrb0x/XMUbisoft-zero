@@ -82,7 +82,7 @@ MonoBehaviour:
   muzzlePS: {fileID: 950183627635947492}
   nextShotTime: 0
   projectileSpawnPosition: {x: 1.5, y: 0.15, z: 0}
-  projectileSpread: {x: 0, y: 0, z: 0}
+  projectileSpread: {x: 0, y: 0, z: 20}
   maxProjectileOneShot: 3
 --- !u!114 &-2506645290724319967
 MonoBehaviour:
