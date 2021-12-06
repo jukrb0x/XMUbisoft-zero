@@ -200,11 +200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3292c7a134039f74b81b45fc576fdbac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewards:
+  - {fileID: 1661995264833734396, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
+  - {fileID: 5167333365224283686, guid: 866f14a97ca4b4421a857fd1add64b46, type: 3}
   xRandomPosition: 2
   yRandomPosition: 2
-  rewards:
-  - {fileID: 4157275756867382003, guid: b0c93d750f80a3d48b1cff5578292686, type: 3}
-  - {fileID: 273326986479357074, guid: bf4ddae8b28dc7543b011b6807aba1d3, type: 3}
 --- !u!50 &571300907972374155
 Rigidbody2D:
   serializedVersion: 4
