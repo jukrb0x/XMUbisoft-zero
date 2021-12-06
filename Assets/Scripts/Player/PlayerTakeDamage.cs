@@ -57,7 +57,15 @@ public class PlayerTakeDamage : MonoBehaviour
             PlayerCanTakeDamage = false;
             nextDamageTime = Time.time + timeBtwDamage;
         }
+        if ((other.CompareTag("Deth_Spike") || other.CompareTag("Debuff_Poison")) && PlayerCanTakeDamage)
+        {
+            _playerHealth.Damage(15);
+            PlayerCanTakeDamage = false;
+            nextDamageTime = Time.time;
+        }
     }
+
+
 
     private void CanTakeDamage()
     {
