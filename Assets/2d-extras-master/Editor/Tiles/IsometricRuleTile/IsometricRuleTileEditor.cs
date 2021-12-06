@@ -7,8 +7,7 @@ namespace UnityEditor
     [CanEditMultipleObjects]
     public class IsometricRuleTileEditor : RuleTileEditor
     {
-
-        private static readonly int[] s_Arrows = { 3, 0, 1, 6, -1, 2, 7, 8, 5 };
+        private static readonly int[] s_Arrows = {3, 0, 1, 6, -1, 2, 7, 8, 5};
 
         public override int GetArrowIndex(Vector3Int position)
         {
@@ -17,60 +16,61 @@ namespace UnityEditor
 
         public override Vector2 GetMatrixSize(BoundsInt bounds)
         {
-            float p = Mathf.Pow(2, 0.5f);
-            float w = (bounds.size.x / p + bounds.size.y / p) * k_SingleLineHeight;
+            var p = Mathf.Pow(2, 0.5f);
+            var w = (bounds.size.x / p + bounds.size.y / p) * k_SingleLineHeight;
             return new Vector2(w, w);
         }
 
-        public override void RuleMatrixOnGUI(RuleTile ruleTile, Rect rect, BoundsInt bounds, RuleTile.TilingRule tilingRule)
+        public override void RuleMatrixOnGUI(RuleTile ruleTile, Rect rect, BoundsInt bounds,
+            RuleTile.TilingRule tilingRule)
         {
             Handles.color = EditorGUIUtility.isProSkin ? new Color(1f, 1f, 1f, 0.2f) : new Color(0f, 0f, 0f, 0.2f);
-            float w = rect.width / bounds.size.x;
-            float h = rect.height / bounds.size.y;
+            var w = rect.width / bounds.size.x;
+            var h = rect.height / bounds.size.y;
 
             // Grid
-            float d = rect.width / (bounds.size.x + bounds.size.y);
-            for (int y = 0; y <= bounds.size.y; y++)
+            var d = rect.width / (bounds.size.x + bounds.size.y);
+            for (var y = 0; y <= bounds.size.y; y++)
             {
-                float left = rect.xMin + d * y;
-                float top = rect.yMin + d * y;
-                float right = rect.xMax - d * (bounds.size.y - y);
-                float bottom = rect.yMax - d * (bounds.size.y - y);
+                var left = rect.xMin + d * y;
+                var top = rect.yMin + d * y;
+                var right = rect.xMax - d * (bounds.size.y - y);
+                var bottom = rect.yMax - d * (bounds.size.y - y);
                 Handles.DrawLine(new Vector3(left, bottom), new Vector3(right, top));
             }
-            for (int x = 0; x <= bounds.size.x; x++)
+
+            for (var x = 0; x <= bounds.size.x; x++)
             {
-                float left = rect.xMin + d * x;
-                float top = rect.yMax - d * x;
-                float right = rect.xMax - d * (bounds.size.x - x);
-                float bottom = rect.yMin + d * (bounds.size.x - x);
+                var left = rect.xMin + d * x;
+                var top = rect.yMax - d * x;
+                var right = rect.xMax - d * (bounds.size.x - x);
+                var bottom = rect.yMin + d * (bounds.size.x - x);
                 Handles.DrawLine(new Vector3(left, bottom), new Vector3(right, top));
             }
+
             Handles.color = Color.white;
 
             var neighbors = tilingRule.GetNeighbors();
 
             // Icons
-            float iconSize = (rect.width - d) / (bounds.size.x + bounds.size.y - 1);
-            float iconScale = Mathf.Pow(2, 0.5f);
+            var iconSize = (rect.width - d) / (bounds.size.x + bounds.size.y - 1);
+            var iconScale = Mathf.Pow(2, 0.5f);
 
-            for (int y = bounds.yMin; y < bounds.yMax; y++)
+            for (var y = bounds.yMin; y < bounds.yMax; y++)
+            for (var x = bounds.xMin; x < bounds.xMax; x++)
             {
-                for (int x = bounds.xMin; x < bounds.xMax; x++)
-                {
-                    Vector3Int pos = new Vector3Int(x, y, 0);
-                    Vector3Int offset = new Vector3Int(pos.x - bounds.xMin, pos.y - bounds.yMin, 0);
-                    Rect r = new Rect(
-                        rect.xMin + rect.size.x - iconSize * (offset.y - offset.x + 0.5f + bounds.size.x),
-                        rect.yMin + rect.size.y - iconSize * (offset.y + offset.x + 1.5f),
-                        iconSize, iconSize
-                    );
-                    Vector2 center = r.center;
-                    r.size *= iconScale;
-                    r.center = center;
+                var pos = new Vector3Int(x, y, 0);
+                var offset = new Vector3Int(pos.x - bounds.xMin, pos.y - bounds.yMin, 0);
+                var r = new Rect(
+                    rect.xMin + rect.size.x - iconSize * (offset.y - offset.x + 0.5f + bounds.size.x),
+                    rect.yMin + rect.size.y - iconSize * (offset.y + offset.x + 1.5f),
+                    iconSize, iconSize
+                );
+                var center = r.center;
+                r.size *= iconScale;
+                r.center = center;
 
-                    RuleMatrixIconOnGUI(tilingRule, neighbors, pos, r);
-                }
+                RuleMatrixIconOnGUI(tilingRule, neighbors, pos, r);
             }
         }
 
@@ -82,7 +82,7 @@ namespace UnityEditor
             var mouseFromCenter = Event.current.mousePosition - center;
             var xAbs = Mathf.Abs(Vector2.Dot(mouseFromCenter, Vector2.right));
             var yAbs = Mathf.Abs(Vector2.Dot(mouseFromCenter, Vector2.up));
-            return (xAbs / halfWidth + yAbs / halfHeight) <= 1;
+            return xAbs / halfWidth + yAbs / halfHeight <= 1;
         }
 
         public override void OnPreviewSettings()
@@ -91,7 +91,7 @@ namespace UnityEditor
 
             if (m_PreviewGrid)
             {
-                float height = EditorGUILayout.FloatField("Cell Height", m_PreviewGrid.cellSize.y);
+                var height = EditorGUILayout.FloatField("Cell Height", m_PreviewGrid.cellSize.y);
                 m_PreviewGrid.cellSize = new Vector3(1f, Mathf.Max(height, 0), 1f);
             }
         }

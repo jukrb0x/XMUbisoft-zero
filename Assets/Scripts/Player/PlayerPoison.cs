@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPoison : MonoBehaviour
@@ -10,11 +7,11 @@ public class PlayerPoison : MonoBehaviour
     [SerializeField] private float timeBetweenPoison = 1f;
 
     private PlayerHealth _playerHealth;
-    private bool isPoison = false;
+    private bool isPoison;
+    private float nextDamageTime;
     private bool poisonCanTakeDamage = true;
     private float poisonEndTime;
-    private float nextDamageTime;
-    
+
     private void Awake()
     {
         _playerHealth = GetComponent<PlayerHealth>();
@@ -26,14 +23,6 @@ public class PlayerPoison : MonoBehaviour
         TakePoison();
     }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("Debuff_Poison"))
-        {
-            isPoison = false;
-        }
-    }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Debuff_Poison"))
@@ -41,6 +30,11 @@ public class PlayerPoison : MonoBehaviour
             isPoison = true;
             poisonEndTime = Time.time + poisonDurationTime;
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Debuff_Poison")) isPoison = false;
     }
 
     private void TakePoison()
@@ -65,11 +59,6 @@ public class PlayerPoison : MonoBehaviour
 
     private void PoisonCanTakeDamage()
     {
-        if (Time.time > nextDamageTime)
-        {
-            poisonCanTakeDamage = true;
-        }
+        if (Time.time > nextDamageTime) poisonCanTakeDamage = true;
     }
-
-
 }
