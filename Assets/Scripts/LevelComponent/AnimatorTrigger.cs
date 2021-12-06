@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreasureBox : MonoBehaviour
+public class AnimatorTrigger : MonoBehaviour
 {
 
     private Animator anim;
@@ -27,7 +27,10 @@ public class TreasureBox : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             anim.SetTrigger("Opening");
+            anim.SetTrigger("Open");
         }
+        
+
     }
     void OnTriggerExit2D(Collider2D other)
     {
