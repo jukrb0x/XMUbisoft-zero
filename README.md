@@ -12,7 +12,7 @@ Game Type: Top-down Role-playing Dungeon Crawl
 
 <details>
   <summary>Story</summary>
-  story //TODO
+  TODO
 </details>
 
 
