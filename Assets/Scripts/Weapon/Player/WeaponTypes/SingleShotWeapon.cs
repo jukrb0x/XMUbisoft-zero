@@ -31,6 +31,7 @@ public class SingleShotWeapon : Weapon
         base.RequestShot();
         if (CanShoot && Input.GetMouseButtonDown(0))
         {
+            muzzlePS.Play();
             EvaluateProjectileSpawnPosition();
             SpawnProjectile(ProjectileSpawnPosition);
         }
@@ -46,6 +47,7 @@ public class SingleShotWeapon : Weapon
 
         // 获取弹丸的参考
         Projectile projectile = projectilePooled.GetComponent<Projectile>();
+        projectile.EnableProjectile();
 
         // 发散
         randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
@@ -54,7 +56,8 @@ public class SingleShotWeapon : Weapon
         // 设置方向和旋转
         Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? spread * transform.right : spread * transform.right * -1;
         projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
-        
+
+        AudioManager.Instance.Play(AudioEnum.ShotGunShoot);
         CanShoot = false;  
         nextShotTime = Time.time + timeBtwShots;
     }
@@ -74,11 +77,11 @@ public class SingleShotWeapon : Weapon
         }       
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        EvaluateProjectileSpawnPosition();
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(ProjectileSpawnPosition, 0.1f);
-    }
+    // private void OnDrawGizmosSelected()
+    // {
+    //     EvaluateProjectileSpawnPosition();
+    //
+    //     Gizmos.color = Color.green;
+    //     Gizmos.DrawWireSphere(ProjectileSpawnPosition, 0.1f);
+    // }
 }
