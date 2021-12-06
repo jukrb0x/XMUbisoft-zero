@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class LevelNavigator : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
@@ -20,6 +20,7 @@ public class LevelNavigator : MonoBehaviour
         mainMenu.SetActive(false);
         levelMenu.SetActive(true);
     }
+ 
 
     public void QuitGame()
     {
