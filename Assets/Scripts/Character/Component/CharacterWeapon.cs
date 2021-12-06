@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterWeapon : CharacterComponents
@@ -9,6 +6,7 @@ public class CharacterWeapon : CharacterComponents
     private Weapon weaponToUse;
 
     [SerializeField] private Transform weaponHolderPosition;
+
 
     // Reference of the Weapon we are using
     public Weapon CurrentWeapon { get; set; }
@@ -25,26 +23,23 @@ public class CharacterWeapon : CharacterComponents
         base.Start();
         EquipWeapon(weaponToUse, weaponHolderPosition);
     }
-    
+
 
     protected override void HandleInput()
     {
         base.HandleInput();
         if (Input.GetMouseButton(mouseLeftBtn))
             // TODO judge if can shoot here
-        {
             BeforeShoot();
-        }
 
         if (Input.GetMouseButtonUp(mouseLeftBtn)) // If we stop shooting
-        {
             StopWeapon();
-        }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();
         }
+
         if (Input.GetKeyDown(KeyCode.Q) && SecondaryWeapon != null)
         {
             EquipWeapon(weaponToUse, weaponHolderPosition);
@@ -54,9 +49,6 @@ public class CharacterWeapon : CharacterComponents
         {
             EquipWeapon(SecondaryWeapon, weaponHolderPosition);
         }
-      
-
-
     }
 
 
@@ -65,45 +57,35 @@ public class CharacterWeapon : CharacterComponents
         if (!CurrentWeapon.CanShoot) return;
 
         CurrentWeapon.TriggerShot();
-        
+
         if (character.CharacterType == Character.CharacterTypes.Player)
-        {
             // FIXME
             // TODO: weapon to UI canvas
             UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
-        }
     }
 
     // When we stop shooting we stop using our Weapon
     public void StopWeapon()
     {
-        if (CurrentWeapon == null)
-        {
-            return;
-        }
+        if (CurrentWeapon == null) return;
 
         CurrentWeapon.StopWeapon();
     }
 
     public void Reload()
     {
-        if (CurrentWeapon == null)
-        {
-            return;
-        }
+        if (CurrentWeapon == null) return;
 
         CurrentWeapon.Reload();
         if (character.CharacterType == Character.CharacterTypes.Player)
-        {
             UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
-        }
     }
 
     public void EquipWeapon(Weapon weapon, Transform weaponPosition)
     {
         if (CurrentWeapon != null)
         {
-            WeaponAim.DestroyReticle();       // Each weapon has its own Reticle component
+            WeaponAim.DestroyReticle(); // Each weapon has its own Reticle component
             Destroy(GameObject.Find("Pool"));
             Destroy(CurrentWeapon.gameObject);
         }

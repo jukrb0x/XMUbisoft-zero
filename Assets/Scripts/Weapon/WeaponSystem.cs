@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon_System : MonoBehaviour
+public class WeaponSystem : MonoBehaviour
 {
-    Weaponlist weaponlist;
+    WeaponList _weaponList;
     void Start()
     {
-        weaponlist = Resources.Load<Weaponlist>(typeof(Weaponlist).Name);
-        Debug.Log(weaponlist);
+        _weaponList = Resources.Load<WeaponList>(typeof(WeaponList).Name);
+        Debug.Log(_weaponList);
     }
 
     // Update is called once per frame

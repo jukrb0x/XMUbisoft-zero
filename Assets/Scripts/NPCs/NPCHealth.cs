@@ -1,7 +1,4 @@
-using System;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.SubsystemsImplementation;
 using UnityEngine.UI;
 
 public class NPCHealth : BaseHealth
@@ -25,11 +22,9 @@ public class NPCHealth : BaseHealth
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Damage(1);
-        }
+        if (Input.GetKeyDown(KeyCode.K)) Damage(1);
     }
+
     private void UpdateHealthBar()
     {
         healthBarImage.fillAmount = HealthPoint / MaxHealthPoint;
@@ -39,18 +34,12 @@ public class NPCHealth : BaseHealth
     public override void Damage(float damage)
 
     {
-        if (!IsDead)
-        {
-            healthBarContainer.SetActive(true);
-        }
+        if (!IsDead) healthBarContainer.SetActive(true);
 
         base.Damage(damage);
         UpdateHealthBar();
 
-        if (IsDead)
-        {
-            Die();
-        }
+        if (IsDead) Die();
     }
 
     private void Die()

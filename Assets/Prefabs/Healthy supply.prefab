@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5710914418167226868}
   - component: {fileID: 6982062314961539507}
   m_Layer: 0
-  m_Name: magical-potions-items-tileset_3
+  m_Name: Healthy supply
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4157275756867382003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -68,9 +68,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -551667957
-  m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingLayerID: 924170447
+  m_SortingLayer: 3
+  m_SortingOrder: 12
   m_Sprite: {fileID: 1371628056344953650, guid: 350098de4b78720478d2649462ca9b51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
