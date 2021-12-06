@@ -1,43 +1,40 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponAim : MonoBehaviour
 {
     [SerializeField] private GameObject reticlePrefab;
-
-    // Returns the current absolute angle
-    public float CurrentAimAngleAbsolute { get; set; }
-    
-    // Returns the current angle
-    public float CurrentAimAngle { get; set; }
-
-    private Camera mainCamera;
-	private GameObject reticle;
-	private Weapon weapon;
-
-    private Vector3 direction;
-    private Vector3 mousePosition;
-	private Vector3 reticlePosition;
     private Vector3 currentAim = Vector3.zero;
     private Vector3 currentAimAbsolute = Vector3.zero;
+
+    private Vector3 direction;
     private Quaternion initialRotation;
     private Quaternion lookRotation;
 
+    private Camera mainCamera;
+    private Vector3 mousePosition;
+    private GameObject reticle;
+    private Vector3 reticlePosition;
+    private Weapon weapon;
+
+    // Returns the current absolute angle
+    public float CurrentAimAngleAbsolute { get; set; }
+
+    // Returns the current angle
+    public float CurrentAimAngle { get; set; }
+
     private void Start()
     {
-        Cursor.visible = false; 
+        Cursor.visible = false;
         weapon = GetComponent<Weapon>();
-        initialRotation = transform.rotation;  
-     
+        initialRotation = transform.rotation;
+
         mainCamera = Camera.main;
         reticle = Instantiate(reticlePrefab);
     }
 
     private void Update()
     {
-        GetMousePosition();                
+        GetMousePosition();
         MoveReticle();
         RotateWeapon();
     }
@@ -47,7 +44,7 @@ public class WeaponAim : MonoBehaviour
     {
         // Get Mouse Position
         mousePosition = Input.mousePosition;
-        mousePosition.z = 5f;  // We set this value to ensure the camera always stays infront to view everything in game
+        mousePosition.z = 5f; // We set this value to ensure the camera always stays infront to view everything in game
 
         // Get World space position
         direction = mainCamera.ScreenToWorldPoint(mousePosition);
@@ -56,14 +53,10 @@ public class WeaponAim : MonoBehaviour
 
         currentAimAbsolute = direction - transform.position;
         if (weapon.WeaponOwner.GetComponent<CharacterFlip>().FacingRight)
-        {
             currentAim = direction - transform.position;
-        }
         else
-        {
             currentAim = transform.position - direction;
-        }
-	}
+    }
 
     public void RotateWeapon()
     {
@@ -75,21 +68,17 @@ public class WeaponAim : MonoBehaviour
 
             // Clamp our rotation
             if (weapon.WeaponOwner.GetComponent<CharacterFlip>().FacingRight)
-            {
                 CurrentAimAngle = Mathf.Clamp(CurrentAimAngle, -180, 180);
-            }
             else
-            {
                 CurrentAimAngle = Mathf.Clamp(CurrentAimAngle, -180, 180);
-            }
-            
+
             // Apply the angle
             lookRotation = Quaternion.Euler(CurrentAimAngle * Vector3.forward);
             transform.rotation = lookRotation;
         }
         else
         {
-            CurrentAimAngle = 0f;  // If the mouse is not moving at all at the beginning
+            CurrentAimAngle = 0f; // If the mouse is not moving at all at the beginning
             transform.rotation = initialRotation;
         }
     }
@@ -100,4 +89,9 @@ public class WeaponAim : MonoBehaviour
         reticle.transform.rotation = Quaternion.identity; //set the normal rotation
         reticle.transform.position = reticlePosition;
     }
+    public void DestroyReticle()
+    {
+        Destroy(reticle.gameObject);
+    }
+
 }

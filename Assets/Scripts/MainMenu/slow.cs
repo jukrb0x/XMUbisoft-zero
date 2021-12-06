@@ -1,47 +1,45 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 public class slow : MonoBehaviour
 {
-
     public float charsPerSecond = 0.05f;
+    private int currentPos;
+
+    private bool isActive;
+    private Text myText; //get test
+    private float timer; //Timer
     private string words;
 
-    private bool isActive = false; 
-    private float timer; //Timer
-    private Text myText; //get test
-    private int currentPos = 0;
-
-    // Use this for initialization
-    private void OnDisable()
-    {
-        OnFinish();
-    }
-    
-    private void OnEnable()
-    {
-        timer = 0;
-        isActive = true;
-        charsPerSecond = Mathf.Max(0.01f, charsPerSecond); 
-        myText = GetComponent<Text>();
-        words = myText.text;
-        myText.text = "";
-
-    }
     private void Awake()
     {
         Cursor.visible = true;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         OnStartWriter();
-    }   
-    void OnStartWriter()
-    {
+    }
 
+    private void OnEnable()
+    {
+        timer = 0;
+        isActive = true;
+        charsPerSecond = Mathf.Max(0.01f, charsPerSecond);
+        myText = GetComponent<Text>();
+        words = myText.text;
+        myText.text = "";
+    }
+
+    // Use this for initialization
+    private void OnDisable()
+    {
+        OnFinish();
+    }
+
+    private void OnStartWriter()
+    {
         if (isActive)
         {
             timer += Time.deltaTime;
@@ -53,23 +51,16 @@ public class slow : MonoBehaviour
 
                 myText.text = words.Substring(0, currentPos);
 
-                if (currentPos >= words.Length)
-                {
-                    OnFinish();
-                }
+                if (currentPos >= words.Length) OnFinish();
             }
-
         }
     }
-    void OnFinish()
+
+    private void OnFinish()
     {
         isActive = false;
         timer = 0;
         currentPos = 0;
         myText.text = words;
     }
-
-
-
-
 }

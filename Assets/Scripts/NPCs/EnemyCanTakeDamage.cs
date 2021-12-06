@@ -1,11 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyCanTakeDamage : MonoBehaviour
 {
-    
     [SerializeField] private LayerMask DamageMask;
     private NPCHealth _npcHealth;
 
@@ -13,17 +9,14 @@ public class EnemyCanTakeDamage : MonoBehaviour
     {
         _npcHealth = GetComponent<NPCHealth>();
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (CheckLayer(other.gameObject.layer, DamageMask))
-        {
-            _npcHealth.Damage(1);
-        }
+        if (CheckLayer(other.gameObject.layer, DamageMask)) _npcHealth.Damage(1);
     }
 
-    private bool CheckLayer(int layer,LayerMask objectMask)
+    private bool CheckLayer(int layer, LayerMask objectMask)
     {
-        return ((1 << layer) & objectMask )!= 0;
+        return ((1 << layer) & objectMask) != 0;
     }
 }
