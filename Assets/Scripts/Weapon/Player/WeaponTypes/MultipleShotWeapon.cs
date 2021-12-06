@@ -31,6 +31,7 @@ public class MultipleShotWeapon : Weapon
         base.RequestShot();
         if (CanShoot)
         {
+            muzzlePS.Play();
             EvaluateProjectileSpawnPosition();
             SpawnProjectile(ProjectileSpawnPosition);
         }

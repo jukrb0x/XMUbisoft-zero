@@ -29,10 +29,9 @@ public class SingleShotWeapon : Weapon
     public override void RequestShot()
     {
         base.RequestShot();
-        
         if (CanShoot && Input.GetMouseButtonDown(0))
         {
-            
+            muzzlePS.Play();
             EvaluateProjectileSpawnPosition();
             SpawnProjectile(ProjectileSpawnPosition);
         }
@@ -77,11 +76,11 @@ public class SingleShotWeapon : Weapon
         }       
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        EvaluateProjectileSpawnPosition();
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(ProjectileSpawnPosition, 0.1f);
-    }
+    // private void OnDrawGizmosSelected()
+    // {
+    //     EvaluateProjectileSpawnPosition();
+    //
+    //     Gizmos.color = Color.green;
+    //     Gizmos.DrawWireSphere(ProjectileSpawnPosition, 0.1f);
+    // }
 }

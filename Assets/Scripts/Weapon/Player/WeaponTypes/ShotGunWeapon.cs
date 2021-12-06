@@ -32,6 +32,7 @@ public class ShotGunWeapon : Weapon
         base.RequestShot();
         if (CanShoot)
         {
+            muzzlePS.Play();
             EvaluateProjectileSpawnPosition();
             SpawnProjectile(ProjectileSpawnPosition);
         }
