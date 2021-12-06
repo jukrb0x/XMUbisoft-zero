@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -23,6 +20,7 @@ public class LevelManager : MonoBehaviour
     }
 
     // TODO: remove revive
+    // TODO： useless code
     // Update is called once per frame
     // private void Update()
     // {
@@ -40,5 +38,4 @@ public class LevelManager : MonoBehaviour
     //         playableCharacter.transform.position = spawnPosition.position;
     //     }
     // }
-
 }

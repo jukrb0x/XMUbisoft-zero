@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 namespace Component
 {
@@ -11,20 +8,15 @@ namespace Component
 
         protected override void HandleInput()
         {
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                Run();
-            }
-            if (Input.GetKeyUp(KeyCode.LeftShift))
-            {
-                StopRun();
-            }
+            if (Input.GetKey(KeyCode.LeftShift)) Run();
+            if (Input.GetKeyUp(KeyCode.LeftShift)) StopRun();
         }
 
         private void Run()
         {
             characterMovement.MoveSpeed = runSpeed;
         }
+
         private void StopRun()
         {
             characterMovement.ResetSpeed();

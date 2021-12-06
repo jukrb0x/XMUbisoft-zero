@@ -1,15 +1,29 @@
-﻿using UnityEngine;
-using UnityEngine.Tilemaps;
+﻿using System.Collections.Generic;
 using UnityEditorInternal;
-using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace UnityEditor
 {
     [CustomEditor(typeof(RuleOverrideTile))]
     public class RuleOverrideTileEditor : Editor
     {
+        private static readonly float k_SpriteElementHeight = 48;
+        private static readonly float k_GameObjectElementHeight = 16;
+        private static readonly float k_PaddingBetweenRules = 4;
+
+        private readonly List<KeyValuePair<GameObject, GameObject>> m_GameObjects =
+            new List<KeyValuePair<GameObject, GameObject>>();
+
+        private readonly List<KeyValuePair<Sprite, Sprite>> m_Sprites = new List<KeyValuePair<Sprite, Sprite>>();
+        private ReorderableList m_GameObjectList;
+
+        private RuleTileEditor m_RuleTileEditor;
+        private RuleTile m_RuleTileEditorTarget;
+        private ReorderableList m_SpriteList;
 
         public RuleOverrideTile overrideTile => target as RuleOverrideTile;
+
         public RuleTileEditor ruleTileEditor
         {
             get
@@ -17,24 +31,13 @@ namespace UnityEditor
                 if (m_RuleTileEditorTarget != overrideTile.m_Tile)
                 {
                     DestroyImmediate(m_RuleTileEditor);
-                    m_RuleTileEditor = Editor.CreateEditor(overrideTile.m_InstanceTile) as RuleTileEditor;
+                    m_RuleTileEditor = CreateEditor(overrideTile.m_InstanceTile) as RuleTileEditor;
                     m_RuleTileEditorTarget = overrideTile.m_Tile;
                 }
+
                 return m_RuleTileEditor;
             }
         }
-
-        RuleTileEditor m_RuleTileEditor;
-        RuleTile m_RuleTileEditorTarget;
-
-        List<KeyValuePair<Sprite, Sprite>> m_Sprites = new List<KeyValuePair<Sprite, Sprite>>();
-        List<KeyValuePair<GameObject, GameObject>> m_GameObjects = new List<KeyValuePair<GameObject, GameObject>>();
-        ReorderableList m_SpriteList;
-        ReorderableList m_GameObjectList;
-
-        static float k_SpriteElementHeight = 48;
-        static float k_GameObjectElementHeight = 16;
-        static float k_PaddingBetweenRules = 4;
 
         public virtual void OnEnable()
         {
@@ -42,16 +45,19 @@ namespace UnityEditor
             {
                 overrideTile.GetOverrides(m_Sprites);
 
-                m_SpriteList = new ReorderableList(m_Sprites, typeof(KeyValuePair<Sprite, Sprite>), false, true, false, false);
+                m_SpriteList = new ReorderableList(m_Sprites, typeof(KeyValuePair<Sprite, Sprite>), false, true, false,
+                    false);
                 m_SpriteList.drawHeaderCallback = DrawSpriteListHeader;
                 m_SpriteList.drawElementCallback = DrawSpriteElement;
                 m_SpriteList.elementHeightCallback = GetSpriteElementHeight;
             }
+
             if (m_GameObjectList == null)
             {
                 overrideTile.GetOverrides(m_GameObjects);
 
-                m_GameObjectList = new ReorderableList(m_GameObjects, typeof(KeyValuePair<Sprite, Sprite>), false, true, false, false);
+                m_GameObjectList = new ReorderableList(m_GameObjects, typeof(KeyValuePair<Sprite, Sprite>), false, true,
+                    false, false);
                 m_GameObjectList.drawHeaderCallback = DrawGameObjectListHeader;
                 m_GameObjectList.drawElementCallback = DrawGameObjectElement;
                 m_GameObjectList.elementHeightCallback = GetGameObjectElementHeight;
@@ -78,14 +84,12 @@ namespace UnityEditor
             m_SpriteList.list = m_Sprites;
             m_SpriteList.DoLayoutList();
             if (EditorGUI.EndChangeCheck())
-            {
-                for (int i = 0; i < targets.Length; i++)
+                for (var i = 0; i < targets.Length; i++)
                 {
-                    RuleOverrideTile tile = targets[i] as RuleOverrideTile;
+                    var tile = targets[i] as RuleOverrideTile;
                     tile.ApplyOverrides(m_Sprites);
                     SaveTile();
                 }
-            }
 
             // GameObject List
             EditorGUI.BeginChangeCheck();
@@ -94,19 +98,17 @@ namespace UnityEditor
             m_GameObjectList.list = m_GameObjects;
             m_GameObjectList.DoLayoutList();
             if (EditorGUI.EndChangeCheck())
-            {
-                for (int i = 0; i < targets.Length; i++)
+                for (var i = 0; i < targets.Length; i++)
                 {
-                    RuleOverrideTile tile = targets[i] as RuleOverrideTile;
+                    var tile = targets[i] as RuleOverrideTile;
                     tile.ApplyOverrides(m_GameObjects);
                     SaveTile();
                 }
-            }
         }
 
-        void DrawSpriteListHeader(Rect rect)
+        private void DrawSpriteListHeader(Rect rect)
         {
-            float xMax = rect.xMax;
+            var xMax = rect.xMax;
             rect.xMax = rect.xMax / 2.0f;
             GUI.Label(rect, "Original Sprite", EditorStyles.label);
             rect.xMin = rect.xMax;
@@ -114,9 +116,9 @@ namespace UnityEditor
             GUI.Label(rect, "Override Sprite", EditorStyles.label);
         }
 
-        void DrawGameObjectListHeader(Rect rect)
+        private void DrawGameObjectListHeader(Rect rect)
         {
-            float xMax = rect.xMax;
+            var xMax = rect.xMax;
             rect.xMax = rect.xMax / 2.0f;
             GUI.Label(rect, "Original GameObject", EditorStyles.label);
             rect.xMin = rect.xMax;
@@ -124,80 +126,92 @@ namespace UnityEditor
             GUI.Label(rect, "Override GameObject", EditorStyles.label);
         }
 
-        float GetSpriteElementHeight(int index)
+        private float GetSpriteElementHeight(int index)
         {
-            float height = k_SpriteElementHeight + k_PaddingBetweenRules;
+            var height = k_SpriteElementHeight + k_PaddingBetweenRules;
 
-            bool isMissing = index >= overrideTile.m_MissingSpriteIndex;
+            var isMissing = index >= overrideTile.m_MissingSpriteIndex;
             if (isMissing)
                 height += 16;
 
             return height;
         }
 
-        float GetGameObjectElementHeight(int index)
+        private float GetGameObjectElementHeight(int index)
         {
-            float height = k_GameObjectElementHeight + k_PaddingBetweenRules;
+            var height = k_GameObjectElementHeight + k_PaddingBetweenRules;
 
-            bool isMissing = index >= overrideTile.m_MissingGameObjectIndex;
+            var isMissing = index >= overrideTile.m_MissingGameObjectIndex;
             if (isMissing)
                 height += 16;
 
             return height;
         }
 
-        void DrawSpriteElement(Rect rect, int index, bool selected, bool focused)
+        private void DrawSpriteElement(Rect rect, int index, bool selected, bool focused)
         {
-            bool isMissing = index >= overrideTile.m_MissingSpriteIndex;
+            var isMissing = index >= overrideTile.m_MissingSpriteIndex;
             if (isMissing)
             {
-                EditorGUI.HelpBox(new Rect(rect.xMin, rect.yMin, rect.width, 16), "Original Sprite missing", MessageType.Warning);
+                EditorGUI.HelpBox(new Rect(rect.xMin, rect.yMin, rect.width, 16), "Original Sprite missing",
+                    MessageType.Warning);
                 rect.yMin += 16;
             }
 
-            Sprite originalSprite = m_Sprites[index].Key;
-            Sprite overrideSprite = m_Sprites[index].Value;
-            Rect fullRect = rect;
+            var originalSprite = m_Sprites[index].Key;
+            var overrideSprite = m_Sprites[index].Value;
+            var fullRect = rect;
 
             rect.y += 2;
             rect.height -= k_PaddingBetweenRules;
 
             rect.xMax = rect.xMax / 2.0f;
             using (new EditorGUI.DisabledScope(true))
-                EditorGUI.ObjectField(new Rect(rect.xMin, rect.yMin, rect.height, rect.height), originalSprite, typeof(Sprite), false);
+            {
+                EditorGUI.ObjectField(new Rect(rect.xMin, rect.yMin, rect.height, rect.height), originalSprite,
+                    typeof(Sprite), false);
+            }
+
             rect.xMin = rect.xMax;
             rect.xMax *= 2.0f;
 
             EditorGUI.BeginChangeCheck();
-            overrideSprite = EditorGUI.ObjectField(new Rect(rect.xMin, rect.yMin, rect.height, rect.height), overrideSprite, typeof(Sprite), false) as Sprite;
+            overrideSprite = EditorGUI.ObjectField(new Rect(rect.xMin, rect.yMin, rect.height, rect.height),
+                overrideSprite, typeof(Sprite), false) as Sprite;
             if (EditorGUI.EndChangeCheck())
                 m_Sprites[index] = new KeyValuePair<Sprite, Sprite>(originalSprite, overrideSprite);
         }
 
-        void DrawGameObjectElement(Rect rect, int index, bool selected, bool focused)
+        private void DrawGameObjectElement(Rect rect, int index, bool selected, bool focused)
         {
-            bool isMissing = index >= overrideTile.m_MissingSpriteIndex;
+            var isMissing = index >= overrideTile.m_MissingSpriteIndex;
             if (isMissing)
             {
-                EditorGUI.HelpBox(new Rect(rect.xMin, rect.yMin, rect.width, 16), "Original Game Object missing", MessageType.Warning);
+                EditorGUI.HelpBox(new Rect(rect.xMin, rect.yMin, rect.width, 16), "Original Game Object missing",
+                    MessageType.Warning);
                 rect.yMin += 16;
             }
 
-            GameObject originalGameObject = m_GameObjects[index].Key;
-            GameObject overrideGameObject = m_GameObjects[index].Value;
-            Rect fullRect = rect;
+            var originalGameObject = m_GameObjects[index].Key;
+            var overrideGameObject = m_GameObjects[index].Value;
+            var fullRect = rect;
 
             rect.y += 2;
             rect.height -= k_PaddingBetweenRules;
 
             rect.xMax = rect.xMax / 2.0f;
             using (new EditorGUI.DisabledScope(true))
-                EditorGUI.ObjectField(new Rect(rect.xMin, rect.yMin, rect.width, rect.height), originalGameObject, typeof(GameObject), false);
+            {
+                EditorGUI.ObjectField(new Rect(rect.xMin, rect.yMin, rect.width, rect.height), originalGameObject,
+                    typeof(GameObject), false);
+            }
+
             rect.xMin = rect.xMax;
             rect.xMax *= 2.0f;
 
             EditorGUI.BeginChangeCheck();
-            overrideGameObject = EditorGUI.ObjectField(new Rect(rect.xMin, rect.yMin, rect.width, rect.height), overrideGameObject, typeof(GameObject), false) as GameObject;
+            overrideGameObject = EditorGUI.ObjectField(new Rect(rect.xMin, rect.yMin, rect.width, rect.height),
+                overrideGameObject, typeof(GameObject), false) as GameObject;
             if (EditorGUI.EndChangeCheck())
                 m_GameObjects[index] = new KeyValuePair<GameObject, GameObject>(originalGameObject, overrideGameObject);
         }
@@ -205,7 +219,7 @@ namespace UnityEditor
         public void DrawTileField()
         {
             EditorGUI.BeginChangeCheck();
-            RuleTile tile = EditorGUILayout.ObjectField("Tile", overrideTile.m_Tile, typeof(RuleTile), false) as RuleTile;
+            var tile = EditorGUILayout.ObjectField("Tile", overrideTile.m_Tile, typeof(RuleTile), false) as RuleTile;
             if (EditorGUI.EndChangeCheck())
             {
                 if (!LoopCheck(tile))
@@ -224,7 +238,7 @@ namespace UnityEditor
                 if (!overrideTile.m_InstanceTile)
                     return false;
 
-                HashSet<RuleTile> renferenceTils = new HashSet<RuleTile>();
+                var renferenceTils = new HashSet<RuleTile>();
                 Add(overrideTile.m_InstanceTile);
 
                 return renferenceTils.Contains(checkTile);
@@ -256,33 +270,30 @@ namespace UnityEditor
 
         public void SaveInstanceTileAsset()
         {
-            bool assetChanged = false;
+            var assetChanged = false;
 
             if (overrideTile.m_InstanceTile)
-            {
                 if (!overrideTile.m_Tile || overrideTile.m_InstanceTile.GetType() != overrideTile.m_Tile.GetType())
                 {
                     DestroyImmediate(overrideTile.m_InstanceTile, true);
                     overrideTile.m_InstanceTile = null;
                     assetChanged = true;
                 }
-            }
+
             if (!overrideTile.m_InstanceTile)
-            {
                 if (overrideTile.m_Tile)
                 {
                     var t = overrideTile.m_Tile.GetType();
-                    RuleTile instanceTile = ScriptableObject.CreateInstance(t) as RuleTile;
+                    var instanceTile = CreateInstance(t) as RuleTile;
                     instanceTile.hideFlags = HideFlags.NotEditable;
                     AssetDatabase.AddObjectToAsset(instanceTile, overrideTile);
                     overrideTile.m_InstanceTile = instanceTile;
                     assetChanged = true;
                 }
-            }
 
             if (overrideTile.m_InstanceTile)
             {
-                string instanceTileName = overrideTile.m_Tile.name + " (Override)";
+                var instanceTileName = overrideTile.m_Tile.name + " (Override)";
                 if (overrideTile.m_InstanceTile.name != instanceTileName)
                 {
                     overrideTile.m_InstanceTile.name = instanceTileName;
@@ -300,7 +311,7 @@ namespace UnityEditor
             SceneView.RepaintAll();
 
             SaveInstanceTileAsset();
-        
+
             if (overrideTile.m_InstanceTile)
             {
                 overrideTile.Override();
@@ -308,10 +319,8 @@ namespace UnityEditor
             }
 
             if (ruleTileEditor && ruleTileEditor.m_PreviewTilemaps != null)
-            {
                 foreach (var tilemap in ruleTileEditor.m_PreviewTilemaps)
                     tilemap.RefreshAllTiles();
-            }
         }
 
         public override Texture2D RenderStaticPreview(string assetPath, Object[] subAssets, int width, int height)

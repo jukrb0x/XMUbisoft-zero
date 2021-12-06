@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : UnityEngine.Component
@@ -17,7 +15,7 @@ public class Singleton<T> : MonoBehaviour where T : UnityEngine.Component
                 instance = FindObjectOfType<T>();
                 if (instance == null)
                 {
-                    GameObject newGameObject = new GameObject();
+                    var newGameObject = new GameObject();
                     instance = newGameObject.AddComponent<T>();
                 }
             }
@@ -32,5 +30,3 @@ public class Singleton<T> : MonoBehaviour where T : UnityEngine.Component
         instance = this as T;
     }
 }
-
-
