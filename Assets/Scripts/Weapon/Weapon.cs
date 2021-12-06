@@ -17,6 +17,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] private bool useRecoil = true;
     [SerializeField] private int recoilForce = 30;
     
+    [Header("Effects")] 
+    [SerializeField] public ParticleSystem muzzlePS;
+    
     public Character WeaponOwner { get; set; }
 
 
@@ -96,8 +99,11 @@ public class Weapon : MonoBehaviour
         {
             Recoil();
         }
-         
-        WeaponAmmo.ConsumeAmmo();      
+        
+        muzzlePS.Play();
+        Debug.Log("True");
+        WeaponAmmo.ConsumeAmmo();   
+        
 	}
 
     private void Recoil()
