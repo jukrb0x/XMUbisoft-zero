@@ -47,6 +47,7 @@ public class MultipleShotWeapon : Weapon
 
         // 获取弹丸的参考
         Projectile projectile = projectilePooled.GetComponent<Projectile>();
+        projectile.EnableProjectile();
 
         // 发散
         randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
