@@ -48,6 +48,7 @@ public class ShotGunWeapon : Weapon
 
         // 获取弹丸的参考
         Projectile projectile = projectilePooled.GetComponent<Projectile>();
+        projectile.EnableProjectile();
         Quaternion rotation;
         // 发散
         if (projectileOneShot == 1)

@@ -19,6 +19,8 @@ public class Projectile : MonoBehaviour
 
     public Character ProjectileOwner { get; set; }
     
+    private bool canMove;
+    
     // Internal
     private Rigidbody2D myRigidbody2D;
     private Collider2D collider2D;
@@ -37,7 +39,11 @@ public class Projectile : MonoBehaviour
 
     private void FixedUpdate()
     {       
-        MoveProjectile();       
+        if (canMove)
+        {
+            MoveProjectile();
+        }
+     
     }
     
     // 移动弹丸
@@ -75,4 +81,19 @@ public class Projectile : MonoBehaviour
     {
         spriteRenderer.flipX = false;
     }
+    
+    public void DisableProjectile()
+    {
+        canMove = false;
+        spriteRenderer.enabled = false;  // If we don’t disable the spriteRenderer, the bullet will fall down before disappear
+        collider2D.enabled = false;
+    }
+
+    public void EnableProjectile()
+    {
+        canMove = true;
+        spriteRenderer.enabled = true;
+        collider2D.enabled = true;
+    }
+
 }
