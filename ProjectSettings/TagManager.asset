@@ -12,6 +12,7 @@ TagManager:
   - Debuff_Slow
   - Debuff_Poison
   - EnemyProjectile
+  - Deth_Spike
   layers:
   - Default
   - TransparentFX

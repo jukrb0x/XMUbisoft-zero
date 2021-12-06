@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2103518788932016262}
   - component: {fileID: 8691424804731100711}
   - component: {fileID: 5974896969643645667}
+  - component: {fileID: 6901667455321766462}
   m_Layer: 11
   m_Name: Enemy_Boss_1
   m_TagString: Enemy
@@ -58,7 +59,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterType: 1
   characterSprite: {fileID: 5488238101406515816}
-  characterAnimator: {fileID: 4032929744212206588}
+  characterAnimator: {fileID: 0}
+  health: {fileID: 0}
 --- !u!114 &318152358655701960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +182,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318152358655701973}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c6356bd50bc50946ae9986fec4850be, type: 3}
   m_Name: 
@@ -203,6 +205,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0.003588168, y: -0.36843306}
   m_Size: {x: 0.40800685, y: 1.0296848}
   m_Direction: 0
+--- !u!114 &6901667455321766462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318152358655701973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d336e4f5fee3241ba8a547eb728e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponToUse: {fileID: 1845851281785617037, guid: 1289153a84356ae408418ceeaff472c4, type: 3}
+  weaponHolderPosition: {fileID: 2795943738743031044}
 --- !u!1 &857167756460863643
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +447,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5699584914982770105}
-  - component: {fileID: 4032929744212206588}
   - component: {fileID: 6152039096992700586}
   - component: {fileID: 4481001358669805014}
   m_Layer: 31
@@ -455,25 +470,6 @@ Transform:
   m_Father: {fileID: 318152358655701975}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &4032929744212206588
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5488238101406515816}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &6152039096992700586
 SpriteRenderer:
   m_ObjectHideFlags: 0
