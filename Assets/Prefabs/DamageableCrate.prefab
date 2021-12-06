@@ -147,6 +147,6 @@ MonoBehaviour:
   rewards: []
   xRandomPosition: 2
   yRandomPosition: 2
-  initialHealth: 3
+  initialHealth: 10
   damagePoint: 0
   damagedSprite: {fileID: 0}
