@@ -29,6 +29,7 @@ public class PlayerDebuff : MonoBehaviour
             if (CanMuzzle)
             {
                 WaterWalkPS.Play();
+                
                 CanMuzzle = false;
                 NextTimeMuzzle = Time.time + TimeBtnMuzzle;
             }

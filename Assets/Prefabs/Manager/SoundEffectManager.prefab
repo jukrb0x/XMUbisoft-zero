@@ -86,3 +86,81 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - audioEnum: 7
+    clip: {fileID: 8300000, guid: 2eb63d79a9310a5429925372d06313ec, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - audioEnum: 8
+    clip: {fileID: 8300000, guid: 7355dfa52b32e6e43adf49d5f78895b6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - audioEnum: 9
+    clip: {fileID: 8300000, guid: be6a47d3dbcc9294699837aa3c40b348, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - audioEnum: 10
+    clip: {fileID: 8300000, guid: b54801772ac6a454bb66909b0c0a1646, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - audioEnum: 11
+    clip: {fileID: 8300000, guid: 30cb374262160bf44a507feb96a37ba2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - audioEnum: 12
+    clip: {fileID: 8300000, guid: 3e9328df6ddfa9844bba2df26b621b89, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - audioEnum: 13
+    clip: {fileID: 8300000, guid: 2a361f1c97432d64eaad5e1ddc9eb4a8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - audioEnum: 14
+    clip: {fileID: 8300000, guid: 352d044f47a683646b05d085be0f902a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - audioEnum: 15
+    clip: {fileID: 8300000, guid: 3b1846ef7f231bc4a9ecc37c957b4d2b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - audioEnum: 16
+    clip: {fileID: 8300000, guid: 9d298a671a3b10c4ca23f814f4979fc8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - audioEnum: 17
+    clip: {fileID: 8300000, guid: c772209ee83fd764ebecbc3e7234ead1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - audioEnum: 18
+    clip: {fileID: 8300000, guid: 302bc8b3436cc30428dafa4c51c313a4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - audioEnum: 19
+    clip: {fileID: 8300000, guid: 6e8990946f1bc1243a0c186e1b36d7e0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
