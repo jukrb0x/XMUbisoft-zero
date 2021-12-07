@@ -41,8 +41,8 @@ public class ReturnToPool : MonoBehaviour
             {
                 projectile.DisableProjectile();
             }
-
             impactPS.Play();
+            AudioManager.Instance.PlayOneShot(AudioEnum.ProjectileHitWall);
             Invoke(nameof(Return), impactPS.main.duration);
 
         }
@@ -74,4 +74,4 @@ public class ReturnToPool : MonoBehaviour
     {
         CancelInvoke();
     }
-} 
+}

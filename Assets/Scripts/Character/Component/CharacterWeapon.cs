@@ -19,6 +19,12 @@ public class CharacterWeapon : CharacterComponents
 
     private int mouseLeftBtn = 0;
     public Weapon SecondaryWeapon { get; set; }
+    public Weapon ThirdWeapon { get; set; }
+    public int beforeindex = -10;
+    public int index = 0;
+    public int weaponNum = 1;
+    public int modNum = 0;
+    //public Weapon SecondaryWeapon { get; set; }
 
 
     protected override void Start()
@@ -58,15 +64,46 @@ public class CharacterWeapon : CharacterComponents
             // }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && SecondaryWeapon != null)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            EquipWeapon(weaponToUse, weaponHolderPosition);
+            index += 1;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            index -= 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && SecondaryWeapon != null)
+        if (SecondaryWeapon != null && ThirdWeapon == null) weaponNum = 2;
+        if (SecondaryWeapon != null && ThirdWeapon != null) weaponNum = 3;
+        modNum = System.Math.Abs(index % weaponNum);
+
+        if (modNum == 0 && beforeindex != index && SecondaryWeapon != null)
+        {
+            EquipWeapon(weaponToUse, weaponHolderPosition);
+            beforeindex = index;
+        }
+
+        if (modNum == 1 && beforeindex != index && SecondaryWeapon != null)
         {
             EquipWeapon(SecondaryWeapon, weaponHolderPosition);
+            beforeindex = index;
         }
+
+        if (modNum == 2 && beforeindex != index && SecondaryWeapon != null && ThirdWeapon != null)
+        {
+            EquipWeapon(ThirdWeapon, weaponHolderPosition);
+            beforeindex = index;
+        }
+
+        // if (Input.GetKeyDown(KeyCode.Q) && SecondaryWeapon != null)
+        // {
+        //     EquipWeapon(weaponToUse, weaponHolderPosition);
+        // }
+        //
+        // if (Input.GetKeyDown(KeyCode.E) && SecondaryWeapon != null)
+        // {
+        //     EquipWeapon(SecondaryWeapon, weaponHolderPosition);
+        // }
     }
 
 
@@ -103,6 +140,7 @@ public class CharacterWeapon : CharacterComponents
     {
         if (CurrentWeapon != null)
         {
+            CurrentWeapon.WeaponAmmo.SaveAmmo();
             WeaponAim.DestroyReticle(); // Each weapon has its own Reticle component
             Destroy(GameObject.Find("Pool"));
             Destroy(CurrentWeapon.gameObject);

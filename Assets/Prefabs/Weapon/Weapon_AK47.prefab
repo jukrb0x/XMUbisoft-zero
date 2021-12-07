@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3079108168139517308}
   m_Layer: 0
   m_Name: Weapon_AK47
-  m_TagString: Weapon1
+  m_TagString: Weapon_AK47
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b491159421655414e96d5db893989143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: Weapon_AK47
   timeBtwShots: 0.3
   useMagazine: 1
   magazineSize: 30
