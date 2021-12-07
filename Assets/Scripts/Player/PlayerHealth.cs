@@ -19,6 +19,7 @@ public class PlayerHealth : BaseHealth
     private bool IsShieldBroken;
     private SpriteRenderer spriteRenderer;
     private CharacterWeapon weapon;
+    private ScreenFlash ScreenFlash;
     private GameObject weapons;
 
     protected override void Awake()
@@ -34,6 +35,7 @@ public class PlayerHealth : BaseHealth
         MaxHealthPoint = initialHealth;
         CurrentShield = initialShield;
         if (!gameOverLabel) gameOverLabel = GameObject.Find("GameOverLabel").GetComponent<TextMeshProUGUI>();
+        ScreenFlash = GetComponent<ScreenFlash>();
 
         base.Awake();
         UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
@@ -46,7 +48,8 @@ public class PlayerHealth : BaseHealth
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.L)) Damage(1);
+        // TODO: for testing usage
+        if (Input.GetKeyDown(KeyCode.L)) Damage(1);
     }
 
     private void UpdateUI()
@@ -57,10 +60,11 @@ public class PlayerHealth : BaseHealth
     // Take the amount of damage we pass in parameters
     public override void Damage(float damage)
     {
+        ScreenFlash.FlashScreen();
+
         if (!IsShieldBroken)
         {
             CurrentShield -= damage;
-            // UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
             UpdateUI();
 
             if (CurrentShield <= 0) IsShieldBroken = true;
@@ -69,7 +73,6 @@ public class PlayerHealth : BaseHealth
         }
 
         base.Damage(damage);
-        // UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
         UpdateUI();
         if (IsDead) Die();
     }
