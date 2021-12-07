@@ -156,7 +156,7 @@ public class CharacterWeapon : CharacterComponents
         {
             UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.CurrentMagazine);
             // TODO fix sprite update
-            // UIManager.Instance.UpdateWeaponSprite(CurrentWeapon.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
+            UIManager.Instance.UpdateWeaponSprite(CurrentWeapon.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
         }
     }
 }

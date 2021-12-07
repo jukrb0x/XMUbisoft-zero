@@ -31,13 +31,13 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenu.SetActive(true);
         }
-    }
+    }*/
 
     private void PlayAudio()
     {

@@ -10,5 +10,5 @@ public class Audio
 	public float volume = 1;
 	public float pitch;
 	public bool loop;
-	[HideInInspector] public AudioSource source;
+	 public AudioSource source;
 }
