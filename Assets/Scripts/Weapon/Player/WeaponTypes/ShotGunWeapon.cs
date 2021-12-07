@@ -73,6 +73,7 @@ public class ShotGunWeapon : Weapon
         {
             rotationGun = transform.position;
             rotation = Quaternion.Euler(rotationGun);
+            AudioManager.Instance.Play(AudioEnum.ShotGunShoot);
         }
 
         // randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);

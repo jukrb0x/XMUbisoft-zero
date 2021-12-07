@@ -62,6 +62,7 @@ public class MultipleShotWeapon : Weapon
         projectile.SetDirection(newDirection, transform.rotation,
             WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
 
+        AudioManager.Instance.Play(AudioEnum.SingleGunAndAK47Shoot);
         CanShoot = false;
         nextShotTime = Time.time + timeBtwShots;
     }

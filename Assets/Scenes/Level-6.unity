@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6757696897234132167, guid: 53080a321fbd2114bb3624c1cb9e43a6, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6757696897234132167, guid: 53080a321fbd2114bb3624c1cb9e43a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8986,7 +8986,7 @@ Transform:
   - {fileID: 1601856579}
   - {fileID: 139833434}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &906958197
 GameObject:
@@ -83785,7 +83785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2304224248690586218, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2304224248690586218, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -84095,8 +84095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee883389abc1bbb44a99f92bf85e532f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playableCharacter: {fileID: 1451466822}
-  spawnPosition: {fileID: 838220038}
+  audioEnum: 0
 --- !u!1 &1426897256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1803517387, guid: 8df03ee2bc4181c4987700c8f81e6d94, type: 3}
@@ -84423,17 +84422,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2552276365764917286, guid: e61857bcd388b40cb9d267401d1b57da, type: 3}
   m_PrefabInstance: {fileID: 1451466820}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1451466822 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2552276365764917304, guid: e61857bcd388b40cb9d267401d1b57da, type: 3}
-  m_PrefabInstance: {fileID: 1451466820}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3fc5346cdfa516478b16a09f0cbed14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1459550712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84704,7 +84692,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1646135827
 GameObject:
@@ -104753,7 +104741,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1941053803
 GameObject:

@@ -59,7 +59,7 @@ public class SingleShotWeapon : Weapon
         Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? spread * transform.right : spread * transform.right * -1;
         projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
 
-        AudioManager.Instance.Play(AudioEnum.ShotGunShoot);
+        AudioManager.Instance.Play(AudioEnum.SingleGunAndAK47Shoot);
         CanShoot = false;  
         nextShotTime = Time.time + timeBtwShots;
     }

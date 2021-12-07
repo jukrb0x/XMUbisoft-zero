@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2506645290724319967}
   m_Layer: 0
   m_Name: Weapon_ShotGun
-  m_TagString: Weapon1
+  m_TagString: Weapon_Shot
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

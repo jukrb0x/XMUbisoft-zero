@@ -24,5 +24,13 @@ public class WeaponAmmo : MonoBehaviour
     {
         // TODO: refill time
         if (weapon.UseMagazine) weapon.CurrentAmmo = weapon.MagazineSize;
+
+        if (weapon.CompareTag("Weapon_Shot"))
+        {
+            AudioManager.Instance.Play(AudioEnum.AK47AndShotGunReload);
+        }else if (weapon.CompareTag("Weapon_AK47"))
+        {
+            AudioManager.Instance.Play(AudioEnum.AK47AndShotGunReload);
+        }
     }
 }
