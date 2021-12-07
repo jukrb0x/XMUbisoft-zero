@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 0}
   time: 0.25
-  flashColor: {r: 1, g: 1, b: 1, a: 0}
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7722529107987351961
 GameObject:
   m_ObjectHideFlags: 0
