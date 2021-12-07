@@ -1,27 +1,36 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class ReturnToPool : MonoBehaviour
 {
-    [Header("Settings")] [SerializeField] private LayerMask WallMask;
-
+    [Header("Settings")] 
+    [SerializeField] private LayerMask WallMask;
     [SerializeField] private LayerMask EnemyMask;
     [SerializeField] private float lifeTime = 2f;
+    
+    [Header("Effects")]
+    [SerializeField] private ParticleSystem impactPS;
 
-    private Projectile projectile;
+
+    private Projectile projectile;    
 
     private void Start()
     {
         projectile = GetComponent<Projectile>();
     }
 
-    private void OnEnable()
+    // Returns this object to the pool
+    private void Return()
     {
-        Invoke(nameof(Return), lifeTime);
-    }
-
-    private void OnDisable()
-    {
-        CancelInvoke();
+        if (projectile != null)
+        {
+            projectile.ResetProjectile();
+        }  
+      
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -31,19 +40,41 @@ public class ReturnToPool : MonoBehaviour
             AudioManager.Instance.PlayOneShot(AudioEnum.ProjectileHitWall);
             Return();
         }
+            if (projectile != null)
+            {
+                projectile.DisableProjectile();
+            }
 
-        if (CheckLayer(other.gameObject.layer, EnemyMask)) Return();
+            impactPS.Play();
+            Invoke(nameof(Return), impactPS.main.duration);
+
+        }
+
+        if (CheckLayer(other.gameObject.layer, EnemyMask))
+        {
+            if (projectile != null)
+            {
+                projectile.DisableProjectile();
+            }
+
+            impactPS.Play();
+            Invoke(nameof(Return), impactPS.main.duration);
+
+        }
     }
 
-    // Returns this object to the pool
-    private void Return()
+    private bool CheckLayer(int layer,LayerMask objectMask)
     {
-        if (projectile != null) projectile.ResetProjectile();
-        gameObject.SetActive(false);
+        return ((1 << layer) & objectMask )!= 0;
+    }
+    
+    private void OnEnable()
+    {
+        Invoke(nameof(Return), lifeTime);       
     }
 
-    private bool CheckLayer(int layer, LayerMask objectMask)
+    private void OnDisable()
     {
-        return ((1 << layer) & objectMask) != 0;
+        CancelInvoke();
     }
-}
+} 
