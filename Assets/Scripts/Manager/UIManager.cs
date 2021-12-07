@@ -7,6 +7,7 @@ public class UIManager : Singleton<UIManager>
     private Image healthBar;
     private Image healthBarDelay;
     [SerializeField] private float amountDelayRate = 0.0005f;
+    [SerializeField] private float ShieldamountDelayRate;
     [Header("Weapon")]
     [SerializeField] private Image weaponImage;
 
@@ -64,7 +65,7 @@ public class UIManager : Singleton<UIManager>
         shieldBar.fillAmount = playerCurrentShield / playerMaxShield;
 
         if (shieldBarDelay.fillAmount > shieldBar.fillAmount)
-            shieldBarDelay.fillAmount -= amountDelayRate;
+            shieldBarDelay.fillAmount -= ShieldamountDelayRate;
         else
             shieldBarDelay.fillAmount = shieldBar.fillAmount;
     }
