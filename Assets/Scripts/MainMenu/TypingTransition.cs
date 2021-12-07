@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class slow : MonoBehaviour
+public class TypingTransition : MonoBehaviour
 {
     public float charsPerSecond = 0.05f;
     private int currentPos;
