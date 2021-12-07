@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3060619757528201853}
   - component: {fileID: 5488841125171288919}
   - component: {fileID: 5109706931613334786}
-  - component: {fileID: 393623077819593821}
+  - component: {fileID: 2543306170546459623}
   m_Layer: 12
   m_Name: EnemyProjectile
   m_TagString: EnemyProjectile
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754f07e351a9d5546a4e88c71abb6819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  speed: 90
   acceleration: 0
 --- !u!61 &5488841125171288919
 BoxCollider2D:
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &393623077819593821
+--- !u!114 &2543306170546459623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,16 +157,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8868557259714636479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94a642302c9a23e409dea4d9e1ea4f73, type: 3}
+  m_Script: {fileID: 11500000, guid: 9503c74cffbaeb74e8c27cac99023717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WallMask:
     serializedVersion: 2
     m_Bits: 2147483648
-  EnemyMask:
+  BossMask:
     serializedVersion: 2
-    m_Bits: 1024
-  lifeTime: 2
+    m_Bits: 17408
+  lifeTime: 5
   impactPS: {fileID: 7815667089507172073}
 --- !u!1001 &4802073024602593954
 PrefabInstance:
