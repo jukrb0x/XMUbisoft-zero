@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3060619757528201853}
   - component: {fileID: 5488841125171288919}
   - component: {fileID: 5109706931613334786}
-  - component: {fileID: 393623077819593821}
+  - component: {fileID: 2543306170546459623}
   m_Layer: 12
   m_Name: EnemyProjectile
   m_TagString: EnemyProjectile
@@ -32,7 +32,7 @@ Transform:
   m_LocalPosition: {x: 0.785, y: -0.105, z: 0}
   m_LocalScale: {x: 2.7757792, y: 2.416775, z: 1}
   m_Children:
-  - {fileID: 2203427177093155535}
+  - {fileID: 5522192927889945380}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754f07e351a9d5546a4e88c71abb6819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 90
   acceleration: 0
 --- !u!61 &5488841125171288919
 BoxCollider2D:
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &393623077819593821
+--- !u!114 &2543306170546459623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,18 +157,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8868557259714636479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94a642302c9a23e409dea4d9e1ea4f73, type: 3}
+  m_Script: {fileID: 11500000, guid: 9503c74cffbaeb74e8c27cac99023717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WallMask:
     serializedVersion: 2
     m_Bits: 2147483648
-  EnemyMask:
+  BossMask:
     serializedVersion: 2
-    m_Bits: 1024
-  lifeTime: 2
-  impactPS: {fileID: 4485642047584241410}
---- !u!1001 &1194161553418871625
+    m_Bits: 17408
+  lifeTime: 5
+  impactPS: {fileID: 7815667089507172073}
+--- !u!1001 &4802073024602593954
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -181,11 +181,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1010678565670332806, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1010678565670332806, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.032
+      value: -0.011
       objectReference: {fileID: 0}
     - target: {fileID: 1010678565670332806, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -221,17 +221,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9070621676748016016, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
       propertyPath: m_Name
-      value: Impact-PS
+      value: ProjectileEffect-PS
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
---- !u!4 &2203427177093155535 stripped
+--- !u!4 &5522192927889945380 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1010678565670332806, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
-  m_PrefabInstance: {fileID: 1194161553418871625}
+  m_PrefabInstance: {fileID: 4802073024602593954}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &4485642047584241410 stripped
+--- !u!198 &7815667089507172073 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3373952817770619979, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
-  m_PrefabInstance: {fileID: 1194161553418871625}
+  m_PrefabInstance: {fileID: 4802073024602593954}
   m_PrefabAsset: {fileID: 0}

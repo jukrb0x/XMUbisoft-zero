@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc2d62486d080894289ca8ebb01a6d59, type: 3}
-  m_Name: StateFollow
+  m_Name: MeleeStateFollow
   m_EditorClassIdentifier: 
   Actions:
   - {fileID: 11400000, guid: 98a689100b6504b478d589c7d3a86246, type: 2}

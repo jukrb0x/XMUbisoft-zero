@@ -9,6 +9,7 @@ public class ReturnToPool : MonoBehaviour
     [Header("Settings")] 
     [SerializeField] private LayerMask WallMask;
     [SerializeField] private LayerMask EnemyMask;
+    [SerializeField] private LayerMask BossMask;
     [SerializeField] private float lifeTime = 2f;
     
     [Header("Effects")]
@@ -56,7 +57,17 @@ public class ReturnToPool : MonoBehaviour
 
             impactPS.Play();
             Invoke(nameof(Return), impactPS.main.duration);
+        }
+        
+        if (CheckLayer(other.gameObject.layer, BossMask))
+        {
+            if (projectile != null)
+            {
+                projectile.DisableProjectile();
+            }
 
+            impactPS.Play();
+            Invoke(nameof(Return), impactPS.main.duration);
         }
     }
 

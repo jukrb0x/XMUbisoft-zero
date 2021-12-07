@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2139447344434486557}
   - component: {fileID: 8655865674398735292}
   - component: {fileID: 5938825230132076408}
+  - component: {fileID: 2999204257920042380}
   m_Layer: 11
   m_Name: Enemy_Ranged
   m_TagString: Enemy
@@ -59,6 +60,7 @@ MonoBehaviour:
   characterType: 1
   characterSprite: {fileID: 5524729607264471027}
   characterAnimator: {fileID: 3996437845767923303}
+  health: {fileID: 0}
 --- !u!114 &354560432224908883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21f4d670b3f8b34c9eb01be091cecc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: cafd4537acfce8547b3e724e388ba804, type: 2}
+  currentState: {fileID: 11400000, guid: 6e8f5e5e40db4c741a30d52387d8dead, type: 2}
   remainState: {fileID: 11400000, guid: 312a9daad13b5004494842ae2dbff301, type: 2}
 --- !u!114 &558493969944483918
 MonoBehaviour:
@@ -180,7 +182,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354560432224908878}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c6356bd50bc50946ae9986fec4850be, type: 3}
   m_Name: 
@@ -203,6 +205,20 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0049307332, y: 0.006399118}
   m_Size: {x: 0.22059074, y: 0.4276822}
   m_Direction: 0
+--- !u!114 &2999204257920042380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354560432224908878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d336e4f5fee3241ba8a547eb728e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponToUse: {fileID: 1845851281785617037, guid: 1289153a84356ae408418ceeaff472c4, type: 3}
+  weaponHolderPosition: {fileID: 2759821686374989983}
 --- !u!1 &820973170147734784
 GameObject:
   m_ObjectHideFlags: 0
