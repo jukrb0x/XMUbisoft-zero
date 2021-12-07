@@ -225,6 +225,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2493140660288932042, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2493140660288932042, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -551667957
+      objectReference: {fileID: 0}
     - target: {fileID: 9070621676748016016, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
       propertyPath: m_Name
       value: Impact-PS

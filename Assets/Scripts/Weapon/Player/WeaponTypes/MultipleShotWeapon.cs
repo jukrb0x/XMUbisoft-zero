@@ -13,7 +13,7 @@ public class MultipleShotWeapon : Weapon
     public Vector3 ProjectileSpawnPosition { get; set; }
 
     // 在此游戏对象中返回对池的引用
-    public ObjectPooler Pooler { get; set; }
+    public PlayerObjectPooler Pooler { get; set; }
 
     private Vector3 projectileSpawnValue;
     private Vector3 randomProjectileSpread;
@@ -23,7 +23,7 @@ public class MultipleShotWeapon : Weapon
         base.Awake();
         projectileSpawnValue = projectileSpawnPosition;
         projectileSpawnValue.y = -projectileSpawnPosition.y;
-        Pooler = GetComponent<ObjectPooler>();
+        Pooler = GetComponent<PlayerObjectPooler>();
     }
     
     public override void RequestShot()

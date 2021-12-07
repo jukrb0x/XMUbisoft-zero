@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1958263497633270681}
   - component: {fileID: 7072510230139113838}
   - component: {fileID: -2506645290724319967}
+  - component: {fileID: 2515810076009770610}
   m_Layer: 0
   m_Name: Weapon_ShotGun
   m_TagString: Weapon_Shot
@@ -76,7 +77,7 @@ MonoBehaviour:
   weaponName: Weapon_ShotGun
   timeBtwShots: 0.6
   useMagazine: 1
-  magazineSize: 30
+  magazineSizes: 30
   autoReload: 0
   useRecoil: 0
   recoilForce: 30
@@ -92,9 +93,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6231782941971154315}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f91b3ceab8c211f409cf74de9290f3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 7029911413628908680, guid: d8be2c1b737d27d44a802ffaa1bd744c, type: 3}
+  poolSize: 10
+  poolCanExpand: 1
+--- !u!114 &2515810076009770610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6231782941971154315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934a6b56874f3f745a5fc6285c55adc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 7029911413628908680, guid: d8be2c1b737d27d44a802ffaa1bd744c, type: 3}
