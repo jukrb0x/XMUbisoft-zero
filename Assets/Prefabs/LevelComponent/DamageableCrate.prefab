@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1650031541750665946}
   - component: {fileID: 1101524053056621588}
   - component: {fileID: -4022652194498732272}
+  - component: {fileID: 646747931308404739}
   m_Layer: 0
   m_Name: DamageableCrate
   m_TagString: Untagged
@@ -148,5 +149,17 @@ MonoBehaviour:
   xRandomPosition: 2
   yRandomPosition: 2
   initialHealth: 10
-  damagePoint: 0
-  damagedSprite: {fileID: 0}
+  damagePoint: 2
+  damagedSprite: {fileID: -3530757283899592571, guid: 8a9c0e74737afed4195ea3d066e0fdfd, type: 3}
+--- !u!114 &646747931308404739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835464515515946325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6427c1045a8f9d14b94b6e41591825b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
