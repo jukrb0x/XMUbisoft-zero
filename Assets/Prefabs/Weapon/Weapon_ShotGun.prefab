@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78787e61e9850644ae84f9a143e972b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: Weapon_ShotGun
   timeBtwShots: 0.6
   useMagazine: 1
   magazineSize: 30
