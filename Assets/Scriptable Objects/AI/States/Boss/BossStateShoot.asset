@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc2d62486d080894289ca8ebb01a6d59, type: 3}
-  m_Name: StateIdleToShoot
+  m_Name: BossStateShoot
   m_EditorClassIdentifier: 
   Actions:
-  - {fileID: 11400000, guid: 0fb64ddc6f303f74b9a2dc9cc0730e3e, type: 2}
+  - {fileID: 11400000, guid: 6dc4fcb04acb15d469809c14b43082bf, type: 2}
   Transitions:
-  - Decision: {fileID: 11400000, guid: 17c5095d19dbf174ba41f5fe57a3ad23, type: 2}
-    TrueState: {fileID: 11400000, guid: e3d4a57de5bec4c49befaa4cb697c62c, type: 2}
-    FalseState: {fileID: 11400000, guid: 312a9daad13b5004494842ae2dbff301, type: 2}
+  - Decision: {fileID: 11400000, guid: 5a46fe2fc4a494f43a79bc585dc62d34, type: 2}
+    TrueState: {fileID: 11400000, guid: 312a9daad13b5004494842ae2dbff301, type: 2}
+    FalseState: {fileID: 11400000, guid: a1dfe2cfac5cb704ab185eeb550f9647, type: 2}

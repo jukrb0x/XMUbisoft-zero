@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2d62486d080894289ca8ebb01a6d59, type: 3}
+  m_Name: Fly&DogStateIdle
+  m_EditorClassIdentifier: 
+  Actions:
+  - {fileID: 11400000, guid: 0fb64ddc6f303f74b9a2dc9cc0730e3e, type: 2}
+  Transitions:
+  - Decision: {fileID: 11400000, guid: 9ee6a23c1b5841049b7a7d020c5d68ea, type: 2}
+    TrueState: {fileID: 11400000, guid: 459c0f7583e5d19418044d608e6bda45, type: 2}
+    FalseState: {fileID: 11400000, guid: 312a9daad13b5004494842ae2dbff301, type: 2}

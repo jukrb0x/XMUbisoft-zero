@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21f4d670b3f8b34c9eb01be091cecc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: cafd4537acfce8547b3e724e388ba804, type: 2}
+  currentState: {fileID: 11400000, guid: 535b403f0d24c87499006ebca59e929d, type: 2}
   remainState: {fileID: 11400000, guid: 312a9daad13b5004494842ae2dbff301, type: 2}
 --- !u!114 &7570752019859570299
 MonoBehaviour:
@@ -241,6 +241,7 @@ MonoBehaviour:
   characterType: 1
   characterSprite: {fileID: 8395228384747888914}
   characterAnimator: {fileID: 2550813053283650532}
+  health: {fileID: 0}
 --- !u!114 &2831182576388062686
 MonoBehaviour:
   m_ObjectHideFlags: 0
