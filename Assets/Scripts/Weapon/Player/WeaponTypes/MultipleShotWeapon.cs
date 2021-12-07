@@ -54,10 +54,14 @@ public class MultipleShotWeapon : Weapon
         Quaternion spread = Quaternion.Euler(randomProjectileSpread);
 
         // 设置方向和旋转
-        Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? spread * transform.right : spread * transform.right * -1;
-        projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
-        
-        CanShoot = false;  
+        Vector2 newDirection = WeaponOwner.GetComponent<CharacterFlip>().FacingRight
+            ? spread * transform.right
+            : spread * transform.right * -1;
+        projectile.SetDirection(newDirection, transform.rotation,
+            WeaponOwner.GetComponent<CharacterFlip>().FacingRight);
+
+        AudioManager.Instance.Play(AudioEnum.SingleGunAndAK47Shoot);
+        CanShoot = false;
         nextShotTime = Time.time + timeBtwShots;
     }
 

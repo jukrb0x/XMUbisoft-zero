@@ -37,6 +37,9 @@ public class ReturnToPool : MonoBehaviour
     {
         if (CheckLayer(other.gameObject.layer, WallMask))
         {
+            AudioManager.Instance.PlayOneShot(AudioEnum.ProjectileHitWall);
+            Return();
+        }
             if (projectile != null)
             {
                 projectile.DisableProjectile();
