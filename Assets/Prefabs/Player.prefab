@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 8620743958629856062}
   - component: {fileID: -4298248202153215017}
   - component: {fileID: 8268312320078872249}
+  - component: {fileID: 2688415607252459665}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -61,6 +62,7 @@ MonoBehaviour:
   characterType: 0
   characterSprite: {fileID: 7722529107987351961}
   characterAnimator: {fileID: 1222186387760670733}
+  health: {fileID: 0}
 --- !u!114 &2552276365764917305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +180,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponToUse: {fileID: 7072510230139113838, guid: d032c00f0cbbd7342bf9b592fcedb0e1, type: 3}
   weaponHolderPosition: {fileID: 129755786265710325}
+  beforeindex: -10
+  index: 0
+  weaponNum: 1
+  modNum: 0
 --- !u!114 &-2951197592439426042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +243,21 @@ CapsuleCollider2D:
   m_Offset: {x: -0.000000050381466, y: -0.0029659567}
   m_Size: {x: 0.26272622, y: 0.5610435}
   m_Direction: 0
+--- !u!114 &2688415607252459665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552276365764917284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c018d3be8ad38da42ae1db1e9888a33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  img: {fileID: 0}
+  time: 0.25
+  flashColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &7722529107987351961
 GameObject:
   m_ObjectHideFlags: 0
