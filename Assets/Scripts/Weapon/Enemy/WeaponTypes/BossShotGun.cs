@@ -6,7 +6,7 @@ public class BossShotGun : Weapon
 {
         [SerializeField] private Vector3 projectileSpawnPosition;
         [SerializeField] private Vector3 projectileSpread;
-        [SerializeField] private int maxProjectileOneShot = 5;
+        [SerializeField] private int maxProjectileOneShot = 8;
     
         // 控制弹丸出生的位置
         public Vector3 ProjectileSpawnPosition { get; set; }
@@ -48,9 +48,15 @@ public class BossShotGun : Weapon
             Projectile projectile = projectilePooled.GetComponent<Projectile>();
             projectile.EnableProjectile();
             
-            Quaternion spread;
+            Quaternion spread = default;
             // 发散
-            if (projectileOneShot == 1)
+            if (projectileOneShot == 0)
+            {
+                randomProjectileSpread.z = 0;
+                spread = Quaternion.Euler(randomProjectileSpread);
+                
+            }
+            else if (projectileOneShot == 1)
             {
                 randomProjectileSpread.z = projectileSpread.z;
                 spread = Quaternion.Euler(randomProjectileSpread);
@@ -70,9 +76,54 @@ public class BossShotGun : Weapon
                 randomProjectileSpread.z = -projectileSpread.z - 10;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
-            else
+            else if (projectileOneShot == 5)
             {
-                randomProjectileSpread.z = 0;
+                randomProjectileSpread.z = projectileSpread.z + 25;
+                spread = Quaternion.Euler(randomProjectileSpread);
+            }
+            else if (projectileOneShot == 6)
+            {
+                randomProjectileSpread.z = -projectileSpread.z - 25;
+                spread = Quaternion.Euler(randomProjectileSpread);
+            }
+            else if(projectileOneShot == 7)
+            {
+                randomProjectileSpread.z = projectileSpread.z + 40;
+                spread = Quaternion.Euler(randomProjectileSpread);
+            }
+            else if(projectileOneShot == 8)
+            {
+                randomProjectileSpread.z = -projectileSpread.z - 40;
+                spread = Quaternion.Euler(randomProjectileSpread);
+            }
+            else if(projectileOneShot == 9)
+            {
+                randomProjectileSpread.z = projectileSpread.z + 50;
+                spread = Quaternion.Euler(randomProjectileSpread);
+            }
+            else if(projectileOneShot == 10)
+            {
+                randomProjectileSpread.z = -projectileSpread.z - 50;
+                spread = Quaternion.Euler(randomProjectileSpread);
+            }
+            else if(projectileOneShot == 11)
+            {
+                randomProjectileSpread.z = projectileSpread.z + 60;
+                spread = Quaternion.Euler(randomProjectileSpread);
+            }
+            else if(projectileOneShot == 12)
+            {
+                randomProjectileSpread.z = -projectileSpread.z - 60;
+                spread = Quaternion.Euler(randomProjectileSpread);
+            }
+            else if(projectileOneShot == 13)
+            {
+                randomProjectileSpread.z = projectileSpread.z + 75;
+                spread = Quaternion.Euler(randomProjectileSpread);
+            }
+            else if(projectileOneShot == 14)
+            {
+                randomProjectileSpread.z = -projectileSpread.z - 75;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
 
@@ -109,11 +160,11 @@ public class BossShotGun : Weapon
             }       
         }
     
-        private void OnDrawGizmosSelected()
-        {
-            EvaluateProjectileSpawnPosition();
-    
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(ProjectileSpawnPosition, 0.1f);
-        }
+        // private void OnDrawGizmosSelected()
+        // {
+        //     EvaluateProjectileSpawnPosition();
+        //
+        //     Gizmos.color = Color.green;
+        //     Gizmos.DrawWireSphere(ProjectileSpawnPosition, 0.1f);
+        // }
 }

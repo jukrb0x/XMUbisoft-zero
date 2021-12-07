@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: 
-  timeBtwShots: 0.5
+  timeBtwShots: 1.2
   useMagazine: 0
   magazineSize: 30
   autoReload: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   nextShotTime: 0
   projectileSpawnPosition: {x: 0, y: 0, z: 0}
   projectileSpread: {x: 0, y: 0, z: 10}
-  maxProjectileOneShot: 5
+  maxProjectileOneShot: 15
 --- !u!1 &2557620196466919887
 GameObject:
   m_ObjectHideFlags: 0

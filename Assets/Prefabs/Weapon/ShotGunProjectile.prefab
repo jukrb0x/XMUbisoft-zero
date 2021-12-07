@@ -166,6 +166,9 @@ MonoBehaviour:
   EnemyMask:
     serializedVersion: 2
     m_Bits: 2048
+  BossMask:
+    serializedVersion: 2
+    m_Bits: 16384
   lifeTime: 2
   impactPS: {fileID: 7562581252191496090}
 --- !u!1001 &5053355040111215569
