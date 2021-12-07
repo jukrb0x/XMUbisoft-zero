@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class SoundController : MonoBehaviour
 {
     public GameObject BGM;
-    public Slider sd;
+    public Slider slider;
     private AudioSource audioSource;
     void Awake()
     {
@@ -18,10 +19,10 @@ public class SoundController : MonoBehaviour
     {
         
     }
-    public void Con_sound()
+    public void SliderVolControl()
     {
 
-        asound.volume = sd.value;
+        audioSource.volume = slider.value;
         
 
     }
