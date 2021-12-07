@@ -27,7 +27,7 @@ public class Weapon : MonoBehaviour
 
     public Character WeaponOwner { get; set; }
 
-
+    public WeaponAim WeaponAim { get; set; }
     public WeaponAmmo WeaponAmmo { get; set; }
 
     public int CurrentAmmo { get; set; }
@@ -47,6 +47,11 @@ public class Weapon : MonoBehaviour
     {
         WeaponCanShoot();
         RotateWeapon();
+    }
+    
+    public virtual void UseWeapon()
+    {
+        StartShooting();
     }
 
     public void TriggerShot()

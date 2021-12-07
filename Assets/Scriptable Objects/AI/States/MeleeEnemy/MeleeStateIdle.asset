@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc2d62486d080894289ca8ebb01a6d59, type: 3}
-  m_Name: StateIdle
+  m_Name: MeleeStateIdle
   m_EditorClassIdentifier: 
   Actions:
   - {fileID: 11400000, guid: 0fb64ddc6f303f74b9a2dc9cc0730e3e, type: 2}
