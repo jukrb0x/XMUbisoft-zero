@@ -183,7 +183,7 @@ RectTransform:
   - {fileID: 4858901038189890232}
   - {fileID: 1186627686103874226}
   m_Father: {fileID: 2603376387683762191}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -371,7 +371,7 @@ RectTransform:
   - {fileID: 3170516067166514371}
   - {fileID: 1244973146542783616}
   m_Father: {fileID: 2603376387683762191}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -583,12 +583,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 7334089589318656947}
   - {fileID: 2603376388643763686}
   - {fileID: 2603376387792599041}
   - {fileID: 3183633290638663767}
   - {fileID: 59299670326822539}
   - {fileID: 4888120140122675569}
-  - {fileID: 7334089589318656947}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -703,7 +703,7 @@ RectTransform:
   m_Children:
   - {fileID: 2603376389464702693}
   m_Father: {fileID: 2603376387683762191}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -929,7 +929,7 @@ RectTransform:
   - {fileID: 2603376389489502298}
   - {fileID: 2603376388752395180}
   m_Father: {fileID: 2603376387683762191}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1758,7 +1758,7 @@ RectTransform:
   - {fileID: 2314208598784074410}
   - {fileID: 3711563625582786702}
   m_Father: {fileID: 2603376387683762191}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1815,7 +1815,7 @@ GameObject:
   - component: {fileID: 1977599373282163674}
   - component: {fileID: 2505457448027239574}
   m_Layer: 5
-  m_Name: ScreenFlash
+  m_Name: UnderAttackedRedScreenFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1833,7 +1833,7 @@ RectTransform:
   m_LocalScale: {x: 0.5921824, y: 0.5921824, z: 0.5921824}
   m_Children: []
   m_Father: {fileID: 2603376387683762191}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

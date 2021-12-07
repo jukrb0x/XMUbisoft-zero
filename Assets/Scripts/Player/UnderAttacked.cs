@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScreenFlash : MonoBehaviour
+public class UnderAttacked : MonoBehaviour
 {
-    public Image img;
-    public float time;
-    public Color flashColor;
-
-    private Color defaultColor;
+    private Image img;
+    [SerializeField] private float time;
+    [SerializeField] private Color flashColor;
+    private Color originalColor;
 
     // Start is called before the first frame update
     void Start()
     {
-        defaultColor = img.color;
+        img = GameObject.Find("UnderAttackedRedScreenFlash").GetComponent<Image>();
+        originalColor = img.color;
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void FlashScreen()
@@ -32,6 +31,6 @@ public class ScreenFlash : MonoBehaviour
     {
         img.color = flashColor;
         yield return new WaitForSeconds(time);
-        img.color = defaultColor;
+        img.color = originalColor;
     }
 }
