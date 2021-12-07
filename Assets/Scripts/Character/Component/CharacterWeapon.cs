@@ -116,7 +116,7 @@ public class CharacterWeapon : CharacterComponents
         if (character.CharacterType == Character.CharacterTypes.Player)
             // FIXME
             // TODO: weapon to UI canvas
-            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
+            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.CurrentMagazine);
     }
 
     // When we stop shooting we stop using our Weapon
@@ -133,14 +133,15 @@ public class CharacterWeapon : CharacterComponents
 
         CurrentWeapon.Reload();
         if (character.CharacterType == Character.CharacterTypes.Player)
-            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
+            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.CurrentMagazine);
     }
 
     public void EquipWeapon(Weapon weapon, Transform weaponPosition)
     {
         if (CurrentWeapon != null)
         {
-            CurrentWeapon.WeaponAmmo.SaveAmmo();
+            CurrentWeapon.WeaponAmmo.SaveCurrentAmmo();
+            CurrentWeapon.WeaponAmmo.SaveMaxAmmo();
             WeaponAim.DestroyReticle(); // Each weapon has its own Reticle component
             Destroy(GameObject.Find("Pool"));
             Destroy(CurrentWeapon.gameObject);
@@ -150,10 +151,10 @@ public class CharacterWeapon : CharacterComponents
         CurrentWeapon.transform.parent = weaponPosition;
         CurrentWeapon.SetOwner(character);
         WeaponAim = CurrentWeapon.GetComponent<WeaponAim>();
-
+        
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
-            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.MagazineSize);
+            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.CurrentMagazine);
             // TODO fix sprite update
             // UIManager.Instance.UpdateWeaponSprite(CurrentWeapon.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
         }

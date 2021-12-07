@@ -234,8 +234,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5080215719513708511, guid: 4178b93ef2a8246db8ed7fbd518f832f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4178b93ef2a8246db8ed7fbd518f832f, type: 3}
+--- !u!1 &678335420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5080215719513708511, guid: 4178b93ef2a8246db8ed7fbd518f832f, type: 3}
+  m_PrefabInstance: {fileID: 678335419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1372903360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314,6 +323,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6824237094817474755, guid: 0da128927280644428b111f741fcf34f, type: 3}
+      propertyPath: HUDDialogue
+      value: 
+      objectReference: {fileID: 678335420}
     - target: {fileID: 9141306958087411401, guid: 0da128927280644428b111f741fcf34f, type: 3}
       propertyPath: m_RootOrder
       value: 2
