@@ -6,7 +6,7 @@ using UnityEngine;
 public class Collectables : MonoBehaviour
 {
     [Header("Settings")] [SerializeField] private bool canDestroyItem = true;
-    [SerializeField] public ParticleSystem collectablePS; // TODO
+    [SerializeField] public ParticleSystem collectablePS; // BUG
 
     protected Character character;
     protected GameObject objectCollided;
@@ -32,7 +32,7 @@ public class Collectables : MonoBehaviour
                 return;
             }
 
-            if(collectablePS != null) PlayEffects();
+            if (collectablePS != null) PlayEffects();
             Collect();
 
             if (canDestroyItem)

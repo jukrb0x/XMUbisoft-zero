@@ -131,8 +131,6 @@ public class CharacterWeapon : CharacterComponents
         CurrentWeapon.TriggerShot();
 
         if (character.CharacterType == Character.CharacterTypes.Player)
-            // FIXME
-            // TODO: weapon to UI canvas
         {
             if (CurrentWeapon.CompareTag("Weapon_Initial"))
             {
@@ -198,7 +196,6 @@ public class CharacterWeapon : CharacterComponents
             {
                 UIManager.Instance.SetUIWeaponAmmo(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
             }
-            // TODO fix sprite update
             UIManager.Instance.SetUIWeaponSprite(CurrentWeapon.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
         }
     }
