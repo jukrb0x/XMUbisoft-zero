@@ -8,6 +8,7 @@ public class AddHealthPotion : Collectables
     protected override void Collect()
     {
         base.Collect();
+        AudioManager.Instance.Play(AudioEnum.UsePotion);
         character.health.AddHealth(HealingPotionPoint);
     }
 }
