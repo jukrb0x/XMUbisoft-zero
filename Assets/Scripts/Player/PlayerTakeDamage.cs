@@ -9,13 +9,12 @@ public class PlayerTakeDamage : MonoBehaviour
 
     private bool PlayerCanTakeDamage = true;
     private Renderer myRender;
-  
-    
+
+
 
     private void Awake()
     {
         _playerHealth = GetComponent<PlayerHealth>();
-      
 
     }
  
@@ -30,6 +29,7 @@ public class PlayerTakeDamage : MonoBehaviour
     
         if ((other.collider.CompareTag("Enemy") || other.collider.CompareTag("EnemyProjectile")) && PlayerCanTakeDamage)
         {
+    
             _playerHealth.Damage(1);
             PlayerCanTakeDamage = false;
             nextDamageTime = Time.time + timeBtwDamage;
