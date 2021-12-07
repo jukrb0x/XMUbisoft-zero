@@ -20,7 +20,7 @@ public class ActionShoot : AIAction
         // Shoot
         if (controller.CharacterWeapon.CurrentWeapon != null)
         {
-            // controller.CharacterWeapon.CurrentWeapon.WeaponAim.SetAim(aimDirection);
+            controller.CharacterWeapon.CurrentWeapon.WeaponAim.SetAim(aimDirection);
             controller.CharacterWeapon.CurrentWeapon.UseWeapon();
         }
     }
