@@ -1,6 +1,10 @@
 ﻿public enum AudioEnum
 {
 	NoAudio,
+	SingleGunAndAK47Shoot,
 	ShotGunShoot,
-	GlassBroken
+	SingeGunReload,
+	AK47AndShotGunReload,
+	GlassBroken,
+	ProjectileHitWall
 }

@@ -73,6 +73,7 @@ public class ShotGunWeapon : Weapon
         {
             randomProjectileSpread.z = 0;
             spread = Quaternion.Euler(randomProjectileSpread);
+            AudioManager.Instance.Play(AudioEnum.ShotGunShoot);
         }
 
         // randomProjectileSpread.z = Random.Range(-projectileSpread.z, projectileSpread.z);
