@@ -60,6 +60,7 @@ public class PlayerHealth : BaseHealth
     // Take the amount of damage we pass in parameters
     public override void Damage(float damage)
     {
+        AudioManager.Instance.PlayOneShot(AudioEnum.PlayerTakeDamage);
         _underAttacked.FlashScreen();
 
         if (!IsShieldBroken)
@@ -72,6 +73,7 @@ public class PlayerHealth : BaseHealth
             return;
         }
 
+        
         base.Damage(damage);
         UpdateUI();
         if (IsDead) Die();
@@ -111,6 +113,7 @@ public class PlayerHealth : BaseHealth
     {
         if (character != null)
         {
+            AudioManager.Instance.Play(AudioEnum.Failed);
             collider2D.enabled = false;
             spriteRenderer.enabled = false;
 
