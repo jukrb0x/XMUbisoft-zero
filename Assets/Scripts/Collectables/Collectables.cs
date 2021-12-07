@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class Collectables : MonoBehaviour
 {
-    [Header("Settings")]
-    [SerializeField] private bool canDestroyItem = true;
-    [SerializeField] public ParticleSystem collectablePS;
+    [Header("Settings")] [SerializeField] private bool canDestroyItem = true;
+    [SerializeField] public ParticleSystem collectablePS; // TODO
 
     protected Character character;
     protected GameObject objectCollided;
@@ -19,6 +18,7 @@ public class Collectables : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider2D = GetComponent<Collider2D>();
+        // collectablePS = GetComponentInChildren<ParticleSystem>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -26,14 +26,15 @@ public class Collectables : MonoBehaviour
         objectCollided = other.gameObject;
         if (IsCollectable())
         {
-            if (other.gameObject.GetComponent<CharacterWeapon>().CurrentWeapon.CompareTag("Weapon_Initial") && other.gameObject.GetComponent<CharacterWeapon>().SecondaryWeapon!=null)
+            if (other.gameObject.GetComponent<CharacterWeapon>().CurrentWeapon.CompareTag("Weapon_Initial") &&
+                other.gameObject.GetComponent<CharacterWeapon>().SecondaryWeapon != null)
             {
                 return;
             }
-            
-            PlayEffects();
+
+            if(collectablePS != null) PlayEffects();
             Collect();
-            
+
             if (canDestroyItem)
             {
                 Destroy(gameObject);
@@ -59,7 +60,6 @@ public class Collectables : MonoBehaviour
 
     protected virtual void Collect()
     {
-        
     }
 
     public void PlayEffects()
@@ -67,4 +67,3 @@ public class Collectables : MonoBehaviour
         collectablePS.Play();
     }
 }
-
