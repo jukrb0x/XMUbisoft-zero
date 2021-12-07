@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     private AudioSource _audioSource;
     private GameObject pauseMenu;
     private bool isPaused;
+    private readonly string WEAPON_AMMO_SAVELOAD = "Weapon_";
+    private readonly string WEAPON_AMMO_MAX_SAVELOAD = "WeaponAmmoMax_";
 
     private void Start()
     {
@@ -18,7 +20,11 @@ public class LevelManager : MonoBehaviour
         isPaused = false;
         pauseMenu = GameObject.Find("PauseMenu");
         pauseMenu.SetActive(false);
-        
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt(WEAPON_AMMO_SAVELOAD + "Weapon_AK47", 30);
+        PlayerPrefs.SetInt(WEAPON_AMMO_SAVELOAD + "Weapon_ShotGun", 30);
+        PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + "Weapon_AK47", 180);
+        PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + "Weapon_ShotGun", 180);
     }
 
     private void Update()
@@ -35,6 +41,8 @@ public class LevelManager : MonoBehaviour
         _audioSource = AudioManager.Instance.Play(audioEnum);
         
     }
+    
+    
 
     // TODO: remove revive
     // TODO： useless code
