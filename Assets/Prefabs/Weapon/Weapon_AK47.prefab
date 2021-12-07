@@ -57,7 +57,7 @@ MonoBehaviour:
   recoilForce: 30
   muzzlePS: {fileID: 1566028475716915374}
   nextShotTime: 0
-  projectileSpawnPosition: {x: 1.5, y: 0.15, z: 0}
+  projectileSpawnPosition: {x: 1.1, y: 0.15, z: 0}
   projectileSpread: {x: 0, y: 0, z: 3}
 --- !u!114 &4290995920744042129
 MonoBehaviour:
@@ -124,8 +124,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7257195599113280472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.169, y: 0.003, z: 0.43831217}
-  m_LocalScale: {x: 0.46122003, y: 0.52224004, z: 1}
+  m_LocalPosition: {x: 0.096, y: 0.001, z: 0.43831217}
+  m_LocalScale: {x: 0.3725274, y: 0.48975408, z: 1}
   m_Children: []
   m_Father: {fileID: 2698020276737655243}
   m_RootOrder: 0
@@ -169,7 +169,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -388488429
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2439bafff8203e94faf8a97023527228, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -198,11 +198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6148743809328270324, guid: dd841def7c05da645b43337aa66b323f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.417
+      value: 0.313
       objectReference: {fileID: 0}
     - target: {fileID: 6148743809328270324, guid: dd841def7c05da645b43337aa66b323f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 6148743809328270324, guid: dd841def7c05da645b43337aa66b323f, type: 3}
       propertyPath: m_LocalPosition.z

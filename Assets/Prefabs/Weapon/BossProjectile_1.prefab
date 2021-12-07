@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7636159028141344342}
   - component: {fileID: 1129507085166356348}
   - component: {fileID: 390058589519773993}
-  - component: {fileID: 5113548493622233206}
+  - component: {fileID: 3439085045064582099}
   m_Layer: 12
   m_Name: BossProjectile_1
   m_TagString: EnemyProjectile
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4076855588469069460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.785, y: -0.105, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 5991947549998938068}
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: 944e26cc057abad44a047a8ba2be1397, type: 3}
+  m_Sprite: {fileID: 8123690483314685083, guid: a346b8e29a69dc4499009a3af16f05f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754f07e351a9d5546a4e88c71abb6819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  speed: 80
   acceleration: 0
 --- !u!61 &1129507085166356348
 BoxCollider2D:
@@ -118,7 +118,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.38, y: 0.55}
+    oldSize: {x: 0.26, y: 0.25}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5113548493622233206
+--- !u!114 &3439085045064582099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,16 +157,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4076855588469069460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94a642302c9a23e409dea4d9e1ea4f73, type: 3}
+  m_Script: {fileID: 11500000, guid: 3dd999db76d7e9c4f8cb1a3654a97754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WallMask:
-    serializedVersion: 2
-    m_Bits: 2147483648
   EnemyMask:
     serializedVersion: 2
-    m_Bits: 1024
-  lifeTime: 2
+    m_Bits: 35840
+  lifeTime: 4
   impactPS: {fileID: 8355226749917837849}
 --- !u!1001 &6710656190668660306
 PrefabInstance:
@@ -181,11 +178,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1010678565670332806, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.087
+      value: 0.004
       objectReference: {fileID: 0}
     - target: {fileID: 1010678565670332806, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.001
+      value: -0.018
       objectReference: {fileID: 0}
     - target: {fileID: 1010678565670332806, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
       propertyPath: m_LocalPosition.z
