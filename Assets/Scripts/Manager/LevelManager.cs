@@ -6,17 +6,19 @@ public class LevelManager : MonoBehaviour
     // [SerializeField] private Character playableCharacter;
     // [SerializeField] private Transform spawnPosition;
     public AudioEnum audioEnum;
+    public float delayTime = 0.5f;
     private AudioSource _audioSource;
     private GameObject pauseMenu;
     private bool isPaused;
 
     private void Start()
     {
-        // Invoke("Audios", 2);
-        Audios();
+        Invoke("Audios", delayTime);
+
         isPaused = false;
         pauseMenu = GameObject.Find("PauseMenu");
         pauseMenu.SetActive(false);
+        
     }
 
     private void Update()
@@ -25,6 +27,7 @@ public class LevelManager : MonoBehaviour
         {
             pauseMenu.SetActive(true);
         }
+        
     }
 
     private void Audios()
