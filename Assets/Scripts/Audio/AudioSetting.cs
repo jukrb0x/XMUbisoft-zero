@@ -15,6 +15,7 @@ public class AudioSetting : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
     
+    
     private void Update()
     {
         SetVolume(volumes);
@@ -25,9 +26,14 @@ public class AudioSetting : MonoBehaviour
         }
     }
     
-    private void SetVolume(float volume)
+    public void SetVolume(float volume)
     {
         _audioSource.volume = volume;
+    }
+
+    public float GetVolume()
+    {
+        return _audioSource.volume;
     }
 
     private void PlayClip(AudioClip audioClip)
