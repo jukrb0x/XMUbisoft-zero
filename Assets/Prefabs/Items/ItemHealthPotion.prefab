@@ -177,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1027189696456113171, guid: 82e28e9f85f959b4a90c4b7efbd62bd2, type: 3}
       propertyPath: m_SortingLayer
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1027189696456113171, guid: 82e28e9f85f959b4a90c4b7efbd62bd2, type: 3}
       propertyPath: m_SortingOrder
@@ -185,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1027189696456113171, guid: 82e28e9f85f959b4a90c4b7efbd62bd2, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1746900937
+      value: -551667957
       objectReference: {fileID: 0}
     - target: {fileID: 1027189696456113171, guid: 82e28e9f85f959b4a90c4b7efbd62bd2, type: 3}
       propertyPath: m_UseCustomVertexStreams
