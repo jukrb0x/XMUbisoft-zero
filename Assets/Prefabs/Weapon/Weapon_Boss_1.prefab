@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8954401774797790342}
   - component: {fileID: 4586828569403974914}
   - component: {fileID: 4639852687391452674}
-  - component: {fileID: 1698948266511814080}
+  - component: {fileID: 381194761780515225}
   m_Layer: 0
   m_Name: Weapon_Boss_1
   m_TagString: Weapon1
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f07e754dd0cad540a12579f881fb4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1698948266511814080
+--- !u!114 &381194761780515225
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,10 +84,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1492637278553014348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f670c681bb2421144ad10aa93e2f7b36, type: 3}
+  m_Script: {fileID: 11500000, guid: d328669f7e7ad8d479c5d3857f427e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBtwShots: 1
+  weaponName: 
+  timeBtwShots: 0.5
   useMagazine: 0
   magazineSize: 30
   autoReload: 0
@@ -95,9 +96,9 @@ MonoBehaviour:
   recoilForce: 30
   muzzlePS: {fileID: 0}
   nextShotTime: 0
-  projectileSpawnPosition: {x: 0.4, y: 0.5, z: 0}
+  projectileSpawnPosition: {x: 0, y: 0, z: 0}
   projectileSpread: {x: 0, y: 0, z: 10}
-  maxProjectileOneShot: 3
+  maxProjectileOneShot: 5
 --- !u!1 &2557620196466919887
 GameObject:
   m_ObjectHideFlags: 0

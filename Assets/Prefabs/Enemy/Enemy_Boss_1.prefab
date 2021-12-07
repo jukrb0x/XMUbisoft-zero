@@ -217,8 +217,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d336e4f5fee3241ba8a547eb728e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponToUse: {fileID: 1698948266511814080, guid: 05c0ee904710ea7438e01093a6b1cb73, type: 3}
+  weaponToUse: {fileID: 381194761780515225, guid: 05c0ee904710ea7438e01093a6b1cb73, type: 3}
   weaponHolderPosition: {fileID: 2795943738743031044}
+  beforeindex: -10
+  index: 0
+  weaponNum: 1
+  modNum: 0
 --- !u!1 &857167756460863643
 GameObject:
   m_ObjectHideFlags: 0
