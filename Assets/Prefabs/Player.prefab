@@ -42,6 +42,7 @@ Transform:
   m_Children:
   - {fileID: 7501082176018177608}
   - {fileID: 129755786265710325}
+  - {fileID: 2246427007508120263}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d336e4f5fee3241ba8a547eb728e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponToUse: {fileID: 4919920270245964967, guid: 6827e30c70cc0ff46a97158384df403b, type: 3}
+  weaponToUse: {fileID: 7072510230139113838, guid: d032c00f0cbbd7342bf9b592fcedb0e1, type: 3}
   weaponHolderPosition: {fileID: 129755786265710325}
 --- !u!114 &-2951197592439426042
 MonoBehaviour:
@@ -203,6 +204,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SlowSpeed: 2
+  WaterWalkPS: {fileID: 4609715198941024010}
+  TimeBtnMuzzle: 1
 --- !u!114 &-4298248202153215017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,3 +396,86 @@ Transform:
   m_Father: {fileID: 2552276365764917286}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &351416808547800783
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2552276365764917286}
+    m_Modifications:
+    - target: {fileID: 2003137354944631816, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003137354944631816, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003137354944631816, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003137354944631816, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003137354944631816, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003137354944631816, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003137354944631816, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003137354944631816, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003137354944631816, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003137354944631816, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003137354944631816, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986633706720802116, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986633706720802116, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258298812676610501, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: lengthInSec
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258298812676610501, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506205732147950622, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+      propertyPath: m_Name
+      value: WaterWalk-PS
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+--- !u!4 &2246427007508120263 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2003137354944631816, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+  m_PrefabInstance: {fileID: 351416808547800783}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4609715198941024010 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4258298812676610501, guid: e8f674ca6f926b14194a5f29e382cd37, type: 3}
+  m_PrefabInstance: {fileID: 351416808547800783}
+  m_PrefabAsset: {fileID: 0}

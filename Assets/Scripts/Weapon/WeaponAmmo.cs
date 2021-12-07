@@ -3,11 +3,13 @@ using UnityEngine;
 public class WeaponAmmo : MonoBehaviour
 {
     private Weapon weapon;
+    private readonly string WEAPON_AMMO_SAVELOAD = "Weapon_";
 
     private void Start()
     {
         weapon = GetComponent<Weapon>();
-        RefillAmmo();
+       // RefillAmmo();
+        LoadWeaponMagazineSize();
     }
 
     public void ConsumeAmmo()
@@ -33,4 +35,21 @@ public class WeaponAmmo : MonoBehaviour
             AudioManager.Instance.Play(AudioEnum.AK47AndShotGunReload);
         }
     }
+    public void LoadWeaponMagazineSize()
+    {
+        int savedAmmo = LoadAmmo();
+        weapon.CurrentAmmo = savedAmmo < weapon.MagazineSize ? LoadAmmo() : weapon.MagazineSize;
+    }
+
+    public void SaveAmmo()
+    {
+        PlayerPrefs.SetInt(WEAPON_AMMO_SAVELOAD + weapon.WeaponName, weapon.CurrentAmmo);
+    }
+
+    public int LoadAmmo()
+    {
+        return PlayerPrefs.GetInt(WEAPON_AMMO_SAVELOAD + weapon.WeaponName, weapon.MagazineSize);
+    }
+
+
 }
