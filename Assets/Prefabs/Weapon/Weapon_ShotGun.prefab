@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2506645290724319967}
   m_Layer: 0
   m_Name: Weapon_ShotGun
-  m_TagString: Weapon1
+  m_TagString: Weapon_Shot
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78787e61e9850644ae84f9a143e972b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: Weapon_ShotGun
   timeBtwShots: 0.6
   useMagazine: 1
   magazineSize: 30

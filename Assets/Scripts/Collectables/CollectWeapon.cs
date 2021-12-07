@@ -15,9 +15,22 @@ public class CollectWeapon : Collectables
     {
         if (character != null)
         {
-            character.GetComponent<CharacterWeapon>().SecondaryWeapon = itemWeaponData.WeaponToEquip;
+            Weapon secondWeapon = character.GetComponent<CharacterWeapon>().SecondaryWeapon;
+            Weapon thirdWeapon = character.GetComponent<CharacterWeapon>().ThirdWeapon;
+            
+            
+            
+            if (secondWeapon == null)
+            {
+                character.GetComponent<CharacterWeapon>().SecondaryWeapon = itemWeaponData.WeaponToEquip;
+            }
+            else if(thirdWeapon == null)
+            {
+                character.GetComponent<CharacterWeapon>().ThirdWeapon = itemWeaponData.WeaponToEquip;
+            }
+
         }
 
     }
-   
+
 }

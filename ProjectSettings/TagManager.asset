@@ -13,6 +13,9 @@ TagManager:
   - Debuff_Poison
   - EnemyProjectile
   - Deth_Spike
+  - Weapon_AK47
+  - Weapon_Initial
+  - Weapon_Shot
   layers:
   - Default
   - TransparentFX
