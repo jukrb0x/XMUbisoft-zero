@@ -48,7 +48,8 @@ public class PlayerHealth : BaseHealth
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.L)) Damage(1);
+        // TODO: for testing usage
+        if (Input.GetKeyDown(KeyCode.L)) Damage(1);
     }
 
     private void UpdateUI()
@@ -64,7 +65,6 @@ public class PlayerHealth : BaseHealth
         if (!IsShieldBroken)
         {
             CurrentShield -= damage;
-            // UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
             UpdateUI();
 
             if (CurrentShield <= 0) IsShieldBroken = true;
@@ -73,7 +73,6 @@ public class PlayerHealth : BaseHealth
         }
 
         base.Damage(damage);
-        // UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
         UpdateUI();
         if (IsDead) Die();
     }

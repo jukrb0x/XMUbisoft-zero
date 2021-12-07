@@ -54,7 +54,6 @@ public class BossShotGun : Weapon
             {
                 randomProjectileSpread.z = 0;
                 spread = Quaternion.Euler(randomProjectileSpread);
-                
             }
             else if (projectileOneShot == 1)
             {
@@ -68,12 +67,12 @@ public class BossShotGun : Weapon
             }
             else if (projectileOneShot == 3)
             {
-                randomProjectileSpread.z = projectileSpread.z + 120;
+                randomProjectileSpread.z = projectileSpread.z + 12;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
             else if (projectileOneShot == 4)
             {
-                randomProjectileSpread.z = -projectileSpread.z - 120;
+                randomProjectileSpread.z = -projectileSpread.z - 12;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
             else if (projectileOneShot == 5)
@@ -88,42 +87,42 @@ public class BossShotGun : Weapon
             }
             else if(projectileOneShot == 7)
             {
-                randomProjectileSpread.z = projectileSpread.z + 40;
+                randomProjectileSpread.z = projectileSpread.z + 35;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
             else if(projectileOneShot == 8)
             {
-                randomProjectileSpread.z = -projectileSpread.z - 40;
+                randomProjectileSpread.z = -projectileSpread.z - 35;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
             else if(projectileOneShot == 9)
             {
-                randomProjectileSpread.z = projectileSpread.z + 50;
+                randomProjectileSpread.z = projectileSpread.z + 45;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
             else if(projectileOneShot == 10)
             {
-                randomProjectileSpread.z = -projectileSpread.z - 50;
+                randomProjectileSpread.z = -projectileSpread.z - 45;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
             else if(projectileOneShot == 11)
             {
-                randomProjectileSpread.z = projectileSpread.z + 60;
+                randomProjectileSpread.z = projectileSpread.z + 55;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
             else if(projectileOneShot == 12)
             {
-                randomProjectileSpread.z = -projectileSpread.z - 60;
+                randomProjectileSpread.z = -projectileSpread.z - 55;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
             else if(projectileOneShot == 13)
             {
-                randomProjectileSpread.z = projectileSpread.z + 75;
+                randomProjectileSpread.z = projectileSpread.z + 70;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
             else if(projectileOneShot == 14)
             {
-                randomProjectileSpread.z = -projectileSpread.z - 75;
+                randomProjectileSpread.z = -projectileSpread.z - 70;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
 
