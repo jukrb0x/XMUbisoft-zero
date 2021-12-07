@@ -120,6 +120,7 @@ public class PlayerHealth : BaseHealth
             weapon.enabled = false;
             Cursor.visible = true;
             weapons.SetActive(false);
+            PlayerPrefs.DeleteAll();
         }
 
         if (destroyObject) DestroyObject();
