@@ -59,6 +59,7 @@ MonoBehaviour:
   characterType: 1
   characterSprite: {fileID: 5524729607264471027}
   characterAnimator: {fileID: 3996437845767923303}
+  health: {fileID: 0}
 --- !u!114 &354560432224908883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21f4d670b3f8b34c9eb01be091cecc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: cafd4537acfce8547b3e724e388ba804, type: 2}
+  currentState: {fileID: 11400000, guid: 6e8f5e5e40db4c741a30d52387d8dead, type: 2}
   remainState: {fileID: 11400000, guid: 312a9daad13b5004494842ae2dbff301, type: 2}
 --- !u!114 &558493969944483918
 MonoBehaviour:

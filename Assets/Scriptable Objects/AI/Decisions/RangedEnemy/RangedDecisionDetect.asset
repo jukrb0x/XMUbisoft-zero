@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66229456c948628418bb43045ba0f084, type: 3}
-  m_Name: DecisionDetectShoot
+  m_Name: RangedDecisionDetect
   m_EditorClassIdentifier: 
-  detectArea: 10
+  detectArea: 8
   targetMask:
     serializedVersion: 2
     m_Bits: 1024
