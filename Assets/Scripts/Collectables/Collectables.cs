@@ -7,6 +7,7 @@ public class Collectables : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private bool canDestroyItem = true;
+    [SerializeField] public ParticleSystem collectablePS;
 
     protected Character character;
     protected GameObject objectCollided;
@@ -31,7 +32,9 @@ public class Collectables : MonoBehaviour
             }
             Collect();
             PlayEffects();
-
+            Collect();
+            
+            
             if (canDestroyItem)
             {
                 Destroy(gameObject);
@@ -57,10 +60,12 @@ public class Collectables : MonoBehaviour
 
     protected virtual void Collect()
     {
+        
     }
 
-    protected virtual void PlayEffects()
+    public void PlayEffects()
     {
+        collectablePS.Play();
     }
 }
 
