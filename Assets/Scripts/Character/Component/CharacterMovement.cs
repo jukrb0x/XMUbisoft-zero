@@ -26,6 +26,7 @@ public class CharacterMovement : CharacterComponents
     // Moves our character by our current speed
     private void MoveCharacter()
     {
+        if (!canMove) return;
         var movement = new Vector2(horizontalInput, verticalInput);
         var moveInput = movement;
         var movementNormalized = moveInput.normalized;

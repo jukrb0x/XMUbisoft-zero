@@ -6,8 +6,10 @@ using UnityEngine;
 public class CharacterWeapon : CharacterComponents
 {
     public static Action OnStartShooting;
-    [Header("Weapon Settings")] 
-    [SerializeField] private Weapon weaponToUse;
+
+    [Header("Weapon Settings")] [SerializeField]
+    private Weapon weaponToUse;
+
     [SerializeField] private Transform weaponHolderPosition;
 
 
@@ -23,6 +25,7 @@ public class CharacterWeapon : CharacterComponents
     public int beforeindex = -10;
     public int index = 0;
     public int weaponNum = 1;
+
     public int modNum = 0;
     //public Weapon SecondaryWeapon { get; set; }
 
@@ -38,12 +41,12 @@ public class CharacterWeapon : CharacterComponents
     {
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0)) // Fire 1
             {
                 BeforeShoot();
             }
 
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0)) // Fire 1
             {
                 StopWeapon();
             }
@@ -68,6 +71,7 @@ public class CharacterWeapon : CharacterComponents
         {
             index += 1;
         }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             index -= 1;
@@ -151,7 +155,7 @@ public class CharacterWeapon : CharacterComponents
         CurrentWeapon.transform.parent = weaponPosition;
         CurrentWeapon.SetOwner(character);
         WeaponAim = CurrentWeapon.GetComponent<WeaponAim>();
-        
+
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
             UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.CurrentMagazine);
