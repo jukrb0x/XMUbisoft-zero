@@ -25,6 +25,8 @@ public class CharacterWeapon : CharacterComponents
     public int weaponNum = 1;
     public int modNum = 0;
     //public Weapon SecondaryWeapon { get; set; }
+    private bool weapon2Status = false;
+    private bool weapon3Status = false;
 
 
     protected override void Start()
@@ -73,8 +75,19 @@ public class CharacterWeapon : CharacterComponents
             index -= 1;
         }
 
-        if (SecondaryWeapon != null && ThirdWeapon == null) weaponNum = 2;
-        if (SecondaryWeapon != null && ThirdWeapon != null) weaponNum = 3;
+        if (SecondaryWeapon != null && ThirdWeapon == null && !weapon2Status)
+        {
+            weaponNum = 2;
+            weapon2Status = true;
+            index = 1;
+        }
+
+        if (SecondaryWeapon != null && ThirdWeapon != null && !weapon3Status)
+        {
+            weaponNum = 3;
+            weapon3Status = true;
+            index = 2;
+        }
         modNum = System.Math.Abs(index % weaponNum);
 
         if (modNum == 0 && beforeindex != index && SecondaryWeapon != null)
@@ -116,7 +129,16 @@ public class CharacterWeapon : CharacterComponents
         if (character.CharacterType == Character.CharacterTypes.Player)
             // FIXME
             // TODO: weapon to UI canvas
-            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.CurrentMagazine);
+        {
+            if (CurrentWeapon.CompareTag("Weapon_Initial"))
+            {
+                UIManager.Instance.SetWeapon("∞", "∞");
+            }
+            else
+            {
+                UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
+            }
+        }
     }
 
     // When we stop shooting we stop using our Weapon
@@ -133,7 +155,17 @@ public class CharacterWeapon : CharacterComponents
 
         CurrentWeapon.Reload();
         if (character.CharacterType == Character.CharacterTypes.Player)
-            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.CurrentMagazine);
+        {
+            if (CurrentWeapon.CompareTag("Weapon_Initial"))
+            {
+                UIManager.Instance.SetWeapon("∞", "∞");
+            }
+            else
+            {
+                UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
+            }
+        }
+            
     }
 
     public void EquipWeapon(Weapon weapon, Transform weaponPosition)
@@ -143,7 +175,7 @@ public class CharacterWeapon : CharacterComponents
             CurrentWeapon.WeaponAmmo.SaveCurrentAmmo();
             CurrentWeapon.WeaponAmmo.SaveMaxAmmo();
             WeaponAim.DestroyReticle(); // Each weapon has its own Reticle component
-            Destroy(GameObject.Find("Pool"));
+            Destroy(GameObject.Find("PlayerPool"));
             Destroy(CurrentWeapon.gameObject);
         }
 
@@ -154,7 +186,14 @@ public class CharacterWeapon : CharacterComponents
         
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
-            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.CurrentMagazine);
+            if (CurrentWeapon.CompareTag("Weapon_Initial"))
+            {
+                UIManager.Instance.SetWeapon("∞", "∞");
+            }
+            else
+            {
+                UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
+            }
             // TODO fix sprite update
             UIManager.Instance.UpdateWeaponSprite(CurrentWeapon.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
         }
