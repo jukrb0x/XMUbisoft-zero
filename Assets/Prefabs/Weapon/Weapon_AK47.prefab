@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b491159421655414e96d5db893989143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: Weapon_AK47
   timeBtwShots: 0.3
   useMagazine: 1
   magazineSize: 30
