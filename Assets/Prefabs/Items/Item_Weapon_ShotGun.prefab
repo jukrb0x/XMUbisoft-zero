@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5292820506449734082}
   - component: {fileID: 8062119389196019868}
   m_Layer: 0
-  m_Name: Item_Weapon 2
+  m_Name: Item_Weapon_ShotGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3401294078810231231}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0183, y: -0.0707, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

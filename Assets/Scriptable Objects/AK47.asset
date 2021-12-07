@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a53110f06cca08e4297e7cefb2fa8ffd, type: 3}
-  m_Name: Item Weapon 2 1
+  m_Name: AK47
   m_EditorClassIdentifier: 
   WeaponToEquip: {fileID: 731396107055660144, guid: 83556762044e5414f885a1ea56f035b9, type: 3}
   WeaponSprite: {fileID: 21300000, guid: 205145d63f6aaed4080971ca12a7afa9, type: 3}
