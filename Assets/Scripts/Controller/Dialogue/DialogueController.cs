@@ -24,6 +24,7 @@ public class DialogueController : Singleton<DialogueController>
     {
         base.Awake();
         // init the dialogs
+        HUDDialogue.SetActive(false);
         sentences = new Queue<Sentence>();
         dialogueSentence = HUDDialogue.GetComponentInChildren<TextMeshProUGUI>();
         dialogueAvatar = HUDDialogue.transform.Find("Avatar").GetComponent<Image>();
@@ -35,11 +36,6 @@ public class DialogueController : Singleton<DialogueController>
 
     private void Start()
     {
-        if (HUDDialogue != null)
-        {
-            GameObject.Find("Dialogue");
-        }
-
         if (startingDialogue != null)
         {
             StartCoroutine(DelayedCallStartDialogue(startingDialogue, .3f));
