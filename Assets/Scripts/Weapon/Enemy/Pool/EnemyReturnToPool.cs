@@ -6,8 +6,12 @@ public class EnemyReturnToPool : MonoBehaviour
 {
     [Header("Settings")] 
     [SerializeField] private LayerMask WallMask;
-    [SerializeField] private LayerMask PlayerMask;
+    [SerializeField] private LayerMask BossMask;
     [SerializeField] private float lifeTime = 2f;
+    
+    [Header("Effects")]
+    [SerializeField] private ParticleSystem impactPS;
+
 
     private Projectile projectile;    
 
@@ -31,12 +35,25 @@ public class EnemyReturnToPool : MonoBehaviour
     {
         if (CheckLayer(other.gameObject.layer, WallMask))
         {
-            Return();
+            if (projectile != null)
+            {
+                projectile.DisableProjectile();
+            }
+            impactPS.Play();
+            AudioManager.Instance.PlayOneShot(AudioEnum.ProjectileHitWall);
+            Invoke(nameof(Return), impactPS.main.duration);
+
         }
 
-        if (CheckLayer(other.gameObject.layer, PlayerMask))
+        if (CheckLayer(other.gameObject.layer, BossMask))
         {
-            Return();
+            if (projectile != null)
+            {
+                projectile.DisableProjectile();
+            }
+
+            impactPS.Play();
+            Invoke(nameof(Return), impactPS.main.duration);
         }
     }
 
