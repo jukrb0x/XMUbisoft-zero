@@ -82,7 +82,7 @@ MonoBehaviour:
   recoilForce: 30
   muzzlePS: {fileID: 950183627635947492}
   nextShotTime: 0
-  projectileSpawnPosition: {x: 1.5, y: 0.15, z: 0}
+  projectileSpawnPosition: {x: 1.1, y: 0.15, z: 0}
   projectileSpread: {x: 0, y: 0, z: 20}
   maxProjectileOneShot: 3
 --- !u!114 &-2506645290724319967
@@ -125,8 +125,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7040016992252300296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.151, y: 0.001, z: 0.4383}
-  m_LocalScale: {x: 0.4539704, y: 0.5091732, z: 0.075222895}
+  m_LocalPosition: {x: 0.0909, y: 0.0017, z: 0.4383}
+  m_LocalScale: {x: 0.36008933, y: 0.5070856, z: 0.075222895}
   m_Children: []
   m_Father: {fileID: 2338738130631955995}
   m_RootOrder: 0
@@ -170,7 +170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -388488429
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 60
   m_Sprite: {fileID: 21300000, guid: 905f72aa14f60974b8e14992ae553926, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -199,11 +199,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6148743809328270324, guid: dd841def7c05da645b43337aa66b323f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.394
+      value: 0.265
       objectReference: {fileID: 0}
     - target: {fileID: 6148743809328270324, guid: dd841def7c05da645b43337aa66b323f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.026
+      value: 0.033
       objectReference: {fileID: 0}
     - target: {fileID: 6148743809328270324, guid: dd841def7c05da645b43337aa66b323f, type: 3}
       propertyPath: m_LocalPosition.z
