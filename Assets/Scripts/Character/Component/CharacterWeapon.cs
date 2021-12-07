@@ -152,8 +152,6 @@ public class CharacterWeapon : CharacterComponents
         CurrentWeapon.SetOwner(character);
         WeaponAim = CurrentWeapon.GetComponent<WeaponAim>();
         
-        
-        
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
             UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.CurrentMagazine);

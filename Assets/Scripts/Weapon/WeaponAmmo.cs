@@ -63,21 +63,17 @@ public class WeaponAmmo : MonoBehaviour
 
     public void SaveCurrentAmmo()
     {
-        print("Access Save Current" + weapon.CurrentAmmo);
         PlayerPrefs.SetInt(WEAPON_AMMO_SAVELOAD + weapon.WeaponName, weapon.CurrentAmmo);
     }
 
     public void SaveMaxAmmo(int maxAmmo=-1)
     {
-        print(maxAmmo+"MAXAMMO IS");
         if (maxAmmo == -1)
         {
-            print("Access save Max original");
             PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + weapon.WeaponName, weapon.CurrentMagazine);
         }
         else
         {
-            print("Access Save Max" + maxAmmo);
             PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD+weapon.WeaponName, maxAmmo);
         }
 
@@ -86,7 +82,6 @@ public class WeaponAmmo : MonoBehaviour
     public int LoadCurrentAmmo()
     {
         int a = PlayerPrefs.GetInt(WEAPON_AMMO_SAVELOAD + weapon.WeaponName, weapon.CurrentMagazine);
-        print("Access Load Current" + a);
         return a;
     }
 
@@ -94,7 +89,6 @@ public class WeaponAmmo : MonoBehaviour
     {
         
         int a = PlayerPrefs.GetInt(WEAPON_AMMO_MAX_SAVELOAD + weapon.WeaponName, weapon.CurrentMagazine);
-        print("Access Load Max" + a);
         return a;
     }
 
