@@ -50,7 +50,7 @@ public class EnemyWeapon : CharacterComponents
         {
             // FIXME
             // TODO: weapon to UI canvas
-            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.CurrentMagazine);
+            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
         }
     }
 
@@ -75,7 +75,7 @@ public class EnemyWeapon : CharacterComponents
         CurrentWeapon.Reload();
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
-            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.CurrentMagazine);
+            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
         }
     }
 
@@ -88,7 +88,7 @@ public class EnemyWeapon : CharacterComponents
 
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
-            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo, CurrentWeapon.CurrentMagazine);
+            UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
         }
     }
 }

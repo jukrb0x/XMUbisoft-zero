@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private float ShieldamountDelayRate;
     [Header("Weapon")]
     [SerializeField] private Image weaponImage;
+
+    [SerializeField] private GameObject weaponAmmoNum;
 
 
     private float playerCurrentHealth;
@@ -47,11 +50,12 @@ public class UIManager : Singleton<UIManager>
         playerMaxShield = maxShield;
     }
 
-    public void SetWeapon(int current, int magazineSize)
+    public void SetWeapon(string current, string magazineSize)
     {
-        // TODO: Weapon Switch
-        currentAmmo = current;
-        totalAmmo = magazineSize;
+        // // TODO: Weapon Switch
+        // currentAmmo = current;
+        // totalAmmo = magazineSize;
+        weaponAmmoNum.GetComponent<TextMeshProUGUI>().text = current + "/" + magazineSize;
     }
 
     private void UpdateBars()

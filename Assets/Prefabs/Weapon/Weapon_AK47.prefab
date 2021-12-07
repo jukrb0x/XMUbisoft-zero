@@ -51,7 +51,7 @@ MonoBehaviour:
   weaponName: Weapon_AK47
   timeBtwShots: 0.3
   useMagazine: 1
-  magazineSize: 30
+  magazineSizes: 30
   autoReload: 0
   useRecoil: 0
   recoilForce: 30

@@ -25,6 +25,10 @@ public class Collectables : MonoBehaviour
         objectCollided = other.gameObject;
         if (IsCollectable())
         {
+            if (other.gameObject.GetComponent<CharacterWeapon>().CurrentWeapon.CompareTag("Weapon_Initial") && other.gameObject.GetComponent<CharacterWeapon>().SecondaryWeapon!=null)
+            {
+                return;
+            }
             Collect();
             PlayEffects();
 
