@@ -1,14 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class EnemyShotGun : Weapon
+public class BossShotGun : Weapon
 {
         [SerializeField] private Vector3 projectileSpawnPosition;
         [SerializeField] private Vector3 projectileSpread;
-        [SerializeField] private int maxProjectileOneShot = 3;
+        [SerializeField] private int maxProjectileOneShot = 5;
     
         // 控制弹丸出生的位置
         public Vector3 ProjectileSpawnPosition { get; set; }
@@ -38,7 +36,7 @@ public class EnemyShotGun : Weapon
                 SpawnProjectile(ProjectileSpawnPosition);
             }
         }
-        
+
         private void SpawnProjectile(Vector2 spawnPosition)
         {
             // 从池中获取对象
@@ -60,6 +58,16 @@ public class EnemyShotGun : Weapon
             else if (projectileOneShot == 2)
             {
                 randomProjectileSpread.z = -projectileSpread.z;
+                spread = Quaternion.Euler(randomProjectileSpread);
+            }
+            else if (projectileOneShot == 3)
+            {
+                randomProjectileSpread.z = projectileSpread.z + 10;
+                spread = Quaternion.Euler(randomProjectileSpread);
+            }
+            else if (projectileOneShot == 4)
+            {
+                randomProjectileSpread.z = -projectileSpread.z - 10;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
             else
