@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9ff30632f9a9f04792c01cce425e46b, type: 3}
   m_Name: BossDecisionRangeToAttack
   m_EditorClassIdentifier: 
-  minDistanceToAttack: 8
+  minDistanceToAttack: 12
