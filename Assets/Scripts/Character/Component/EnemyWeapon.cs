@@ -48,8 +48,6 @@ public class EnemyWeapon : CharacterComponents
         
         if (character.CharacterType == Character.CharacterTypes.Player)
         {
-            // FIXME
-            // TODO: weapon to UI canvas
             UIManager.Instance.SetUIWeaponAmmo(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
         }
     }

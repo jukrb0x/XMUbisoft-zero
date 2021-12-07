@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ButtomSoundManager : MonoBehaviour
 {
-    public void ButtomSoundPlay()
+    public void ButtonSoundPlay()
     {
         AudioManager.Instance.Play(AudioEnum.Buttom);
     }

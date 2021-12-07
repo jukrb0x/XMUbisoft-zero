@@ -24,9 +24,9 @@ public class AudioManager : Singleton<AudioManager>
 	}
 
 	/// <summary>
-	/// Plays a sound.
+	/// Plays the sound.
 	/// </summary>
-	/// <param name="audioEnum">the sound</param>
+	/// <param name="audioEnum">the sound to be played</param>
 	public AudioSource Play(AudioEnum audioEnum)
 	{
 		//print("bzzzztz");

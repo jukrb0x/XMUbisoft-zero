@@ -14,10 +14,11 @@ public class BaseHealth : MonoBehaviour
         get => healthPoint;
         set
         {
-            // TODO: buggy code
             healthPoint = (int) Mathf.Clamp(value, 0, maxHealthPoint);
             if (healthPoint == 0)
+            {
                 OnDie?.Invoke();
+            }
         }
     }
 
