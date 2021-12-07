@@ -21,7 +21,11 @@ public class BoxDamageable : ComponentBase
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Projectile")) TakeDamage();
+        if (other.CompareTag("Projectile"))
+        {
+            TakeDamage();
+            
+        }
     }
 
     private void TakeDamage()

@@ -26,7 +26,11 @@ public class ReturnToPool : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (CheckLayer(other.gameObject.layer, WallMask)) Return();
+        if (CheckLayer(other.gameObject.layer, WallMask))
+        {
+            AudioManager.Instance.PlayOneShot(AudioEnum.ProjectileHitWall);
+            Return();
+        }
 
         if (CheckLayer(other.gameObject.layer, EnemyMask)) Return();
     }
@@ -35,7 +39,6 @@ public class ReturnToPool : MonoBehaviour
     private void Return()
     {
         if (projectile != null) projectile.ResetProjectile();
-
         gameObject.SetActive(false);
     }
 

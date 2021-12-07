@@ -5,18 +5,18 @@ public class LevelManager : MonoBehaviour
     // [SerializeField] private Character playableCharacter;
     // [SerializeField] private Transform spawnPosition;
     public AudioEnum audioEnum;
+    public float delayTime = 0;
     private AudioSource _audioSource;
 
     private void Start()
     {
-        // Invoke("Audios", 2);
-        Audios();
+        Invoke("Audios", delayTime);
+        //Audios();
     }
 
     private void Audios()
     {
         _audioSource = AudioManager.Instance.Play(audioEnum);
-        Debug.Log("True");
     }
 
     // TODO: remove revive
