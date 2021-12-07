@@ -21,6 +21,7 @@ public class PlayerHealth : BaseHealth
     private CharacterWeapon weapon;
     private UnderAttacked _underAttacked;
     private GameObject weapons;
+    private LevelManager levelManager;
 
     protected override void Awake()
     {
@@ -34,6 +35,8 @@ public class PlayerHealth : BaseHealth
         // weapons = GameObject.FindWithTag("Weapon1");
         MaxHealthPoint = initialHealth;
         CurrentShield = initialShield;
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+
         if (!gameOverLabel) gameOverLabel = GameObject.Find("GameOverLabel").GetComponent<TextMeshProUGUI>();
         _underAttacked = GetComponent<UnderAttacked>();
 
@@ -128,8 +131,9 @@ public class PlayerHealth : BaseHealth
 
         if (destroyObject) DestroyObject();
 
-        // show Game Over label
+        // Show Game Over
         gameOverLabel.gameObject.SetActive(true);
+        levelManager.PauseGame();
     }
 
     // Revive this game object    

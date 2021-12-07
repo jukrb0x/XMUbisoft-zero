@@ -37,7 +37,8 @@ public class CharacterComponents : MonoBehaviour
 
     public void InvertPlayerStates()
     {
-        canMove = canShoot = !canMove;
+        canMove = !canMove;
+        canShoot = !canShoot;
     }
 
     // Main method. Here we put the logic of each ability

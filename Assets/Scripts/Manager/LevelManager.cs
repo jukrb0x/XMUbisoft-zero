@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    // [SerializeField] private Character playableCharacter;
     // [SerializeField] private Transform spawnPosition;
     public AudioEnum audioEnum;
     private GameObject player;
@@ -13,6 +12,7 @@ public class LevelManager : MonoBehaviour
     private readonly string WEAPON_AMMO_SAVELOAD = "Weapon_";
     private readonly string WEAPON_AMMO_MAX_SAVELOAD = "WeaponAmmoMax_";
     public float delayTime = 0.5f;
+    public bool isDialogueRunning;
 
     private AudioSource _audioSource;
     // private AudioSetting bgmSetting;
@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
     {
         player = GameObject.Find("Player");
         Invoke("PlayAudio", delayTime);
-        isPaused = false;
+        // init Pause Menu
         // PauseMenu has to be active before the game started.
         pauseMenu = GameObject.Find("PauseMenu");
         pauseMenu.SetActive(false);
@@ -31,16 +31,25 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + "Weapon_AK47", 180);
         PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + "Weapon_ShotGun", 180);
         // bgmSetting = GameObject.Find("BGM").GetComponent<AudioSetting>();
+        // Reset Level States
+        ResetLevel();
     }
 
 
     private void Update()
     {
         // pause the game and invoke the pause menu
+        if (!CanPause()) return;
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             InvertPauseState();
         }
+    }
+
+    private bool CanPause()
+    {
+        if (player.GetComponent<BaseHealth>().IsDead) return false;
+        return !isDialogueRunning;
     }
 
     public void InvertPauseState()
@@ -58,18 +67,16 @@ public class LevelManager : MonoBehaviour
         isPaused = !isPaused;
     }
 
-    private void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0;
         player.GetComponent<CharacterComponents>().InvertPlayerStates();
-        // TODO pause the bgm
     }
 
-    private void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1;
         player.GetComponent<CharacterComponents>().InvertPlayerStates();
-        // TODO resume bgm
     }
 
     public void ResetLevel()
