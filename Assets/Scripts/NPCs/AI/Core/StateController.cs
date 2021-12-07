@@ -22,7 +22,6 @@ public class StateController : MonoBehaviour
 
     // Returns this character weapon
     public CharacterWeapon CharacterWeapon { get; set; }
-
     public CharacterFlip CharacterFlip { get; set; }   
 
     // Returns a reference to this enemy path
@@ -42,7 +41,6 @@ public class StateController : MonoBehaviour
         CharacterWeapon = GetComponent<CharacterWeapon>();
         Path = GetComponent<Path>();
         Collider2D = GetComponent<Collider2D>();
-
         Player = GameObject.FindWithTag("Player").transform;
     }
 	

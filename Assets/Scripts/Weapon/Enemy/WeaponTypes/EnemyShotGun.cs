@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemySingleShot : Weapon
+public class EnemyShotGun : Weapon
 {
         [SerializeField] private Vector3 projectileSpawnPosition;
         [SerializeField] private Vector3 projectileSpread;
