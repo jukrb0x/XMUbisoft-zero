@@ -686,7 +686,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1289939872}
         m_TargetAssemblyTypeName: ButtomSoundManager, Assembly-CSharp
-        m_MethodName: ButtomSoundPlay
+        m_MethodName: ButtonSoundPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1027,7 +1027,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1289939872}
         m_TargetAssemblyTypeName: ButtomSoundManager, Assembly-CSharp
-        m_MethodName: ButtomSoundPlay
+        m_MethodName: ButtonSoundPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1440,7 +1440,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1289939872}
         m_TargetAssemblyTypeName: ButtomSoundManager, Assembly-CSharp
-        m_MethodName: ButtomSoundPlay
+        m_MethodName: ButtonSoundPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1721,7 +1721,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1289939872}
         m_TargetAssemblyTypeName: ButtomSoundManager, Assembly-CSharp
-        m_MethodName: ButtomSoundPlay
+        m_MethodName: ButtonSoundPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1866,7 +1866,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1289939872}
         m_TargetAssemblyTypeName: ButtomSoundManager, Assembly-CSharp
-        m_MethodName: ButtomSoundPlay
+        m_MethodName: ButtonSoundPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2219,7 +2219,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1289939872}
         m_TargetAssemblyTypeName: ButtomSoundManager, Assembly-CSharp
-        m_MethodName: ButtomSoundPlay
+        m_MethodName: ButtonSoundPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2500,7 +2500,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1289939872}
         m_TargetAssemblyTypeName: ButtomSoundManager, Assembly-CSharp
-        m_MethodName: ButtomSoundPlay
+        m_MethodName: ButtonSoundPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2901,7 +2901,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1289939872}
         m_TargetAssemblyTypeName: ButtomSoundManager, Assembly-CSharp
-        m_MethodName: ButtomSoundPlay
+        m_MethodName: ButtonSoundPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3229,7 +3229,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1289939872}
         m_TargetAssemblyTypeName: ButtomSoundManager, Assembly-CSharp
-        m_MethodName: ButtomSoundPlay
+        m_MethodName: ButtonSoundPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
