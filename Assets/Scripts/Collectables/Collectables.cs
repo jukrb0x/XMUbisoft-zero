@@ -12,6 +12,7 @@ public class Collectables : MonoBehaviour
     protected GameObject objectCollided;
     protected SpriteRenderer spriteRenderer;
     protected Collider2D collider2D;
+    protected CharacterController _controller;
 
     private void Start()
     {
