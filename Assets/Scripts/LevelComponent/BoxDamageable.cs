@@ -15,7 +15,6 @@ public class BoxDamageable : ComponentBase
     {
         base.Start();
         if (GetComponent<BaseHealth>()) health = GetComponent<BaseHealth>();
-
         health.MaxHealthPoint = initialHealth;
     }
 
