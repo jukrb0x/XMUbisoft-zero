@@ -153,8 +153,8 @@ MonoBehaviour:
   - {fileID: 5167333365224283686, guid: 866f14a97ca4b4421a857fd1add64b46, type: 3}
   - {fileID: 8460540893107655994, guid: a124254363c0f2b4a958cb2ad7372471, type: 3}
   - {fileID: 4881868944730359402, guid: b4ef98b5800c7aa4883b1327aacbb17e, type: 3}
-  xRandomPosition: 2
-  yRandomPosition: 2
+  xRandomPosition: 0
+  yRandomPosition: 0
   initialHealth: 10
   damagePoint: 4
   damagedSprite: {fileID: -3530757283899592571, guid: 8a9c0e74737afed4195ea3d066e0fdfd, type: 3}
