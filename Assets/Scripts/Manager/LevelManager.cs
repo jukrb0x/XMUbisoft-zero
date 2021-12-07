@@ -6,20 +6,22 @@ public class LevelManager : MonoBehaviour
     // [SerializeField] private Character playableCharacter;
     // [SerializeField] private Transform spawnPosition;
     public AudioEnum audioEnum;
-    public float delayTime = 0.5f;
-    private AudioSource _audioSource;
     private GameObject pauseMenu;
     private bool isPaused;
+    public float delayTime = 0.5f;
+    private AudioSource _audioSource;
+    private AudioSetting bgmSetting;
 
     private void Start()
     {
-        Invoke("Audios", delayTime);
+        Invoke("PlayAudio", delayTime);
 
         isPaused = false;
         pauseMenu = GameObject.Find("PauseMenu");
         pauseMenu.SetActive(false);
-        
+        bgmSetting = GameObject.Find("BGM").GetComponent<AudioSetting>();
     }
+
 
     private void Update()
     {
@@ -27,14 +29,24 @@ public class LevelManager : MonoBehaviour
         {
             pauseMenu.SetActive(true);
         }
-        
     }
 
-    private void Audios()
+    private void PlayAudio()
     {
         _audioSource = AudioManager.Instance.Play(audioEnum);
-        
     }
+
+    public void ChangeBGMVolume(float sliderValue)
+    {
+        bgmSetting.SetVolume(sliderValue);
+    }
+
+    public float GetBGMVolume()
+    {
+        // TODO BUG
+        return bgmSetting.GetVolume();
+    }
+
 
     // TODO: remove revive
     // TODO： useless code
