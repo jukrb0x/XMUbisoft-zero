@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -157, y: -13.93}
-  m_SizeDelta: {x: 287.0896, y: 50}
+  m_AnchoredPosition: {x: -156, y: -0.000030518}
+  m_SizeDelta: {x: 287.09, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &73328718
 MonoBehaviour:
@@ -366,8 +366,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: 9}
-  m_SizeDelta: {x: 426.06, y: 63.35}
+  m_AnchoredPosition: {x: 0.0000076294, y: 114}
+  m_SizeDelta: {x: 889.07, y: 332.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635607335
 MonoBehaviour:
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044d861d9c787f24b8fa8b4fd81bd7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charsPerSecond: 0.05
+  charsPerSecond: 0.01
 --- !u!114 &635607336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +415,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You have successfully passed all levels \n             Congratulations! "
+  m_Text: "My name is Jerry, which is the last survivor of Azeroth. Three years ago
+    a zombie virus outbreak destroyed my home. Now I had everything ready to go back
+    in time with my partner Jessica through the time travel to kill the pathogen
+    and save my homeland. Unfortunately, my purpose was discovered by the pathogen,
+    the boss, it split a doppelganger to hunt us down, and together we, the pathogen
+    returned to the timeline back. While the good news was that we had set out first
+    and still had time. While the time travel space changing had scattered me and
+    Jessica, when I woke up in the spaceship which crashed, I found that the Jessica
+    is missing\u2026."
 --- !u!222 &635607337
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -556,7 +564,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 900, y: 900}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -642,8 +650,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: -155}
-  m_SizeDelta: {x: 411.09998, y: 77.859985}
+  m_AnchoredPosition: {x: -46, y: -117.58}
+  m_SizeDelta: {x: 411.1, y: 73.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2130078365
 MonoBehaviour:
