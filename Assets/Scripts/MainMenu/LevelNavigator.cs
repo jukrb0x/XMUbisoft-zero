@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class LevelNavigator : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
@@ -20,7 +21,7 @@ public class LevelNavigator : MonoBehaviour
         mainMenu.SetActive(false);
         levelMenu.SetActive(true);
     }
- 
+
 
     public void QuitGame()
     {
@@ -36,13 +37,11 @@ public class LevelNavigator : MonoBehaviour
 
     public void EnterLevel(int chosenLevel)
     {
-        // Level 1 --> 1
         SceneManager.LoadScene(chosenLevel);
     }
 
     public void BackMenu()
     {
-        // Level 1 --> 1
         SceneManager.LoadScene(0);
     }
 }

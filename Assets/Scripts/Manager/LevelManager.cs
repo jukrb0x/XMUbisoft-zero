@@ -11,8 +11,9 @@ public class LevelManager : MonoBehaviour
     private readonly string WEAPON_AMMO_SAVELOAD = "Weapon_";
     private readonly string WEAPON_AMMO_MAX_SAVELOAD = "WeaponAmmoMax_";
     public float delayTime = 0.5f;
+
     private AudioSource _audioSource;
-    private AudioSetting bgmSetting;
+    // private AudioSetting bgmSetting;
 
     private void Start()
     {
@@ -20,13 +21,13 @@ public class LevelManager : MonoBehaviour
 
         isPaused = false;
         pauseMenu = GameObject.Find("PauseMenu");
-        pauseMenu.SetActive(false);
+        // pauseMenu.SetActive(false);
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt(WEAPON_AMMO_SAVELOAD + "Weapon_AK47", 30);
         PlayerPrefs.SetInt(WEAPON_AMMO_SAVELOAD + "Weapon_ShotGun", 30);
         PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + "Weapon_AK47", 180);
         PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + "Weapon_ShotGun", 180);
-        bgmSetting = GameObject.Find("BGM").GetComponent<AudioSetting>();
+        // bgmSetting = GameObject.Find("BGM").GetComponent<AudioSetting>();
     }
 
 
@@ -42,18 +43,18 @@ public class LevelManager : MonoBehaviour
     {
         _audioSource = AudioManager.Instance.Play(audioEnum);
     }
-    
-    
+
 
     public void ChangeBGMVolume(float sliderValue)
     {
-        bgmSetting.SetVolume(sliderValue);
+        // bgmSetting.SetVolume(sliderValue);
     }
 
     public float GetBGMVolume()
     {
         // TODO BUG
-        return bgmSetting.GetVolume();
+        // return bgmSetting.GetVolume();
+        return 1f;
     }
 
 
