@@ -3,6 +3,7 @@ using UnityEngine;
 public class AddHealthPotion : Collectables
 {
     [SerializeField] private float HealingPotionPoint;
+    
 
     protected override void Collect()
     {

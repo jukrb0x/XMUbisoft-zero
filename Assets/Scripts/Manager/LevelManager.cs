@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseMenu.SetActive(true);
+            // pauseMenu.SetActive(true);
         }
     }*/
 

@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
 
     [Header("Weapon")] 
     [SerializeField] private bool useMagazine = true;
-    [SerializeField] private int magazineSizes = 40; 
+    [SerializeField] private int magazineSizes = 30; 
     [SerializeField] private bool autoReload = true;
 
     [Header("Recoil")] [SerializeField] private bool useRecoil = true;
@@ -40,7 +40,10 @@ public class Weapon : MonoBehaviour
     protected virtual void Awake()
     {
         WeaponAmmo = GetComponent<WeaponAmmo>();
-        CurrentAmmo = magazineSizes;
+        CurrentAmmo = WeaponAmmo.LoadCurrentAmmo(weaponName);
+        CurrentMagazine = WeaponAmmo.LoadMaxAmmo(weaponName);
+        // CurrentAmmo = WeaponAmmo.LoadCurrentAmmo();
+        // CurrentMagazine = WeaponAmmo.LoadMaxAmmo();
         // if(gameObject.CompareTag("Weapon_Shot"))
         //     CurrentMagazine = 300;
         // print(WeaponAmmo);

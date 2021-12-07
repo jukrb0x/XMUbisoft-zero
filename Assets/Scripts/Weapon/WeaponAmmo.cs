@@ -79,16 +79,31 @@ public class WeaponAmmo : MonoBehaviour
 
     }
 
-    public int LoadCurrentAmmo()
+    public int LoadCurrentAmmo(string weaponName = "-1")
     {
-        int a = PlayerPrefs.GetInt(WEAPON_AMMO_SAVELOAD + weapon.WeaponName, weapon.CurrentMagazine);
+        int a = 0;
+        if (weaponName == "-1")
+        {
+            a = PlayerPrefs.GetInt(WEAPON_AMMO_SAVELOAD + weapon.WeaponName);
+        }
+        else
+        {
+            a = PlayerPrefs.GetInt(WEAPON_AMMO_SAVELOAD + weaponName);
+        }
         return a;
     }
 
-    public int LoadMaxAmmo()
+    public int LoadMaxAmmo(string weaponName = "-1")
     {
-        
-        int a = PlayerPrefs.GetInt(WEAPON_AMMO_MAX_SAVELOAD + weapon.WeaponName, weapon.CurrentMagazine);
+        int a = 0;
+        if (weaponName == "-1")
+        {
+            a = PlayerPrefs.GetInt(WEAPON_AMMO_MAX_SAVELOAD + weapon.WeaponName);
+        }
+        else
+        {
+            a = PlayerPrefs.GetInt(WEAPON_AMMO_MAX_SAVELOAD + weaponName);
+        }
         return a;
     }
 
