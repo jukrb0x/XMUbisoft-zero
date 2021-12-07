@@ -8,6 +8,7 @@ namespace Component
 
         protected override void HandleInput()
         {
+            base.HandleInput();
             if (Input.GetKey(KeyCode.LeftShift)) Run();
             if (Input.GetKeyUp(KeyCode.LeftShift)) StopRun();
         }
