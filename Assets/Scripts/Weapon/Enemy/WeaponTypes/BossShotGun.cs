@@ -62,12 +62,12 @@ public class BossShotGun : Weapon
             }
             else if (projectileOneShot == 3)
             {
-                randomProjectileSpread.z = projectileSpread.z + 10;
+                randomProjectileSpread.z = projectileSpread.z + 120;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
             else if (projectileOneShot == 4)
             {
-                randomProjectileSpread.z = -projectileSpread.z - 10;
+                randomProjectileSpread.z = -projectileSpread.z - 120;
                 spread = Quaternion.Euler(randomProjectileSpread);
             }
             else
