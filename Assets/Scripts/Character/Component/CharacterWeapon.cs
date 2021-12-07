@@ -136,11 +136,11 @@ public class CharacterWeapon : CharacterComponents
         {
             if (CurrentWeapon.CompareTag("Weapon_Initial"))
             {
-                UIManager.Instance.SetWeapon("∞", "∞");
+                UIManager.Instance.SetUIWeaponAmmo("∞", "∞");
             }
             else
             {
-                UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
+                UIManager.Instance.SetUIWeaponAmmo(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
             }
         }
     }
@@ -162,11 +162,11 @@ public class CharacterWeapon : CharacterComponents
         {
             if (CurrentWeapon.CompareTag("Weapon_Initial"))
             {
-                UIManager.Instance.SetWeapon("∞", "∞");
+                UIManager.Instance.SetUIWeaponAmmo("∞", "∞");
             }
             else
             {
-                UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
+                UIManager.Instance.SetUIWeaponAmmo(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
             }
         }
             
@@ -192,14 +192,14 @@ public class CharacterWeapon : CharacterComponents
         {
             if (CurrentWeapon.CompareTag("Weapon_Initial"))
             {
-                UIManager.Instance.SetWeapon("∞", "∞");
+                UIManager.Instance.SetUIWeaponAmmo("∞", "∞");
             }
             else
             {
-                UIManager.Instance.SetWeapon(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
+                UIManager.Instance.SetUIWeaponAmmo(CurrentWeapon.CurrentAmmo.ToString(), CurrentWeapon.CurrentMagazine.ToString());
             }
             // TODO fix sprite update
-            UIManager.Instance.UpdateWeaponSprite(CurrentWeapon.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
+            UIManager.Instance.SetUIWeaponSprite(CurrentWeapon.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
         }
     }
 }

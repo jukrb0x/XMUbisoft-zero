@@ -38,7 +38,7 @@ public class PlayerHealth : BaseHealth
         _underAttacked = GetComponent<UnderAttacked>();
 
         base.Awake();
-        UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
+        UIManager.Instance.SetUIPlayerStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
     }
 
     private void Start()
@@ -55,7 +55,7 @@ public class PlayerHealth : BaseHealth
 
     private void UpdateUI()
     {
-        UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
+        UIManager.Instance.SetUIPlayerStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
     }
 
     // Take the amount of damage we pass in parameters
