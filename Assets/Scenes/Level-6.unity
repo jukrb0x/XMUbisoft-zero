@@ -84163,6 +84163,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1335187083419022925, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335187083419022925, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -551667957
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335187083419022925, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1661995264833734396, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
       propertyPath: m_Name
       value: ItemHealthPotion
@@ -84177,6 +84189,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2219240639833234124, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
       propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474402509898258177, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474402509898258177, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474402509898258177, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474402509898258177, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6892442617132068427, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
@@ -104820,6 +104848,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1096417217849807931, guid: 1074a1fd2e632b942966b1553b84738c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096417217849807931, guid: 1074a1fd2e632b942966b1553b84738c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096417217849807931, guid: 1074a1fd2e632b942966b1553b84738c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3401294078810231231, guid: 1074a1fd2e632b942966b1553b84738c, type: 3}
       propertyPath: m_Name
       value: Item_Weapon_ShotGun
