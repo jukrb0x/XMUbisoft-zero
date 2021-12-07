@@ -4,8 +4,6 @@ public class BoxChest : ComponentBase
 {
     private readonly int boxTreasureOpenedParameter = Animator.StringToHash("Rewarded");
     private Animator animator;
-    private bool rewardDelivered;
-    private Vector3 rewardRandomPosition;
 
     protected override void Start()
     {
@@ -31,6 +29,7 @@ public class BoxChest : ComponentBase
     protected override void RewardPlayer()
     {
         animator.SetTrigger(boxTreasureOpenedParameter);
+        AudioManager.Instance.PlayOneShot(AudioEnum.ChestOpen);
         base.RewardPlayer();
     }
 }
