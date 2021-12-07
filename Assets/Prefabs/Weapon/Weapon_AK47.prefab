@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4290995920744042129}
   - component: {fileID: 8678281170599130901}
   - component: {fileID: 3079108168139517308}
+  - component: {fileID: 301344348965214224}
   m_Layer: 0
   m_Name: Weapon_AK47
   m_TagString: Weapon_AK47
@@ -66,7 +67,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6016293726102671963}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f91b3ceab8c211f409cf74de9290f3fa, type: 3}
   m_Name: 
@@ -99,6 +100,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f07e754dd0cad540a12579f881fb4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &301344348965214224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6016293726102671963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934a6b56874f3f745a5fc6285c55adc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 8137644099906661219, guid: ca0038cbd29355844bd24713a276e60e, type: 3}
+  poolSize: 10
+  poolCanExpand: 1
 --- !u!1 &7257195599113280472
 GameObject:
   m_ObjectHideFlags: 0

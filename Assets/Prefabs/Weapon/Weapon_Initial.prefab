@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1823342003209549413}
   - component: {fileID: 4919920270245964967}
   - component: {fileID: 7923057568456133336}
+  - component: {fileID: 6303407672934169650}
   m_Layer: 0
   m_Name: Weapon_Initial
   m_TagString: Weapon_Initial
@@ -76,7 +77,7 @@ MonoBehaviour:
   weaponName: Weapon_Initia
   timeBtwShots: 0.6
   useMagazine: 0
-  magazineSize: 30
+  magazineSizes: 30
   autoReload: 1
   useRecoil: 0
   recoilForce: 30
@@ -91,9 +92,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2297259550455399495}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f91b3ceab8c211f409cf74de9290f3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 8137644099906661219, guid: ca0038cbd29355844bd24713a276e60e, type: 3}
+  poolSize: 10
+  poolCanExpand: 1
+--- !u!114 &6303407672934169650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2297259550455399495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934a6b56874f3f745a5fc6285c55adc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 8137644099906661219, guid: ca0038cbd29355844bd24713a276e60e, type: 3}

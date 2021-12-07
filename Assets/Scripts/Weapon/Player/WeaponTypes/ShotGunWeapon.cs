@@ -17,14 +17,14 @@ public class ShotGunWeapon : Weapon
     public Vector3 ProjectileSpawnPosition { get; set; }
 
     // 在此游戏对象中返回对池的引用
-    public ObjectPooler Pooler { get; set; }
+    public PlayerObjectPooler Pooler { get; set; }
 
     protected override void Awake()
     {
         base.Awake();
         projectileSpawnValue = projectileSpawnPosition;
         projectileSpawnValue.y = -projectileSpawnPosition.y;
-        Pooler = GetComponent<ObjectPooler>();
+        Pooler = GetComponent<PlayerObjectPooler>();
     }
 
     private void OnDrawGizmosSelected()
