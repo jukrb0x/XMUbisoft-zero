@@ -17,7 +17,6 @@ public class CharacterWeapon : CharacterComponents
     private int mouseLeftBtn = 0;
     public Weapon SecondaryWeapon { get; set; }
     public Weapon ThirdWeapon { get; set; }
-
     public int beforeindex = -10;
     public int index = 0;
     public int weaponNum = 1;
