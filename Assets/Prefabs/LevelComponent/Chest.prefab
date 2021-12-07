@@ -200,11 +200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3292c7a134039f74b81b45fc576fdbac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewards: []
   xRandomPosition: 2
   yRandomPosition: 2
-  rewards:
-  - {fileID: 4157275756867382003, guid: b0c93d750f80a3d48b1cff5578292686, type: 3}
-  - {fileID: 273326986479357074, guid: bf4ddae8b28dc7543b011b6807aba1d3, type: 3}
 --- !u!50 &571300907972374155
 Rigidbody2D:
   serializedVersion: 4
