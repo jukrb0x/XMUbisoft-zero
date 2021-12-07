@@ -21,7 +21,7 @@ public class SoundController : MonoBehaviour
     public void Con_sound()
     {
 
-        // asound.volume = sd.value;
+        asound.volume = sd.value;
         
 
     }
