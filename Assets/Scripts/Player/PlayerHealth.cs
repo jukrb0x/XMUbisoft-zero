@@ -46,7 +46,7 @@ public class PlayerHealth : BaseHealth
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L)) Damage(1);
+        //if (Input.GetKeyDown(KeyCode.L)) Damage(1);
     }
 
     private void UpdateUI()
