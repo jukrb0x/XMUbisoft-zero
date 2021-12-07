@@ -175,7 +175,7 @@ public class CharacterWeapon : CharacterComponents
             CurrentWeapon.WeaponAmmo.SaveCurrentAmmo();
             CurrentWeapon.WeaponAmmo.SaveMaxAmmo();
             WeaponAim.DestroyReticle(); // Each weapon has its own Reticle component
-            //Destroy(GameObject.Find("Pool"));
+            Destroy(GameObject.Find("PlayerPool"));
             Destroy(CurrentWeapon.gameObject);
         }
 
