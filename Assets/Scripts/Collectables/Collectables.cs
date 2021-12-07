@@ -30,10 +30,9 @@ public class Collectables : MonoBehaviour
             {
                 return;
             }
-            Collect();
+            
             PlayEffects();
             Collect();
-            
             
             if (canDestroyItem)
             {
