@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1650031541750665946}
   - component: {fileID: 1101524053056621588}
   - component: {fileID: -4022652194498732272}
+  - component: {fileID: -1717693055492387063}
   m_Layer: 0
   m_Name: DamageableCrate
   m_TagString: Untagged
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -551667957
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 6180907720118946570, guid: 8a9c0e74737afed4195ea3d066e0fdfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -147,6 +148,18 @@ MonoBehaviour:
   rewards: []
   xRandomPosition: 2
   yRandomPosition: 2
-  initialHealth: 10
-  damagePoint: 0
-  damagedSprite: {fileID: 0}
+  initialHealth: 3
+  damagePoint: 1
+  damagedSprite: {fileID: -3530757283899592571, guid: 8a9c0e74737afed4195ea3d066e0fdfd, type: 3}
+--- !u!114 &-1717693055492387063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835464515515946325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6427c1045a8f9d14b94b6e41591825b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
