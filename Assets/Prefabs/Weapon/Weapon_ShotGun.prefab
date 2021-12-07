@@ -76,7 +76,7 @@ MonoBehaviour:
   weaponName: Weapon_ShotGun
   timeBtwShots: 0.6
   useMagazine: 1
-  magazineSize: 30
+  magazineSizes: 30
   autoReload: 0
   useRecoil: 0
   recoilForce: 30
