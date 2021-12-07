@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canDestroyItem: 1
-  Health: {fileID: 3452720777401090420}
+  collectablePS: {fileID: 0}
   ShieldPotionPoint: 3
 --- !u!1001 &3305662846554132966
 PrefabInstance:
@@ -170,6 +170,14 @@ PrefabInstance:
     - target: {fileID: 147094420889178258, guid: 82e28e9f85f959b4a90c4b7efbd62bd2, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027189696456113171, guid: 82e28e9f85f959b4a90c4b7efbd62bd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027189696456113171, guid: 82e28e9f85f959b4a90c4b7efbd62bd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -551667957
       objectReference: {fileID: 0}
     - target: {fileID: 2512590100950310239, guid: 82e28e9f85f959b4a90c4b7efbd62bd2, type: 3}
       propertyPath: m_RootOrder
@@ -224,10 +232,5 @@ PrefabInstance:
 --- !u!4 &1098475588070313145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2512590100950310239, guid: 82e28e9f85f959b4a90c4b7efbd62bd2, type: 3}
-  m_PrefabInstance: {fileID: 3305662846554132966}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &3452720777401090420 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 147094420889178258, guid: 82e28e9f85f959b4a90c4b7efbd62bd2, type: 3}
   m_PrefabInstance: {fileID: 3305662846554132966}
   m_PrefabAsset: {fileID: 0}

@@ -84168,6 +84168,14 @@ PrefabInstance:
       value: ItemHealthPotion
       objectReference: {fileID: 0}
     - target: {fileID: 2219240639833234124, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219240639833234124, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219240639833234124, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
