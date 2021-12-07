@@ -22,7 +22,7 @@ public class NPCHealth : BaseHealth
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K)) Damage(1);
+        //if (Input.GetKeyDown(KeyCode.K)) Damage(1);
     }
 
     private void UpdateHealthBar()
@@ -36,6 +36,7 @@ public class NPCHealth : BaseHealth
     {
         if (!IsDead) healthBarContainer.SetActive(true);
 
+        AudioManager.Instance.Play(AudioEnum.NPCTakeDamage);
         base.Damage(damage);
         UpdateHealthBar();
 
@@ -44,6 +45,7 @@ public class NPCHealth : BaseHealth
 
     private void Die()
     {
+        AudioManager.Instance.Play(AudioEnum.NPCDie);
         DestroyObject();
     }
 }

@@ -212,6 +212,7 @@ MonoBehaviour:
   SlowSpeed: 2
   WaterWalkPS: {fileID: 4609715198941024010}
   TimeBtnMuzzle: 1
+  TimeBtnSound: 2
 --- !u!114 &-4298248202153215017
 MonoBehaviour:
   m_ObjectHideFlags: 0

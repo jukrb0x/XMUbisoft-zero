@@ -65,4 +65,5 @@ public class AudioManager : Singleton<AudioManager>
 			Debug.LogError("Sound with sound enum " + audioEnum + " does not exist!");
 		return theAudio;
 	}
+	
 }
