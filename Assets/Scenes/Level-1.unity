@@ -80026,14 +80026,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1625728783}
     m_Modifications:
-    - target: {fileID: -4022652194498732272, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
-      propertyPath: rewards.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4022652194498732272, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
-      propertyPath: rewards.Array.data[0]
-      value: 
-      objectReference: {fileID: 8460540893107655994, guid: a124254363c0f2b4a958cb2ad7372471, type: 3}
     - target: {fileID: 2304224248690586218, guid: 0ca7e88c763dd264fad76b020ac90ac7, type: 3}
       propertyPath: m_RootOrder
       value: 0
