@@ -159,6 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 59299670326822539}
+  - component: {fileID: 2244016154716832901}
   m_Layer: 0
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -189,6 +190,18 @@ RectTransform:
   m_AnchoredPosition: {x: -15, y: -10.189}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2244016154716832901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377976024482856349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291ee36ca60da9f45be1b7484994fe78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &673014122235333572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1729,7 +1742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4888120140122675569
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2068,7 +2081,7 @@ GameObject:
   - component: {fileID: 1186627686103874226}
   - component: {fileID: 1444630417639638858}
   m_Layer: 0
-  m_Name: Slider
+  m_Name: BGMSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2146,7 +2159,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2244016154716832901}
+        m_TargetAssemblyTypeName: PauseMenuController, Assembly-CSharp
+        m_MethodName: BGMSliderChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6198101794838150182
 GameObject:
   m_ObjectHideFlags: 0
