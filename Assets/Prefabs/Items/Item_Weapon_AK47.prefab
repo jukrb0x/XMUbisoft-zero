@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6573888410045329505}
   m_Layer: 0
   m_Name: Item_Weapon_AK47
-  m_TagString: Untagged
+  m_TagString: Weapon_AK47
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
