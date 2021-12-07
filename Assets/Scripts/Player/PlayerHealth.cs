@@ -44,6 +44,7 @@ public class PlayerHealth : BaseHealth
     private void Start()
     {
         gameOverLabel.gameObject.SetActive(false);
+        UpdateUI();
     }
 
     private void Update()
@@ -56,7 +57,7 @@ public class PlayerHealth : BaseHealth
     {
         UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
     }
-    
+
     // Take the amount of damage we pass in parameters
     public override void Damage(float damage)
     {
@@ -88,6 +89,7 @@ public class PlayerHealth : BaseHealth
         {
             HealthPoint = MaxHealthPoint;
         }
+
         UpdateUI();
     }
 
@@ -100,8 +102,9 @@ public class PlayerHealth : BaseHealth
         }
         else
         {
-            CurrentShield = shield;
+            CurrentShield = maxShield;
         }
+
         UpdateUI();
     }
 
