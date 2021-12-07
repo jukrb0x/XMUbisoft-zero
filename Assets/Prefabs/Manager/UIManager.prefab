@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b6b19e29749464fab74a2e6ab09971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthAmountDelayRate: 0.0005
-  shieldAmountDelayRate: 0.0005
-  weaponImage: {fileID: 0}
-  weaponAmmoUI: {fileID: 0}
+  healthAmountDelayRate: 0.5
+  shieldAmountDelayRate: 0.5
+  WeaponContainer: {fileID: 0}

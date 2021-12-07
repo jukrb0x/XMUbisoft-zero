@@ -31,11 +31,15 @@ public class DialogueController : Singleton<DialogueController>
         playerComponents = GameObject.Find("Player").GetComponent<CharacterComponents>();
         // get Level Manager
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-
     }
 
     private void Start()
     {
+        if (HUDDialogue != null)
+        {
+            GameObject.Find("Dialogue");
+        }
+
         if (startingDialogue != null)
         {
             StartCoroutine(DelayedCallStartDialogue(startingDialogue, .3f));
@@ -69,10 +73,7 @@ public class DialogueController : Singleton<DialogueController>
     private void CloseDialogue()
     {
         isDialogRunning = false;
-        // TODO: free game time here
-        // LevelManager.Instance.CanPlayerMove = true;
         HUDDialogue.SetActive(false);
-        // playerComponents.InvertPlayerStates();
         levelManager.ResumeGame();
         levelManager.isDialogueRunning = isDialogRunning;
     }

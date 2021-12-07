@@ -11,9 +11,9 @@ public class UIManager : Singleton<UIManager>
     private Image healthBarDelay;
     [SerializeField] private float healthAmountDelayRate;
     [SerializeField] private float shieldAmountDelayRate;
-    [Header("Weapon")] [SerializeField] private Image weaponImage;
-
-    [SerializeField] private GameObject weaponAmmoUI;
+    [Header("Weapon")] [SerializeField] private GameObject WeaponContainer;
+    private Image weaponImage;
+    private GameObject weaponAmmoUI;
 
 
     private float playerCurrentHealth;
@@ -33,6 +33,15 @@ public class UIManager : Singleton<UIManager>
         shieldBar = statusBarsContainer.Find("ShieldBarContainer").Find("ShieldBar").GetComponent<Image>();
         healthBarDelay = statusBarsContainer.Find("HealthBarContainer").Find("HealthBarDelay").GetComponent<Image>();
         shieldBarDelay = statusBarsContainer.Find("ShieldBarContainer").Find("ShieldBarDelay").GetComponent<Image>();
+
+        // Get Weapon's details
+        if (WeaponContainer == null)
+        {
+            WeaponContainer = GameObject.Find("WeaponContainer");
+        }
+
+        weaponImage = WeaponContainer.transform.Find("Weapon").GetComponent<Image>();
+        weaponAmmoUI = WeaponContainer.transform.Find("Weapon").Find("Ammo").gameObject;
     }
 
     private void Update()
@@ -67,8 +76,7 @@ public class UIManager : Singleton<UIManager>
     private void UpdateBars()
     {
         healthBar.fillAmount = playerCurrentHealth / playerMaxHealth;
-        
-        
+
 
         if (healthBarDelay.fillAmount > healthBar.fillAmount)
         {
