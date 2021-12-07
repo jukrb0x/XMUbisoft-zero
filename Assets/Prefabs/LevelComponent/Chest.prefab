@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1803517388}
   - component: {fileID: 1803517389}
+  - component: {fileID: 7960991014521785442}
   m_Layer: 0
   m_Name: 174-Chest01_1
   m_TagString: Untagged
@@ -68,9 +69,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -551667957
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: -388488429
+  m_SortingLayer: 2
+  m_SortingOrder: 30
   m_Sprite: {fileID: -2704105833618463589, guid: b1738efee5db160439b593345c127d7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -82,6 +83,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &7960991014521785442
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803517387}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000029802322, y: -0.49019498}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.875, y: 1.875}
+    newSize: {x: 0.3, y: 0.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6571351, y: 0.7856778}
+  m_EdgeRadius: 0
 --- !u!1 &7077902278289635610
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7077902278289635610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.4, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1803517388}
@@ -155,9 +182,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -551667957
-  m_SortingLayer: 1
-  m_SortingOrder: 20
+  m_SortingLayerID: -388488429
+  m_SortingLayer: 2
+  m_SortingOrder: 30
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -242,6 +269,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.04147625, y: -0.03517008}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 2.2191
