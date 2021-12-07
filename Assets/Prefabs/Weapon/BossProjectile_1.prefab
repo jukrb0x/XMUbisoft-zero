@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyMask:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 35840
   lifeTime: 4
   impactPS: {fileID: 8355226749917837849}
 --- !u!1001 &6710656190668660306
