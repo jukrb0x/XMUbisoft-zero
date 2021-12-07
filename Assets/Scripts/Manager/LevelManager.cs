@@ -72,12 +72,13 @@ public class LevelManager : MonoBehaviour
         // TODO resume bgm
     }
 
-   public void ResetLevel()
+    public void ResetLevel()
     {
         isPaused = false;
         Time.timeScale = 1;
         player.GetComponent<CharacterComponents>().ResetPlayerStates();
     }
+
 
     private void PlayAudio()
     {
