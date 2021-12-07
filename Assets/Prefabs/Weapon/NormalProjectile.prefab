@@ -225,6 +225,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2493140660288932042, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2493140660288932042, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -551667957
+      objectReference: {fileID: 0}
     - target: {fileID: 3373952817770619979, guid: 4a209583ef93db54bba6dc8602b93eb9, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
       value: 0.3
