@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class SoundController : MonoBehaviour
 {
-    public AudioSource asound;
+    public GameObject BGM;
     public Slider sd;
-    void Start()
+    private AudioSource audioSource;
+    void Awake()
     {
-        
+         audioSource = BGM.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
