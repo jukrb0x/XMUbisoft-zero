@@ -37,15 +37,12 @@ public class ReturnToPool : MonoBehaviour
     {
         if (CheckLayer(other.gameObject.layer, WallMask))
         {
-            AudioManager.Instance.PlayOneShot(AudioEnum.ProjectileHitWall);
-            Return();
-        }
             if (projectile != null)
             {
                 projectile.DisableProjectile();
             }
-
             impactPS.Play();
+            AudioManager.Instance.PlayOneShot(AudioEnum.ProjectileHitWall);
             Invoke(nameof(Return), impactPS.main.duration);
 
         }
@@ -77,4 +74,4 @@ public class ReturnToPool : MonoBehaviour
     {
         CancelInvoke();
     }
-} 
+}
