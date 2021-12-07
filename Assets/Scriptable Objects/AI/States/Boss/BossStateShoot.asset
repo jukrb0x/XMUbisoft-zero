@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Actions:
   - {fileID: 11400000, guid: 6dc4fcb04acb15d469809c14b43082bf, type: 2}
+  - {fileID: 11400000, guid: 98a689100b6504b478d589c7d3a86246, type: 2}
   Transitions:
   - Decision: {fileID: 11400000, guid: 5a46fe2fc4a494f43a79bc585dc62d34, type: 2}
     TrueState: {fileID: 11400000, guid: 312a9daad13b5004494842ae2dbff301, type: 2}
