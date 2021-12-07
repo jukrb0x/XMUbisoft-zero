@@ -32,7 +32,7 @@ TagManager:
   - EnemyProjectile
   - PlayerProjectile
   - Boss
-  - 
+  - LevelComponent
   - 
   - 
   - 
