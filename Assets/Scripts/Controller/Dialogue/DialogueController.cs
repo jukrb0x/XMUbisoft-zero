@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class DialogueController : Singleton<DialogueController>
 {
-    private Character player;
+    private CharacterComponents playerComponents;
     [SerializeField] private GameObject HUDDialogue;
     private Image dialogueAvatar;
     private TextMeshProUGUI dialogueSentence;
@@ -26,6 +26,8 @@ public class DialogueController : Singleton<DialogueController>
         sentences = new Queue<Sentence>();
         dialogueSentence = HUDDialogue.GetComponentInChildren<TextMeshProUGUI>();
         dialogueAvatar = HUDDialogue.transform.Find("Avatar").GetComponent<Image>();
+        // get states of player
+        playerComponents = GameObject.Find("Player").GetComponent<CharacterComponents>();
     }
 
     private void Start()
@@ -66,11 +68,15 @@ public class DialogueController : Singleton<DialogueController>
         // TODO: free game time here
         // LevelManager.Instance.CanPlayerMove = true;
         HUDDialogue.SetActive(false);
+        playerComponents.InvertPlayerStates();
     }
 
 
     public void StartDialogue(Dialogue dialogue)
     {
+        // TODO BUG invert not working
+        playerComponents.ResetPlayerStates();
+        playerComponents.InvertPlayerStates();
         isDialogRunning = true;
         HUDDialogue.SetActive(true);
         sentences.Clear(); // clear default text
