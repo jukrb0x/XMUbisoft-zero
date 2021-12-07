@@ -14,7 +14,6 @@ public class PauseMenuController : MonoBehaviour
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         BGMSlider = GameObject.Find("BGMSlider").GetComponent<Slider>();
         BGMSlider.value = levelManager.GetBGMVolume();
-        print(levelManager.GetBGMVolume());
     }
 
     // Update is called once per frame
