@@ -16,6 +16,7 @@ public class DialogueController : Singleton<DialogueController>
     private Sentence currentSentence;
     private bool isTyping;
     private bool isDialogRunning;
+    private LevelManager levelManager;
 
     [SerializeField] private Dialogue startingDialogue;
 
@@ -28,6 +29,9 @@ public class DialogueController : Singleton<DialogueController>
         dialogueAvatar = HUDDialogue.transform.Find("Avatar").GetComponent<Image>();
         // get states of player
         playerComponents = GameObject.Find("Player").GetComponent<CharacterComponents>();
+        // get Level Manager
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+
     }
 
     private void Start()
@@ -68,16 +72,18 @@ public class DialogueController : Singleton<DialogueController>
         // TODO: free game time here
         // LevelManager.Instance.CanPlayerMove = true;
         HUDDialogue.SetActive(false);
-        playerComponents.InvertPlayerStates();
+        // playerComponents.InvertPlayerStates();
+        levelManager.ResumeGame();
+        levelManager.isDialogueRunning = isDialogRunning;
     }
 
 
     public void StartDialogue(Dialogue dialogue)
     {
-        // TODO BUG invert not working
-        playerComponents.ResetPlayerStates();
-        playerComponents.InvertPlayerStates();
         isDialogRunning = true;
+        levelManager.ResetLevel();
+        levelManager.PauseGame();
+        levelManager.isDialogueRunning = isDialogRunning;
         HUDDialogue.SetActive(true);
         sentences.Clear(); // clear default text
         foreach (var sentence in dialogue.sentences)
