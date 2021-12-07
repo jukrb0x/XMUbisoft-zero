@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -5,13 +6,28 @@ public class LevelManager : MonoBehaviour
     // [SerializeField] private Character playableCharacter;
     // [SerializeField] private Transform spawnPosition;
     public AudioEnum audioEnum;
-    public float delayTime = 0;
+    public float delayTime = 0.5f;
     private AudioSource _audioSource;
+    private GameObject pauseMenu;
+    private bool isPaused;
 
     private void Start()
     {
         Invoke("Audios", delayTime);
-        //Audios();
+
+        isPaused = false;
+        pauseMenu = GameObject.Find("PauseMenu");
+        pauseMenu.SetActive(false);
+        
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(true);
+        }
+        
     }
 
     private void Audios()
