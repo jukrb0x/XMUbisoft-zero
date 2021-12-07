@@ -165,7 +165,7 @@ MonoBehaviour:
     m_Bits: 2147483648
   BossMask:
     serializedVersion: 2
-    m_Bits: 17408
+    m_Bits: 50176
   lifeTime: 5
   impactPS: {fileID: 7815667089507172073}
 --- !u!1001 &4802073024602593954
