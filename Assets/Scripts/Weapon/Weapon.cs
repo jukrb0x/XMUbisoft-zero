@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [Header("Name")]
+    [SerializeField] private string weaponName = "";
+
     [Header("Settings")] [SerializeField] public float timeBtwShots = 0.5f;
 
     [Header("Weapon")] 
@@ -15,7 +18,8 @@ public class Weapon : MonoBehaviour
     
     [Header("Effects")] 
     [SerializeField] protected ParticleSystem muzzlePS;
-    
+    public string WeaponName => weaponName;
+
 
     // Internal
     public float nextShotTime;
