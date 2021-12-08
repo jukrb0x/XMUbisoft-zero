@@ -14,8 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - avatar: {fileID: 8906951933893973859, guid: 63919541b45e510439a52a7c32f8d7b0, type: 3}
-    sentence: Test sentence 1
+    sentence: 'This levels is challenging. '
   - avatar: {fileID: 8906951933893973859, guid: 63919541b45e510439a52a7c32f8d7b0, type: 3}
-    sentence: 'Test sentence 2
+    sentence: 'Please be prepared!
+
+'
+  - avatar: {fileID: 8906951933893973859, guid: 63919541b45e510439a52a7c32f8d7b0, type: 3}
+    sentence: 'Are you ready?
+
+'
+  - avatar: {fileID: 8906951933893973859, guid: 63919541b45e510439a52a7c32f8d7b0, type: 3}
+    sentence: Yes or No
+  - avatar: {fileID: 8906951933893973859, guid: 63919541b45e510439a52a7c32f8d7b0, type: 3}
+    sentence: 'Please be prepared!
 
 '
