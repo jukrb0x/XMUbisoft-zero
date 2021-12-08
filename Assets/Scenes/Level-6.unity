@@ -87588,6 +87588,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1021913775}
     m_Modifications:
+    - target: {fileID: -1953002988882627796, guid: 8df03ee2bc4181c4987700c8f81e6d94, type: 3}
+      propertyPath: rewards.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -1953002988882627796, guid: 8df03ee2bc4181c4987700c8f81e6d94, type: 3}
+      propertyPath: rewards.Array.data[2]
+      value: 
+      objectReference: {fileID: 3401294078810231231, guid: 1074a1fd2e632b942966b1553b84738c, type: 3}
+    - target: {fileID: -1953002988882627796, guid: 8df03ee2bc4181c4987700c8f81e6d94, type: 3}
+      propertyPath: rewards.Array.data[3]
+      value: 
+      objectReference: {fileID: 5469590526729881090, guid: f557081451a996e44971c7401078db0f, type: 3}
+    - target: {fileID: -1953002988882627796, guid: 8df03ee2bc4181c4987700c8f81e6d94, type: 3}
+      propertyPath: rewards.Array.data[4]
+      value: 
+      objectReference: {fileID: 5469590526729881090, guid: f557081451a996e44971c7401078db0f, type: 3}
+    - target: {fileID: -1953002988882627796, guid: 8df03ee2bc4181c4987700c8f81e6d94, type: 3}
+      propertyPath: rewards.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -1953002988882627796, guid: 8df03ee2bc4181c4987700c8f81e6d94, type: 3}
+      propertyPath: rewards.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3913562630892962226, guid: 8df03ee2bc4181c4987700c8f81e6d94, type: 3}
       propertyPath: m_RootOrder
       value: 0
