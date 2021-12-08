@@ -9,14 +9,16 @@ using UnityEngine.UI;
 public class DialogueController : Singleton<DialogueController>
 {
     private CharacterComponents playerComponents;
+    private GameObject player;
     [SerializeField] private GameObject HUDDialogue;
     private Image dialogueAvatar;
     private TextMeshProUGUI dialogueSentence;
     private Queue<Sentence> sentences;
     private Sentence currentSentence;
     private bool isTyping;
-    private bool isDialogRunning;
+    public bool isDialogRunning;
     private LevelManager levelManager;
+    private Vector2 zero = Vector2.zero;
 
     [SerializeField] private Dialogue startingDialogue;
 
@@ -32,6 +34,8 @@ public class DialogueController : Singleton<DialogueController>
         playerComponents = GameObject.Find("Player").GetComponent<CharacterComponents>();
         // get Level Manager
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        player = GameObject.Find("Player");
+        
     }
 
     private void Start()
@@ -79,7 +83,9 @@ public class DialogueController : Singleton<DialogueController>
     {
         isDialogRunning = true;
         levelManager.ResetLevel();
-        levelManager.PauseGame();
+        levelManager.PauseGame(1);
+        player.GetComponent<CharacterController>().SetMovement(zero);
+        //Gao Do
         levelManager.isDialogueRunning = isDialogRunning;
         HUDDialogue.SetActive(true);
         sentences.Clear(); // clear default text
