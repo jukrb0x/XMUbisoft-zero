@@ -341,7 +341,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014653429, y: -0.17165454}
+  m_Offset: {x: 0.0039827824, y: -0.36399782}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -352,7 +352,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.12370595, y: 0.10669091}
+  m_Size: {x: 1.9749086, y: 0.25298008}
   m_EdgeRadius: 0
 --- !u!1 &7858416758278948653
 GameObject:
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 1361208063610150294}
   - component: {fileID: 4076883064454296215}
   - component: {fileID: 7961724148725476593}
-  - component: {fileID: 1221925961292328055}
+  - component: {fileID: 3160339732978369834}
   m_Layer: 11
   m_Name: Enemy_MonsterCar_2
   m_TagString: Enemy
@@ -388,7 +388,7 @@ Transform:
   m_GameObject: {fileID: 7858416758278948653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.483, y: -3.182, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 6965104084861604478}
   - {fileID: 2513933433755909545}
@@ -517,8 +517,8 @@ MonoBehaviour:
   DamageMask:
     serializedVersion: 2
     m_Bits: 8192
---- !u!70 &1221925961292328055
-CapsuleCollider2D:
+--- !u!61 &3160339732978369834
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -530,9 +530,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0052333847, y: 0.005233377}
-  m_Size: {x: 0.23046677, y: 0.46046668}
-  m_Direction: 0
+  m_Offset: {x: -0.049153194, y: -0.11632919}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0393224, y: 0.60349774}
+  m_EdgeRadius: 0
 --- !u!1 &8630622412523775558
 GameObject:
   m_ObjectHideFlags: 0

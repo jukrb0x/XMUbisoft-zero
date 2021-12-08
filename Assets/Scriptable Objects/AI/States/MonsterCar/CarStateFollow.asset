@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2d62486d080894289ca8ebb01a6d59, type: 3}
   m_Name: CarStateFollow
   m_EditorClassIdentifier: 
-  Actions: []
-  Transitions: []
+  Actions:
+  - {fileID: 11400000, guid: 98a689100b6504b478d589c7d3a86246, type: 2}
+  Transitions:
+  - Decision: {fileID: 11400000, guid: 0feaf509f5603f441a2edddeafd22296, type: 2}
+    TrueState: {fileID: 11400000, guid: 312a9daad13b5004494842ae2dbff301, type: 2}
+    FalseState: {fileID: 11400000, guid: 22d5933e64650d1458703289970f8208, type: 2}

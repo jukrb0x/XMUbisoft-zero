@@ -341,7 +341,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014653429, y: -0.17165454}
+  m_Offset: {x: -0.0029621124, y: -0.31973052}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -352,7 +352,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.12370595, y: 0.10669091}
+  m_Size: {x: 1.4565308, y: 0.21074453}
   m_EdgeRadius: 0
 --- !u!1 &7277855231472419486
 GameObject:
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 10687369510500686}
   - component: {fileID: 3050621491754980943}
   - component: {fileID: 8987982474295281705}
-  - component: {fileID: 158510744164944047}
+  - component: {fileID: 5918984717874470513}
   m_Layer: 11
   m_Name: Enemy_MonsterCar_3
   m_TagString: Enemy
@@ -457,7 +457,7 @@ Transform:
   m_GameObject: {fileID: 9207811720004854773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.483, y: -3.182, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 8245816992056784550}
   - {fileID: 3469261267802216817}
@@ -586,8 +586,8 @@ MonoBehaviour:
   DamageMask:
     serializedVersion: 2
     m_Bits: 8192
---- !u!70 &158510744164944047
-CapsuleCollider2D:
+--- !u!61 &5918984717874470513
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -599,6 +599,16 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0052333847, y: 0.005233377}
-  m_Size: {x: 0.23046677, y: 0.46046668}
-  m_Direction: 0
+  m_Offset: {x: 0.06333251, y: -0.016888812}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.80578005, y: 0.45956227}
+  m_EdgeRadius: 0

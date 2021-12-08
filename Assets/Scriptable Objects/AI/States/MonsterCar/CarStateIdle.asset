@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2d62486d080894289ca8ebb01a6d59, type: 3}
   m_Name: CarStateIdle
   m_EditorClassIdentifier: 
-  Actions: []
-  Transitions: []
+  Actions:
+  - {fileID: 11400000, guid: 0fb64ddc6f303f74b9a2dc9cc0730e3e, type: 2}
+  Transitions:
+  - Decision: {fileID: 11400000, guid: 0feaf509f5603f441a2edddeafd22296, type: 2}
+    TrueState: {fileID: 11400000, guid: 560d4b681610d61409256e45935e9110, type: 2}
+    FalseState: {fileID: 11400000, guid: 312a9daad13b5004494842ae2dbff301, type: 2}
