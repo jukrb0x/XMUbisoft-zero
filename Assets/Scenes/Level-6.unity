@@ -10188,6 +10188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 3590230243304992651, guid: cd594a18bdf8543d3a4616474889672d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd594a18bdf8543d3a4616474889672d, type: 3}
 --- !u!1001 &757888297
@@ -84640,6 +84644,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3913562630892962226, guid: 8df03ee2bc4181c4987700c8f81e6d94, type: 3}
   m_PrefabInstance: {fileID: 922155178}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &930122895 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1444630417639638858, guid: 4178b93ef2a8246db8ed7fbd518f832f, type: 3}
+  m_PrefabInstance: {fileID: 760317265}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &931709585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104792,6 +104807,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2477611402688588398, guid: 15782614225494f4d9a0b1fd4c7543fc, type: 3}
+      propertyPath: _slider
+      value: 
+      objectReference: {fileID: 930122895}
     - target: {fileID: 4900084993174541518, guid: 15782614225494f4d9a0b1fd4c7543fc, type: 3}
       propertyPath: m_Name
       value: BGM
@@ -104890,11 +104909,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 318152358655701975, guid: 9ca6e4677ed6f894199a613e64bb1a5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.741322
+      value: 3.59
       objectReference: {fileID: 0}
     - target: {fileID: 318152358655701975, guid: 9ca6e4677ed6f894199a613e64bb1a5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.872143
+      value: 25.06
       objectReference: {fileID: 0}
     - target: {fileID: 318152358655701975, guid: 9ca6e4677ed6f894199a613e64bb1a5a, type: 3}
       propertyPath: m_LocalPosition.z
