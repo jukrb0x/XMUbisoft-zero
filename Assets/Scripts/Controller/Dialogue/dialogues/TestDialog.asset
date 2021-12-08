@@ -23,9 +23,3 @@ MonoBehaviour:
     sentence: 'Are you ready?
 
 '
-  - avatar: {fileID: 8906951933893973859, guid: 63919541b45e510439a52a7c32f8d7b0, type: 3}
-    sentence: Please be prepared!
-  - avatar: {fileID: 8906951933893973859, guid: 63919541b45e510439a52a7c32f8d7b0, type: 3}
-    sentence: 'Please be prepared!
-
-'
