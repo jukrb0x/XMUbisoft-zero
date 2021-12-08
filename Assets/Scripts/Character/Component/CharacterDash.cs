@@ -15,6 +15,7 @@ namespace Component
 
         protected override void HandleInput()
         {
+            base.HandleInput();
             if (Input.GetKeyDown(KeyCode.Space)) Dash();
         }
 

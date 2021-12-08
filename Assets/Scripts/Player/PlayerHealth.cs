@@ -21,6 +21,7 @@ public class PlayerHealth : BaseHealth
     private CharacterWeapon weapon;
     private UnderAttacked _underAttacked;
     private GameObject weapons;
+    private LevelManager levelManager;
 
     protected override void Awake()
     {
@@ -34,16 +35,19 @@ public class PlayerHealth : BaseHealth
         // weapons = GameObject.FindWithTag("Weapon1");
         MaxHealthPoint = initialHealth;
         CurrentShield = initialShield;
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+
         if (!gameOverLabel) gameOverLabel = GameObject.Find("GameOverLabel").GetComponent<TextMeshProUGUI>();
         _underAttacked = GetComponent<UnderAttacked>();
 
         base.Awake();
-        UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
+        UIManager.Instance.SetUIPlayerStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
     }
 
     private void Start()
     {
         gameOverLabel.gameObject.SetActive(false);
+        UpdateUI();
     }
 
     private void Update()
@@ -54,12 +58,13 @@ public class PlayerHealth : BaseHealth
 
     private void UpdateUI()
     {
-        UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
+        UIManager.Instance.SetUIPlayerStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
     }
-    
+
     // Take the amount of damage we pass in parameters
     public override void Damage(float damage)
     {
+        AudioManager.Instance.PlayOneShot(AudioEnum.PlayerTakeDamage);
         _underAttacked.FlashScreen();
 
         if (!IsShieldBroken)
@@ -72,6 +77,7 @@ public class PlayerHealth : BaseHealth
             return;
         }
 
+        
         base.Damage(damage);
         UpdateUI();
         if (IsDead) Die();
@@ -88,6 +94,7 @@ public class PlayerHealth : BaseHealth
         {
             HealthPoint = MaxHealthPoint;
         }
+
         UpdateUI();
     }
 
@@ -100,8 +107,11 @@ public class PlayerHealth : BaseHealth
         }
         else
         {
-            CurrentShield = shield;
+            CurrentShield = maxShield;
         }
+
+        IsShieldBroken = false;
+
         UpdateUI();
     }
 
@@ -111,6 +121,7 @@ public class PlayerHealth : BaseHealth
     {
         if (character != null)
         {
+            AudioManager.Instance.Play(AudioEnum.Failed);
             collider2D.enabled = false;
             spriteRenderer.enabled = false;
 
@@ -125,8 +136,9 @@ public class PlayerHealth : BaseHealth
 
         if (destroyObject) DestroyObject();
 
-        // show Game Over label
+        // Show Game Over
         gameOverLabel.gameObject.SetActive(true);
+        levelManager.PauseGame();
     }
 
     // Revive this game object    

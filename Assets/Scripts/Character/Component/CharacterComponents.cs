@@ -10,9 +10,14 @@ public class CharacterComponents : MonoBehaviour
     protected CharacterController controller;
     protected float horizontalInput;
     protected float verticalInput;
+    public bool canMove;
+    public bool canShoot;
 
     protected virtual void Start()
     {
+        // init state
+        ResetPlayerStates();
+
         controller = GetComponent<CharacterController>();
         character = GetComponent<Character>();
         characterWeapon = GetComponent<CharacterWeapon>();
@@ -25,6 +30,17 @@ public class CharacterComponents : MonoBehaviour
         HandleAbility();
     }
 
+    public void ResetPlayerStates()
+    {
+        canMove = canShoot = true;
+    }
+
+    public void InvertPlayerStates()
+    {
+        canMove = !canMove;
+        canShoot = !canShoot;
+    }
+
     // Main method. Here we put the logic of each ability
     protected virtual void HandleAbility()
     {
@@ -35,7 +51,7 @@ public class CharacterComponents : MonoBehaviour
     // Here we get the necessary input we need to perform our actions    
     protected virtual void HandleInput()
     {
-        
+        if (!canMove || !canShoot) return;
     }
 
     // Here get the main input we need to control our character

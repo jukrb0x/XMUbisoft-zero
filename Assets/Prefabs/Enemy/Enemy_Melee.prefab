@@ -445,6 +445,7 @@ MonoBehaviour:
   characterType: 1
   characterSprite: {fileID: 5870734710875285677}
   characterAnimator: {fileID: 476980599736533595}
+  health: {fileID: 0}
 --- !u!114 &194424633419166817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,6 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544ff67eeb495cd4d8e87f6d323738ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   walkSpeed: 3.5
 --- !u!114 &1849417813132875118
 MonoBehaviour:
@@ -482,6 +485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6906ddeb39a40b245a9fa8a47de6db16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   flipMode: 0
   threshold: 0.1
 --- !u!114 &3736430497550269039
@@ -496,7 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74921990018740c2a7489a905817e41c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 10
+  initialHealth: 12
 --- !u!114 &7292508502241551369
 MonoBehaviour:
   m_ObjectHideFlags: 0
