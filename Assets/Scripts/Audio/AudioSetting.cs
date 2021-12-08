@@ -10,18 +10,20 @@ public class AudioSetting : MonoBehaviour
     public int _status = 1;
     [SerializeField] private float volumes = 1;
     [SerializeField] private bool isBGM = false;
-    private Slider slider;
+    //private Slider slider;
+    [SerializeField] private Slider _slider;
+    
 
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
-        slider = GameObject.Find("BGMSlider").GetComponent<Slider>();
+        //slider = GameObject.Find("BGMSlider").GetComponent<Slider>();
     }
 
 
     private void Update()
     {
-        SetVolume(slider.value);
+        SetVolume(_slider.value);
         if (!_audioSource.isPlaying && isBGM && _status == 1)
         {
             _audioSource.Play();
