@@ -19,7 +19,7 @@ public class CharacterWeapon : CharacterComponents
     // Returns the reference to our Current Weapon Aim
     public WeaponAim WeaponAim { get; set; }
 
-    private int mouseLeftBtn = 0;
+    // private int mouseLeftBtn = 0;
     public Weapon SecondaryWeapon { get; set; }
     public Weapon ThirdWeapon { get; set; }
     public int beforeindex = -10;
