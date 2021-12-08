@@ -7,6 +7,7 @@ public class AddShieldPotion : Collectables
     protected override void Collect()
     {
         base.Collect();
+        AudioManager.Instance.Play(AudioEnum.UsePotion);
         character.health.AddShield(ShieldPotionPoint);
     }
 }

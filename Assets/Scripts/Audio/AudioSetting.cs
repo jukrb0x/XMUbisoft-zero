@@ -14,18 +14,17 @@ public class AudioSetting : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
     }
-    
-    
+
+
     private void Update()
     {
         SetVolume(volumes);
-        Test();
         if (!_audioSource.isPlaying && isBGM && _status == 1)
         {
             _audioSource.Play();
         }
     }
-    
+
     public void SetVolume(float volume)
     {
         _audioSource.volume = volume;
@@ -55,21 +54,5 @@ public class AudioSetting : MonoBehaviour
         _audioSource.Pause();
         _status = 0;
         Time.timeScale = 0;
-    }
-    
-    
-    //TODO: Delete This.
-    private void Test()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Pause();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            Resume();
-        }
-        
     }
 }

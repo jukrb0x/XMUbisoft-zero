@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a037a3dca04ed79d06dc16232f32bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HUDDialogue: {fileID: 0}
+  startingDialogue: {fileID: 11400000, guid: 418e061bb3f5e4d4b8f5970e79195885, type: 2}

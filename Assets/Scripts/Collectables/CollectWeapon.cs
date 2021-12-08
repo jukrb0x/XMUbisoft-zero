@@ -26,7 +26,7 @@ public class CollectWeapon : Collectables
                 int maxAmmo = character.GetComponent<CharacterWeapon>().CurrentWeapon.CurrentMagazine + AddProjectileNum;
                 character.GetComponent<CharacterWeapon>().CurrentWeapon.WeaponAmmo.SaveMaxAmmo(maxAmmo);
                 character.GetComponent<CharacterWeapon>().CurrentWeapon.CurrentMagazine = maxAmmo;
-                UIManager.Instance.SetWeapon(character.GetComponent<CharacterWeapon>().CurrentWeapon.CurrentAmmo.ToString(),character.GetComponent<CharacterWeapon>().CurrentWeapon.CurrentMagazine.ToString());
+                UIManager.Instance.SetUIWeaponAmmo(character.GetComponent<CharacterWeapon>().CurrentWeapon.CurrentAmmo.ToString(),character.GetComponent<CharacterWeapon>().CurrentWeapon.CurrentMagazine.ToString());
             }
 
             if (thirdWeapon != null && thirdWeapon.CompareTag(gameObject.tag))
@@ -35,7 +35,7 @@ public class CollectWeapon : Collectables
                 int maxAmmo = character.GetComponent<CharacterWeapon>().CurrentWeapon.CurrentMagazine + AddProjectileNum;
                 character.GetComponent<CharacterWeapon>().CurrentWeapon.WeaponAmmo.SaveMaxAmmo(maxAmmo);
                 character.GetComponent<CharacterWeapon>().CurrentWeapon.CurrentMagazine = maxAmmo;
-                UIManager.Instance.SetWeapon(character.GetComponent<CharacterWeapon>().CurrentWeapon.CurrentAmmo.ToString(),character.GetComponent<CharacterWeapon>().CurrentWeapon.CurrentMagazine.ToString());
+                UIManager.Instance.SetUIWeaponAmmo(character.GetComponent<CharacterWeapon>().CurrentWeapon.CurrentAmmo.ToString(),character.GetComponent<CharacterWeapon>().CurrentWeapon.CurrentMagazine.ToString());
             }
             
             if (secondWeapon == null)
@@ -46,6 +46,8 @@ public class CollectWeapon : Collectables
             {
                 character.GetComponent<CharacterWeapon>().ThirdWeapon = itemWeaponData.WeaponToEquip;
             }
+
+            AudioManager.Instance.Play(AudioEnum.AK47AndShotGunReload);
         }
 
     }

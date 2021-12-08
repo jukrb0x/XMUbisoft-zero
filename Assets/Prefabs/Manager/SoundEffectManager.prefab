@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6757696897234132167}
   - component: {fileID: -1654821013762794293}
+  - component: {fileID: 7273685078689651649}
   m_Layer: 0
   m_Name: SoundEffectManager
   m_TagString: Untagged
@@ -114,13 +115,13 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 30cb374262160bf44a507feb96a37ba2, type: 3}
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - audioEnum: 12
     clip: {fileID: 8300000, guid: 3e9328df6ddfa9844bba2df26b621b89, type: 3}
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - audioEnum: 13
     clip: {fileID: 8300000, guid: 2a361f1c97432d64eaad5e1ddc9eb4a8, type: 3}
@@ -132,7 +133,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 352d044f47a683646b05d085be0f902a, type: 3}
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - audioEnum: 15
     clip: {fileID: 8300000, guid: 3b1846ef7f231bc4a9ecc37c957b4d2b, type: 3}
@@ -162,5 +163,17 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6e8990946f1bc1243a0c186e1b36d7e0, type: 3}
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
+--- !u!114 &7273685078689651649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4727439151716323445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a9df1b710de1d4a9d9f5d899ea4369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
