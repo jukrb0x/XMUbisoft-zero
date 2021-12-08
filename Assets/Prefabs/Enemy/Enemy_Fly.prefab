@@ -457,7 +457,7 @@ Transform:
   m_GameObject: {fileID: 8460540893107655994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.483, y: -3.182, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 8704983335809892457}
   - {fileID: 4216526321189597118}
@@ -539,7 +539,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544ff67eeb495cd4d8e87f6d323738ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 6
+  canMove: 0
+  canShoot: 0
+  walkSpeed: 5
 --- !u!114 &757923050691350401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,6 +554,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6906ddeb39a40b245a9fa8a47de6db16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   flipMode: 0
   threshold: 0.1
 --- !u!114 &2374710859301789824

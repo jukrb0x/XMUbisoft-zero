@@ -87,6 +87,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7639a2c6f8758a4985aeefa56a8365d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
 --- !u!114 &2552276365764917282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544ff67eeb495cd4d8e87f6d323738ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   walkSpeed: 5
 --- !u!114 &3682670745383504756
 MonoBehaviour:
@@ -112,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1669d0dc5e70ca40a37e702104a37cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBtwDamage: 0.5
+  timeBtwDamage: 0.3
 --- !u!50 &2552276365764917280
 Rigidbody2D:
   serializedVersion: 4
@@ -146,6 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6906ddeb39a40b245a9fa8a47de6db16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   flipMode: 1
   threshold: 0.1
 --- !u!114 &2366739268618710121
@@ -178,6 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d336e4f5fee3241ba8a547eb728e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   weaponToUse: {fileID: 4919920270245964967, guid: 6827e30c70cc0ff46a97158384df403b, type: 3}
   weaponHolderPosition: {fileID: 129755786265710325}
   beforeindex: -10
@@ -196,6 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74acd639c0aee4458157845a764f76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   runSpeed: 10
 --- !u!114 &8620743958629856062
 MonoBehaviour:
