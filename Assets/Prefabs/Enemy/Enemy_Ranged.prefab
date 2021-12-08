@@ -85,6 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7639a2c6f8758a4985aeefa56a8365d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
 --- !u!114 &354560432224908872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544ff67eeb495cd4d8e87f6d323738ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   walkSpeed: 2
 --- !u!50 &354560432224908874
 Rigidbody2D:
@@ -131,6 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6906ddeb39a40b245a9fa8a47de6db16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   flipMode: 0
   threshold: 0.1
 --- !u!114 &1470374904056094537
@@ -159,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74921990018740c2a7489a905817e41c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 10
+  initialHealth: 8
 --- !u!114 &2139447344434486557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6356bd50bc50946ae9986fec4850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   weaponToUse: {fileID: 1845851281785617037, guid: 1289153a84356ae408418ceeaff472c4, type: 3}
   weaponHolderPosition: {fileID: 2759821686374989983}
 --- !u!70 &5938825230132076408
@@ -217,8 +225,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d336e4f5fee3241ba8a547eb728e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   weaponToUse: {fileID: 1845851281785617037, guid: 1289153a84356ae408418ceeaff472c4, type: 3}
   weaponHolderPosition: {fileID: 2759821686374989983}
+  beforeindex: -10
+  index: 0
+  weaponNum: 1
+  modNum: 0
 --- !u!1 &820973170147734784
 GameObject:
   m_ObjectHideFlags: 0
