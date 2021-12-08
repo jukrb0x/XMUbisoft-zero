@@ -7953,11 +7953,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2552276365764917286, guid: e61857bcd388b40cb9d267401d1b57da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.62
+      value: -16.8
       objectReference: {fileID: 0}
     - target: {fileID: 2552276365764917286, guid: e61857bcd388b40cb9d267401d1b57da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: 2552276365764917286, guid: e61857bcd388b40cb9d267401d1b57da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11067,11 +11067,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8460540893107655996, guid: a124254363c0f2b4a958cb2ad7372471, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.8
+      value: 18.42
       objectReference: {fileID: 0}
     - target: {fileID: 8460540893107655996, guid: a124254363c0f2b4a958cb2ad7372471, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.05
+      value: -10.53
       objectReference: {fileID: 0}
     - target: {fileID: 8460540893107655996, guid: a124254363c0f2b4a958cb2ad7372471, type: 3}
       propertyPath: m_LocalPosition.z
@@ -88750,7 +88750,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.9402075, y: 0.15670156}
+  m_Offset: {x: -2.971592, y: 0.15670156}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -88761,7 +88761,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.5817394, y: 10.805005}
+  m_Size: {x: 0.5189705, y: 10.805005}
   m_EdgeRadius: 0
 --- !u!4 &1636107152
 Transform:
@@ -108748,11 +108748,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8460540893107655996, guid: a124254363c0f2b4a958cb2ad7372471, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.45
+      value: -30.16
       objectReference: {fileID: 0}
     - target: {fileID: 8460540893107655996, guid: a124254363c0f2b4a958cb2ad7372471, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.51
+      value: 8.83
       objectReference: {fileID: 0}
     - target: {fileID: 8460540893107655996, guid: a124254363c0f2b4a958cb2ad7372471, type: 3}
       propertyPath: m_LocalPosition.z
