@@ -46,6 +46,8 @@ public class CollectWeapon : Collectables
             {
                 character.GetComponent<CharacterWeapon>().ThirdWeapon = itemWeaponData.WeaponToEquip;
             }
+
+            AudioManager.Instance.Play(AudioEnum.AK47AndShotGunReload);
         }
 
     }
