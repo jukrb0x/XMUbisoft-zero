@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TypingTransition : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class TypingTransition : MonoBehaviour
     private int currentPos;
 
     private bool isActive;
-    private Text myText; //get test
+    private TextMeshProUGUI myText; //get test
     private float timer; //Timer
     private string words;
 
@@ -27,7 +28,7 @@ public class TypingTransition : MonoBehaviour
         timer = 0;
         isActive = true;
         charsPerSecond = Mathf.Max(0.01f, charsPerSecond);
-        myText = GetComponent<Text>();
+        myText = GetComponent<TextMeshProUGUI>();
         words = myText.text;
         myText.text = "";
     }
