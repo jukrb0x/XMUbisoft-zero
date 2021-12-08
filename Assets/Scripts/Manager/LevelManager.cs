@@ -13,26 +13,32 @@ public class LevelManager : MonoBehaviour
     private readonly string WEAPON_AMMO_MAX_SAVELOAD = "WeaponAmmoMax_";
     public float delayTime = 0.5f;
     public bool isDialogueRunning;
+    public bool canMove;
+    public bool canShoot;
 
     private AudioSource _audioSource;
     // private AudioSetting bgmSetting;
 
-    private void Start()
+    private void Awake()
     {
         player = GameObject.Find("Player");
-        Invoke("PlayAudio", delayTime);
         // init Pause Menu
         // PauseMenu has to be active before the game started.
         pauseMenu = GameObject.Find("PauseMenu");
         pauseMenu.SetActive(false);
+        // Reset Level States at the end of Awake
+        ResetLevel();
+    }
+
+    private void Start()
+    {
+        Invoke("PlayAudio", delayTime);
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt(WEAPON_AMMO_SAVELOAD + "Weapon_AK47", 30);
         PlayerPrefs.SetInt(WEAPON_AMMO_SAVELOAD + "Weapon_ShotGun", 30);
         PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + "Weapon_AK47", 60);
         PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + "Weapon_ShotGun", 60);
         // bgmSetting = GameObject.Find("BGM").GetComponent<AudioSetting>();
-        // Reset Level States
-        ResetLevel();
     }
 
 
@@ -67,23 +73,34 @@ public class LevelManager : MonoBehaviour
         isPaused = !isPaused;
     }
 
-    public void PauseGame()
+    public void PauseGame(int timeScale = 0)
     {
-        Time.timeScale = 0;
-        player.GetComponent<CharacterComponents>().InvertPlayerStates();
+        Time.timeScale = timeScale;
+        InvertPlayerStates();
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        player.GetComponent<CharacterComponents>().InvertPlayerStates();
+        InvertPlayerStates();
     }
 
     public void ResetLevel()
     {
         isPaused = false;
         Time.timeScale = 1;
-        player.GetComponent<CharacterComponents>().ResetPlayerStates();
+        ResetPlayerStates();
+    }
+
+    public void ResetPlayerStates()
+    {
+        canMove = canShoot = true;
+    }
+
+    public void InvertPlayerStates()
+    {
+        canMove = !canMove;
+        canShoot = !canShoot;
     }
 
 

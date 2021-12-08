@@ -64,6 +64,7 @@ public class DialogueController : Singleton<DialogueController>
 
         isTyping = false;
     }
+    
 
 
     private void CloseDialogue()
@@ -79,7 +80,7 @@ public class DialogueController : Singleton<DialogueController>
     {
         isDialogRunning = true;
         levelManager.ResetLevel();
-        levelManager.PauseGame();
+        levelManager.PauseGame(1);
         levelManager.isDialogueRunning = isDialogRunning;
         HUDDialogue.SetActive(true);
         sentences.Clear(); // clear default text
