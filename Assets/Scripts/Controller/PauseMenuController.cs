@@ -7,14 +7,21 @@ using UnityEngine.UI;
 
 public class PauseMenuController : MonoBehaviour
 {
-    private LevelManager levelManager;
-    private Slider BGMSlider;
+    [SerializeField] private LevelManager levelManager;
+    // [SerializeField] private Slider BGMSlider;
 
     void Awake()
     {
-        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-        BGMSlider = GameObject.Find("BGMSlider").GetComponent<Slider>();
-        BGMSlider.value = levelManager.GetBGMVolume(); // this should works fine
+        if (levelManager == null)
+        {
+            levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        }
+        // if (BGMSlider == null)
+        // {
+        //     BGMSlider = GameObject.Find("BGMSlider").GetComponent<Slider>();
+        // }
+
+        // BGMSlider.value = levelManager.GetBGMVolume(); // this should works fine
     }
 
     public void ContinueGame()
@@ -35,9 +42,9 @@ public class PauseMenuController : MonoBehaviour
         levelManager.isGodMode = !levelManager.isGodMode;
     }
 
-    public void BGMSliderChange()
-    {
-        // TODO BGM slider change
-        levelManager.ChangeBGMVolume(BGMSlider.value);
-    }
+    // public void BGMSliderChange()
+    // {
+    //     // TODO BGM slider change
+    //     levelManager.ChangeBGMVolume(BGMSlider.value);
+    // }
 }
