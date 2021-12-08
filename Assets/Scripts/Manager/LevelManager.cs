@@ -28,8 +28,8 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt(WEAPON_AMMO_SAVELOAD + "Weapon_AK47", 30);
         PlayerPrefs.SetInt(WEAPON_AMMO_SAVELOAD + "Weapon_ShotGun", 30);
-        PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + "Weapon_AK47", 180);
-        PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + "Weapon_ShotGun", 180);
+        PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + "Weapon_AK47", 60);
+        PlayerPrefs.SetInt(WEAPON_AMMO_MAX_SAVELOAD + "Weapon_ShotGun", 60);
         // bgmSetting = GameObject.Find("BGM").GetComponent<AudioSetting>();
         // Reset Level States
         ResetLevel();
