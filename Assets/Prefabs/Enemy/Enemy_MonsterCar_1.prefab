@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   canShoot: 0
-  walkSpeed: 3.5
+  walkSpeed: 7
 --- !u!114 &6952887915761292346
 MonoBehaviour:
   m_ObjectHideFlags: 0
