@@ -12,8 +12,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private float healthAmountDelayRate;
     [SerializeField] private float shieldAmountDelayRate;
     [Header("Weapon")] [SerializeField] private GameObject WeaponContainer;
-    private Image weaponImage;
-    private GameObject weaponAmmoUI;
+    [SerializeField] private Image weaponImage;
+    [SerializeField] private GameObject weaponAmmoUI;
 
 
     private float playerCurrentHealth;
