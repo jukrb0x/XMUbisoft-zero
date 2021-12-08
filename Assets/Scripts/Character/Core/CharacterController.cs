@@ -1,40 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    // Internal
+    private Rigidbody2D myRigidbody2D;
+    private DialogueController _dialogueController;
+    private bool isDialog = false;
+    private Vector2 recoilMovement;
+
     // Controls the current movement of this character    
     public Vector2 CurrentMovement { get; set; }
 
     // Returns if this character can move normally (When dashing we can't)
     public bool NormalMovement { get; set; }
-	
-    // Internal
-    private Rigidbody2D myRigidbody2D;
-    private Vector2 recoilMovement;
-	
+
+    private void Awake()
+    {
+        _dialogueController = GameObject.Find("DialogueManager").GetComponent<DialogueController>();
+    }
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         NormalMovement = true;
         myRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         Recoil();
-
-        if (NormalMovement)
-        {
-            MoveCharacter();
-        }
+        isDialog = _dialogueController.isDialogRunning;
+        if (isDialog)
+            SetMovement(Vector2.zero);
+        if (NormalMovement) MoveCharacter();
     }
-	
+
     private void MoveCharacter()
-    {    
-        Vector2 currentMovePosition = myRigidbody2D.position + CurrentMovement * Time.fixedDeltaTime;
+    {
+        var currentMovePosition = myRigidbody2D.position + CurrentMovement * Time.fixedDeltaTime;
         myRigidbody2D.MovePosition(currentMovePosition);
     }
 
@@ -57,9 +62,6 @@ public class CharacterController : MonoBehaviour
 
     private void Recoil()
     {
-        if (recoilMovement.magnitude > 0.1f)
-        {
-            myRigidbody2D.AddForce(recoilMovement);
-        }
+        if (recoilMovement.magnitude > 0.1f) myRigidbody2D.AddForce(recoilMovement);
     }
 }

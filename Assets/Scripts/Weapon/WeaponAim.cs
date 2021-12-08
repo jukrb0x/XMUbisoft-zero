@@ -14,12 +14,12 @@ public class WeaponAim : MonoBehaviour
     public float CurrentAimAngle { get; set; }
 
     private Camera mainCamera;
-	private GameObject reticle;
-	private Weapon weapon;
+    private GameObject reticle;
+    private Weapon weapon;
 
     private Vector3 direction;
     private Vector3 mousePosition;
-	private Vector3 reticlePosition;
+    private Vector3 reticlePosition;
     private Vector3 currentAim = Vector3.zero;
     private Vector3 currentAimAbsolute = Vector3.zero;
     private Quaternion initialRotation;
@@ -36,12 +36,16 @@ public class WeaponAim : MonoBehaviour
     }
 
     private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
+	{
+        if (weapon.WeaponOwner.CharacterType == Character.CharacterTypes.Player)
         {
-            Cursor.visible = true;
+            GetMousePosition();
         }
-        GetMousePosition();                
+        else
+        {
+            EnemyAim();
+        }
+
         MoveReticle();
         RotateWeapon();
     }
@@ -67,7 +71,7 @@ public class WeaponAim : MonoBehaviour
         {
             currentAim = transform.position - direction;
         }
-	}
+    }
 
     public void RotateWeapon()
     {
@@ -96,6 +100,18 @@ public class WeaponAim : MonoBehaviour
             CurrentAimAngle = 0f;  // If the mouse is not moving at all at the beginning
             transform.rotation = initialRotation;
         }
+	}
+
+    private void EnemyAim()
+    {
+        currentAimAbsolute = currentAim;
+        currentAim = weapon.WeaponOwner.GetComponent<CharacterFlip>().FacingRight ? currentAim : -currentAim;
+        direction = currentAim - transform.position;
+    }
+
+    public void SetAim(Vector2 newAim)
+    {
+        currentAim = newAim;
     }
 
     // Moves our reticle towards our Mouse Position
@@ -103,5 +119,10 @@ public class WeaponAim : MonoBehaviour
     {
         reticle.transform.rotation = Quaternion.identity; //set the normal rotation
         reticle.transform.position = reticlePosition;
+    }
+
+    public void DestroyReticle()
+    {
+        Destroy(reticle.gameObject);
     }
 }

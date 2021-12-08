@@ -1,48 +1,65 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
-{   
-    [Header("Settings")] 
-    [SerializeField] private float timeBtwShots = 0.5f;
+{
+    [Header("Name")]
+    [SerializeField] private string weaponName = "";
+
+    [Header("Settings")] [SerializeField] public float timeBtwShots = 0.5f;
 
     [Header("Weapon")] 
     [SerializeField] private bool useMagazine = true;
-    [SerializeField] private int magazineSize = 30;
+    [SerializeField] private int magazineSizes = 30; 
     [SerializeField] private bool autoReload = true;
 
-    [Header("Recoil")] 
-    [SerializeField] private bool useRecoil = true;
+    [Header("Recoil")] [SerializeField] private bool useRecoil = true;
+
     [SerializeField] private int recoilForce = 30;
     
-    public Character WeaponOwner { get; set; }
+    [Header("Effects")] 
+    [SerializeField] protected ParticleSystem muzzlePS;
+    public string WeaponName => weaponName;
 
-    public int CurrentAmmo { get; set; }
-
-    public WeaponAmmo WeaponAmmo { get; set; }
-    
-    public bool UseMagazine => useMagazine;
-    
-	public int MagazineSize => magazineSize;
-    
-    public bool CanShoot { get; set; }
 
     // Internal
-    private float nextShotTime;
-    private CharacterController controller; 
+    public float nextShotTime;
+    private CharacterController controller;
+
+    public Character WeaponOwner { get; set; }
+
+    public WeaponAim WeaponAim { get; set; }
+    public WeaponAmmo WeaponAmmo { get; set; }
+
+    public int CurrentAmmo { get; set; }
+    public bool UseMagazine => useMagazine;
+
+    public int CurrentMagazine { get; set; }
+
+    public bool CanShoot { get; set; }
 
     protected virtual void Awake()
     {
         WeaponAmmo = GetComponent<WeaponAmmo>();
-        CurrentAmmo = magazineSize;
+        CurrentAmmo = WeaponAmmo.LoadCurrentAmmo(weaponName);
+        CurrentMagazine = WeaponAmmo.LoadMaxAmmo(weaponName);
+        // CurrentAmmo = WeaponAmmo.LoadCurrentAmmo();
+        // CurrentMagazine = WeaponAmmo.LoadMaxAmmo();
+        // if(gameObject.CompareTag("Weapon_Shot"))
+        //     CurrentMagazine = 300;
+        // print(WeaponAmmo);
+        // print("Test Awake");
+        // print("Awake" + CurrentMagazine);
     }
 
-    protected virtual void Update()
+    public virtual void Update()
     {
         WeaponCanShoot();
-        RotateWeapon();   
+        RotateWeapon();
+    }
+    
+    public virtual void UseWeapon()
+    {
+        StartShooting();
     }
 
     public void TriggerShot()
@@ -52,12 +69,9 @@ public class Weapon : MonoBehaviour
 
     public void StopWeapon()
     {
-        if (useRecoil)
-        {
-            controller.ApplyRecoil(Vector2.one, 0f);
-        }
+        if (useRecoil) controller.ApplyRecoil(Vector2.one, 0f);
     }
-    
+
     private void StartShooting()
     {
         if (useMagazine)
@@ -70,32 +84,29 @@ public class Weapon : MonoBehaviour
                 }
                 else
                 {
-                    if (autoReload)
-                    {
-                        Reload();
-                    }
+                    if (autoReload) Reload();
                 }
             }
         }
         else
         {
             RequestShot();
-		}
+        }
     }
 
-    protected virtual void RequestShot()
+    public virtual void RequestShot()
     {
-        if (!CanShoot)
-        {
-            return;
-        }
+        if (!CanShoot) return;
 
         if (useRecoil)
         {
             Recoil();
         }
-         
-        WeaponAmmo.ConsumeAmmo();      
+        
+        
+        // Debug.Log("True");
+        WeaponAmmo.ConsumeAmmo();   
+        
 	}
 
     private void Recoil()
@@ -103,31 +114,24 @@ public class Weapon : MonoBehaviour
         if (WeaponOwner != null)
         {
             if (WeaponOwner.GetComponent<CharacterFlip>().FacingRight)
-            {
                 controller.ApplyRecoil(Vector2.left, recoilForce);
-            }
             else
-            {
                 controller.ApplyRecoil(Vector2.right, recoilForce);
-            }
         }
     }
 
-    protected virtual void WeaponCanShoot()
+    public void WeaponCanShoot()
     {
-        if (Time.time > nextShotTime)  
-        {
-            CanShoot = true;
-            nextShotTime = Time.time + timeBtwShots;
-        }
+        // TODO: Fix double shoot
+        if (Time.time > nextShotTime) CanShoot = true;
     }
 
     public void SetOwner(Character owner)
     {
-        WeaponOwner = owner; 
+        WeaponOwner = owner;
         controller = WeaponOwner.GetComponent<CharacterController>();
     }
-      
+
     public void Reload()
     {
         if (WeaponAmmo != null)
@@ -137,17 +141,13 @@ public class Weapon : MonoBehaviour
                 WeaponAmmo.RefillAmmo();
             }
         }
-	}
+    }
 
     protected virtual void RotateWeapon()
     {
         if (WeaponOwner.GetComponent<CharacterFlip>().FacingRight)
-        {
             transform.localScale = new Vector3(1, 1, 1);
-        }
         else
-        {
             transform.localScale = new Vector3(-1, 1, 1);
-        }
     }
 }

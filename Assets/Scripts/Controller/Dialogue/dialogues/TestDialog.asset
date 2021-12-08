@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208faaf1c1634825ae739bfbfa66dafb, type: 3}
+  m_Name: TestDialog
+  m_EditorClassIdentifier: 
+  sentences:
+  - avatar: {fileID: 8906951933893973859, guid: 63919541b45e510439a52a7c32f8d7b0, type: 3}
+    sentence: 'This levels is challenging. '
+  - avatar: {fileID: 8906951933893973859, guid: 63919541b45e510439a52a7c32f8d7b0, type: 3}
+    sentence: 'Please be prepared!
+
+'
+  - avatar: {fileID: 8906951933893973859, guid: 63919541b45e510439a52a7c32f8d7b0, type: 3}
+    sentence: 'Are you ready?
+
+'

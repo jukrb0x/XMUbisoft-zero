@@ -1,0 +1,23 @@
+﻿public enum AudioEnum
+{
+	NoAudio,
+	SingleGunAndAK47Shoot,
+	ShotGunShoot,
+	SingeGunReload,
+	AK47AndShotGunReload,
+	GlassBroken,
+	ProjectileHitWall,
+	Bird,
+	Buttom,
+	ChestOpen,
+	Failed,
+	GrassWalk,
+	MudWalk,
+	NPCDie,
+	NPCSay,
+	NPCTakeDamage,
+	PlayerTakeDamage,
+	Portal,
+	UsePotion,
+	WaterWalk
+}
