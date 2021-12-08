@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CharacterComponents : MonoBehaviour
@@ -8,42 +9,36 @@ public class CharacterComponents : MonoBehaviour
     protected CharacterWeapon characterWeapon;
 
     protected CharacterController controller;
+    protected LevelManager levelManager;
     protected float horizontalInput;
     protected float verticalInput;
+    
     public bool canMove;
     public bool canShoot;
 
+
     protected virtual void Start()
     {
-        // init state
-        ResetPlayerStates();
-
         controller = GetComponent<CharacterController>();
         character = GetComponent<Character>();
         characterWeapon = GetComponent<CharacterWeapon>();
         characterMovement = GetComponent<CharacterMovement>();
         animator = GetComponent<Animator>();
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     protected virtual void Update()
     {
+        canMove = levelManager.canMove;
+        canShoot = levelManager.canShoot;
         HandleAbility();
     }
 
-    public void ResetPlayerStates()
-    {
-        canMove = canShoot = true;
-    }
-
-    public void InvertPlayerStates()
-    {
-        canMove = !canMove;
-        canShoot = !canShoot;
-    }
 
     // Main method. Here we put the logic of each ability
     protected virtual void HandleAbility()
     {
+        if (!canMove || !canShoot) return;
         InternalInput();
         HandleInput();
     }
@@ -51,7 +46,6 @@ public class CharacterComponents : MonoBehaviour
     // Here we get the necessary input we need to perform our actions    
     protected virtual void HandleInput()
     {
-        if (!canMove || !canShoot) return;
     }
 
     // Here get the main input we need to control our character
