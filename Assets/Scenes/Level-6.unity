@@ -11240,10 +11240,10 @@ PrefabInstance:
     - target: {fileID: 6824237094817474755, guid: 0da128927280644428b111f741fcf34f, type: 3}
       propertyPath: startingDialogue
       value: 
-      objectReference: {fileID: 11400000, guid: 3d90bc3a6e93f2c468919e7efd6f7937, type: 2}
+      objectReference: {fileID: 11400000, guid: 080849e27488a054698d2808d4e82cd8, type: 2}
     - target: {fileID: 9141306958087411401, guid: 0da128927280644428b111f741fcf34f, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 9141306958087411401, guid: 0da128927280644428b111f741fcf34f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -108644,7 +108644,7 @@ Transform:
   - {fileID: 1220932452}
   - {fileID: 1098697322}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1750781685
 PrefabInstance:
