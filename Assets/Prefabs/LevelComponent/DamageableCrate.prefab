@@ -148,9 +148,6 @@ MonoBehaviour:
   rewards:
   - {fileID: 1661995264833734396, guid: f9441de0d78e1a04c8b33bd0b6e4ba01, type: 3}
   - {fileID: 5167333365224283686, guid: 866f14a97ca4b4421a857fd1add64b46, type: 3}
-  - {fileID: 5167333365224283686, guid: 866f14a97ca4b4421a857fd1add64b46, type: 3}
-  - {fileID: 5167333365224283686, guid: 866f14a97ca4b4421a857fd1add64b46, type: 3}
-  - {fileID: 5167333365224283686, guid: 866f14a97ca4b4421a857fd1add64b46, type: 3}
   - {fileID: 8460540893107655994, guid: a124254363c0f2b4a958cb2ad7372471, type: 3}
   - {fileID: 4881868944730359402, guid: b4ef98b5800c7aa4883b1327aacbb17e, type: 3}
   xRandomPosition: 0
