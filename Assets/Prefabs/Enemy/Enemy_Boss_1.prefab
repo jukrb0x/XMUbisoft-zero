@@ -36,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 318152358655701973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.41, y: 4.323, z: 0}
-  m_LocalScale: {x: 4, y: 3, z: 1.183067}
+  m_LocalScale: {x: 5, y: 5, z: 1.183067}
   m_Children:
   - {fileID: 5699584914982770105}
   - {fileID: 2795943738743031044}
@@ -84,6 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7639a2c6f8758a4985aeefa56a8365d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
 --- !u!114 &318152358655701971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544ff67eeb495cd4d8e87f6d323738ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   walkSpeed: 2
 --- !u!50 &318152358655701969
 Rigidbody2D:
@@ -130,6 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6906ddeb39a40b245a9fa8a47de6db16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   flipMode: 0
   threshold: 0.1
 --- !u!114 &1505953902907169490
@@ -158,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74921990018740c2a7489a905817e41c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 10
+  initialHealth: 50
 --- !u!114 &2103518788932016262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,8 +193,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.030738473, y: -0.085372135}
-  m_Size: {x: 0.46230745, y: 0.61640996}
+  m_Offset: {x: 0.030738473, y: -0.07096014}
+  m_Size: {x: 0.46230745, y: 0.47229156}
   m_Direction: 0
 --- !u!114 &6901667455321766462
 MonoBehaviour:
@@ -202,6 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d336e4f5fee3241ba8a547eb728e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  canShoot: 0
   weaponToUse: {fileID: 381194761780515225, guid: 05c0ee904710ea7438e01093a6b1cb73, type: 3}
   weaponHolderPosition: {fileID: 2795943738743031044}
   beforeindex: -10
