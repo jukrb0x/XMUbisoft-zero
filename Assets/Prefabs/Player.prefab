@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHealth: 10
-  initialShield: 5
-  maxShield: 5
+  initialShield: 10
+  maxShield: 10
   gameOverLabel: {fileID: 0}
   destroyObject: 1
   CurrentShield: 0
