@@ -7,9 +7,10 @@ public class CollectWeapon : Collectables
     [SerializeField] private ItemData itemWeaponData;
     [SerializeField] private int AddProjectileNum = 30;
 
-    protected override void Collect()
+    protected override bool Collect()
     {
         EquipWeapon();
+        return true;
     }
 
     private void EquipWeapon()
