@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Dialogue_Q
   m_EditorClassIdentifier: 
   sentences:
-  - avatar: {fileID: 0}
+  - avatar: {fileID: 21300000, guid: 7523125265df62448b657d18b5148dc8, type: 3}
     sentence: Use q to switch to the previous weapon and use e to switch to the next
       weapon
