@@ -1,6 +1,7 @@
 using System;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class LevelManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public AudioEnum audioEnum;
     private GameObject player;
     private GameObject pauseMenu;
+    private GameObject godMenu;
     private bool isPaused;
     private readonly string WEAPON_AMMO_SAVELOAD = "Weapon_";
     private readonly string WEAPON_AMMO_MAX_SAVELOAD = "WeaponAmmoMax_";
@@ -15,6 +17,8 @@ public class LevelManager : MonoBehaviour
     public bool isDialogueRunning;
     public bool canMove;
     public bool canShoot;
+    public bool isGodModeMenuToggled;
+    public bool isGodMode;
 
     private AudioSource _audioSource;
     // private AudioSetting bgmSetting;
@@ -26,8 +30,11 @@ public class LevelManager : MonoBehaviour
         // PauseMenu has to be active before the game started.
         pauseMenu = GameObject.Find("PauseMenu");
         pauseMenu.SetActive(false);
+        godMenu = GameObject.Find("GodModeMenu");
+        godMenu.SetActive(false);
         // Reset Level States at the end of Awake
         ResetLevel();
+        isGodModeMenuToggled = false;
     }
 
     private void Start()
@@ -50,12 +57,32 @@ public class LevelManager : MonoBehaviour
         {
             InvertPauseState();
         }
+
+        if (Input.GetKeyDown(KeyCode.BackQuote))
+        {
+            ToggleGodModeMenu();
+        }
     }
 
     private bool CanPause()
     {
         if (player.GetComponent<BaseHealth>().IsDead) return false;
         return !isDialogueRunning;
+    }
+
+    public void ToggleGodModeMenu()
+    {
+        godMenu.SetActive(!isGodModeMenuToggled);
+        if (!isGodModeMenuToggled)
+        {
+            PauseGame();
+        }
+        else
+        {
+            ResumeGame();
+        }
+
+        isGodModeMenuToggled = !isGodModeMenuToggled;
     }
 
     public void InvertPauseState()
