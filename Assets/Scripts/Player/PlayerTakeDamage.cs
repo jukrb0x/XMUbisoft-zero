@@ -6,19 +6,15 @@ public class PlayerTakeDamage : MonoBehaviour
 
     private PlayerHealth _playerHealth;
     private float nextDamageTime;
-
     private bool PlayerCanTakeDamage = true;
     private Renderer myRender;
-
-
-
+    
     private void Awake()
     {
         _playerHealth = GetComponent<PlayerHealth>();
 
     }
- 
-
+    
     protected virtual void Update()
     {
         CanTakeDamage();
@@ -29,7 +25,6 @@ public class PlayerTakeDamage : MonoBehaviour
     
         if ((other.collider.CompareTag("Enemy") || other.collider.CompareTag("EnemyProjectile")) && PlayerCanTakeDamage)
         {
-    
             _playerHealth.Damage(1);
             PlayerCanTakeDamage = false;
             nextDamageTime = Time.time + timeBtwDamage;
@@ -45,8 +40,6 @@ public class PlayerTakeDamage : MonoBehaviour
             PlayerCanTakeDamage = false;
             nextDamageTime = Time.time + timeBtwDamage;
         }
-     
-
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -57,16 +50,14 @@ public class PlayerTakeDamage : MonoBehaviour
             PlayerCanTakeDamage = false;
             nextDamageTime = Time.time + timeBtwDamage;
         }
-        if ((other.CompareTag("Deth_Spike") || other.CompareTag("Debuff_Poison")) && PlayerCanTakeDamage)
+        if (other.CompareTag("Deth_Spike") && PlayerCanTakeDamage)
         {
             _playerHealth.Damage(15);
             PlayerCanTakeDamage = false;
             nextDamageTime = Time.time;
         }
     }
-
-
-
+    
     private void CanTakeDamage()
     {
         if (Time.time > nextDamageTime) PlayerCanTakeDamage = true;
