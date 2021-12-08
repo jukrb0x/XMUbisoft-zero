@@ -28,7 +28,11 @@ public class PauseMenuController : MonoBehaviour
         // double check
         levelManager.ResetLevel();
         SceneManager.LoadScene(0);
-        
+    }
+
+    public void ToggleGodMode()
+    {
+        levelManager.isGodMode = !levelManager.isGodMode;
     }
 
     public void BGMSliderChange()
