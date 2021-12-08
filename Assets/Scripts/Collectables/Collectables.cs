@@ -22,14 +22,17 @@ public class Collectables : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        canDestroyItem = true;
         objectCollided = other.gameObject;
         if (IsCollectable())
         {
             if (other.gameObject.GetComponent<CharacterWeapon>().CurrentWeapon.CompareTag("Weapon_Initial") &&
                 other.gameObject.GetComponent<CharacterWeapon>().SecondaryWeapon != null)
             {
+                canDestroyItem = false;
                 return;
             }
+
             Collect();
 
             if (canDestroyItem)
@@ -55,8 +58,12 @@ public class Collectables : MonoBehaviour
         return character.CharacterType == Character.CharacterTypes.Player;
     }
 
-    protected virtual void Collect()
+    /// <summary>
+    ///  Character collects items on the map
+    /// </summary>
+    /// <returns>return bool indicating collect succeeded or not</returns>
+    protected virtual bool Collect()
     {
-        
+        return true;
     }
 }
