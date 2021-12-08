@@ -53,7 +53,23 @@ public class PlayerHealth : BaseHealth
     private void Update()
     {
         // TODO: for testing usage
-        if (Input.GetKeyDown(KeyCode.L)) Damage(1);
+        if (levelManager.isGodMode)
+        {
+            if (Input.GetKeyDown(KeyCode.L)) Damage(1);
+
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                if (CurrentShield == maxShield && HealthPoint == MaxHealthPoint) return;
+                if (HealthPoint != MaxHealthPoint)
+                {
+                    AddHealth(1);
+                }
+                else
+                {
+                    AddShield(1);
+                }
+            }
+        }
     }
 
     private void UpdateUI()
@@ -77,7 +93,7 @@ public class PlayerHealth : BaseHealth
             return;
         }
 
-        
+
         base.Damage(damage);
         UpdateUI();
         if (IsDead) Die();
@@ -140,31 +156,4 @@ public class PlayerHealth : BaseHealth
         gameOverLabel.gameObject.SetActive(true);
         levelManager.PauseGame();
     }
-
-    // Revive this game object    
-    // FIXME: awake --> start
-    // public void Revive()
-    // {
-    //     if (character != null)
-    //     {
-    //         collider2D.enabled = true;
-    //         spriteRenderer.enabled = true;
-    //
-    //         character.enabled = true;
-    //         controller.enabled = true;
-    //
-    //         weapon.enabled = true;
-    //         Cursor.visible = false;
-    //         weapons.SetActive(true);
-    //     }
-    //
-    //     gameObject.SetActive(true);
-    //
-    //     HealthPoint = initialHealth;
-    //     CurrentShield = initialShield;
-    //
-    //     IsShieldBroken = false;
-    //
-    //     UIManager.Instance.SetUIStates(HealthPoint, MaxHealthPoint, CurrentShield, maxShield);
-    // }
 }

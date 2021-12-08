@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
     // Internal
     private Rigidbody2D myRigidbody2D;
-
+    private DialogueController _dialogueController;
+    private bool isDialog = false;
     private Vector2 recoilMovement;
 
     // Controls the current movement of this character    
@@ -12,6 +14,11 @@ public class CharacterController : MonoBehaviour
 
     // Returns if this character can move normally (When dashing we can't)
     public bool NormalMovement { get; set; }
+
+    private void Awake()
+    {
+        _dialogueController = GameObject.Find("DialogueManager").GetComponent<DialogueController>();
+    }
 
     // Start is called before the first frame update
     private void Start()
@@ -24,7 +31,9 @@ public class CharacterController : MonoBehaviour
     private void FixedUpdate()
     {
         Recoil();
-
+        isDialog = _dialogueController.isDialogRunning;
+        if (isDialog)
+            SetMovement(Vector2.zero);
         if (NormalMovement) MoveCharacter();
     }
 

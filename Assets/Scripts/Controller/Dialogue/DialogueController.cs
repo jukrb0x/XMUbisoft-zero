@@ -16,7 +16,7 @@ public class DialogueController : Singleton<DialogueController>
     private Queue<Sentence> sentences;
     private Sentence currentSentence;
     private bool isTyping;
-    private bool isDialogRunning;
+    public bool isDialogRunning;
     private LevelManager levelManager;
     private Vector2 zero = Vector2.zero;
 
