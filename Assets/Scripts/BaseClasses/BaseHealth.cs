@@ -1,46 +1,53 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseHealth : MonoBehaviour
 {
-    private float hp;
-    [SerializeField] public float maxHp=10f;
-    [HideInInspector] public float invulnerabilityTimer = 0;
+    private float healthPoint;
+    private float maxHealthPoint;
 
     public Action OnDie;
+    public bool IsDead => HealthPoint <= 0;
 
-    public virtual float Hp
+    public float HealthPoint
     {
-        get => hp;
+        get => healthPoint;
         set
         {
-            hp = Mathf.Clamp(value, 0, maxHp);
-            if (hp == 0)
+            healthPoint = (int) Mathf.Clamp(value, 0, maxHealthPoint);
+            if (healthPoint == 0)
+            {
                 OnDie?.Invoke();
+            }
+        }
+    }
+
+    public float MaxHealthPoint
+    {
+        get => maxHealthPoint;
+
+        set
+        {
+            maxHealthPoint = value;
+            healthPoint = maxHealthPoint;
         }
     }
 
     // Use this for initialization
     protected virtual void Awake()
     {
-        Hp = maxHp;
+        healthPoint = maxHealthPoint;
     }
-    protected virtual void Update()
+
+    public virtual void Damage(float damage)
     {
-        invulnerabilityTimer = Mathf.Max(invulnerabilityTimer - Time.deltaTime, 0);
+        // do not change this
+        healthPoint -= damage;
+        // TODO invoke onDie when damage
     }
 
-    public virtual bool Damage(float damage, float invulnerabilityTime = 0)
+    protected void DestroyObject()
     {
-        if (IsInvulnerable) return false;
-        Hp -= damage;
-        invulnerabilityTimer = invulnerabilityTime;
-        return true;
+        gameObject.SetActive(false);
     }
-
-    public bool IsInvulnerable => invulnerabilityTimer > 0;
-
-    public bool IsDead => Hp == 0;
 }

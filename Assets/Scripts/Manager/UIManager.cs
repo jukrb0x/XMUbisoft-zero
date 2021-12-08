@@ -1,56 +1,101 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
-    [Header("Settings")]
-    [SerializeField] private Image healthBar;
-    [SerializeField] private Image shieldBar;
-    [SerializeField] private TextMeshProUGUI currentHealthTMP;
-    [SerializeField] private TextMeshProUGUI currentShieldTMP;
-    [Header("Weapon")]
-    [SerializeField] private TextMeshProUGUI currentAmmoTMP;
-
+    private int currentAmmo;
+    private Image healthBar;
+    private Image healthBarDelay;
+    [SerializeField] private float healthAmountDelayRate;
+    [SerializeField] private float shieldAmountDelayRate;
+    [Header("Weapon")] [SerializeField] private GameObject WeaponContainer;
+    [SerializeField] private Image weaponImage;
+    [SerializeField] private GameObject weaponAmmoUI;
 
 
     private float playerCurrentHealth;
+    private float playerCurrentShield;
     private float playerMaxHealth;
     private float playerMaxShield;
-    private float playerCurrentShield;
-    private int playerCurrentAmmo;
-    private int playerMaxAmmo;
 
+    private Image shieldBar;
+    private Image shieldBarDelay;
+    private int totalAmmo;
+
+    private void Start()
+    {
+        // Initialize status bars
+        var statusBarsContainer = GameObject.Find("StatusBarsContainer").transform;
+        healthBar = statusBarsContainer.Find("HealthBarContainer").Find("HealthBar").GetComponent<Image>();
+        shieldBar = statusBarsContainer.Find("ShieldBarContainer").Find("ShieldBar").GetComponent<Image>();
+        healthBarDelay = statusBarsContainer.Find("HealthBarContainer").Find("HealthBarDelay").GetComponent<Image>();
+        shieldBarDelay = statusBarsContainer.Find("ShieldBarContainer").Find("ShieldBarDelay").GetComponent<Image>();
+
+        // Get Weapon's details
+        if (WeaponContainer == null)
+        {
+            WeaponContainer = GameObject.Find("WeaponContainer");
+        }
+
+        weaponImage = WeaponContainer.transform.Find("Weapon").GetComponent<Image>();
+        weaponAmmoUI = WeaponContainer.transform.Find("Weapon").Find("Ammo").gameObject;
+    }
 
     private void Update()
     {
-        InternalUpdate();
+        UpdateBars();
     }
 
-    public void UpdateHealth(float currentHealth, float maxHealth, float currentShield, float maxShield)
+
+    public void SetUIPlayerStates(float hp, float maxHp, float shield,
+        float maxShield)
     {
-        playerCurrentHealth = currentHealth;
-        playerMaxHealth = maxHealth;
-        playerCurrentShield = currentShield;
+        playerCurrentHealth = hp;
+        playerMaxHealth = maxHp;
+        playerCurrentShield = shield;
         playerMaxShield = maxShield;
     }
-    public void UpdateAmmo(int currentAmmo, int maxAmmo)
+
+    public void SetUIWeaponAmmo(string current, string magazineSize)
     {
-        playerCurrentAmmo = currentAmmo;
-        playerMaxAmmo = maxAmmo;
+        // // TODO: Weapon Switch
+        // currentAmmo = current;
+        // totalAmmo = magazineSize;
+        weaponAmmoUI.GetComponent<TextMeshProUGUI>().text = current + "/" + magazineSize;
     }
 
-
-    private void InternalUpdate()
+    public void SetUIWeaponSprite(Sprite weaponSprite)
     {
-        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, playerCurrentHealth / playerMaxHealth, 10f * Time.deltaTime);
-        currentHealthTMP.text = playerCurrentHealth.ToString() + "/" + playerMaxHealth.ToString();
+        weaponImage.sprite = weaponSprite;
+        weaponImage.SetNativeSize();
+    }
 
-        shieldBar.fillAmount = Mathf.Lerp(shieldBar.fillAmount, playerCurrentShield / playerMaxShield, 10f * Time.deltaTime);
-        currentShieldTMP.text = playerCurrentShield.ToString() + "/" + playerMaxShield.ToString();
-        currentAmmoTMP.text = playerCurrentAmmo + " / " + playerMaxAmmo;
+    private void UpdateBars()
+    {
+        healthBar.fillAmount = playerCurrentHealth / playerMaxHealth;
+
+
+        if (healthBarDelay.fillAmount > healthBar.fillAmount)
+        {
+            healthBarDelay.fillAmount -= healthAmountDelayRate * Time.deltaTime;
+        }
+        else
+        {
+            healthBarDelay.fillAmount = healthBar.fillAmount;
+        }
+
+        shieldBar.fillAmount = playerCurrentShield / playerMaxShield;
+
+        if (shieldBarDelay.fillAmount > shieldBar.fillAmount)
+        {
+            shieldBarDelay.fillAmount -= shieldAmountDelayRate * Time.deltaTime;
+        }
+        else
+        {
+            shieldBarDelay.fillAmount = shieldBar.fillAmount;
+        }
     }
 }

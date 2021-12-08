@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -11,11 +8,11 @@ public class CameraFollow : MonoBehaviour
     private Vector3 _velocity = Vector3.zero;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        Vector3 position = player.position;
+        if (!player) return;
+        var position = player.position;
         _cameraPos = new Vector3(position.x, position.y, -10f);
         transform.position = Vector3.SmoothDamp(gameObject.transform.position, _cameraPos, ref _velocity, dampTime);
-        
     }
 }
