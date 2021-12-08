@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Weapon_AK47
-  timeBtwShots: 0.3
+  timeBtwShots: 0.1
   useMagazine: 1
   magazineSizes: 30
   autoReload: 0
