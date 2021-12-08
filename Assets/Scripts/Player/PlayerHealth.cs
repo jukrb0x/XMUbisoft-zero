@@ -110,6 +110,8 @@ public class PlayerHealth : BaseHealth
             CurrentShield = maxShield;
         }
 
+        IsShieldBroken = false;
+
         UpdateUI();
     }
 
