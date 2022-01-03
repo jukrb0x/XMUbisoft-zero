@@ -3468,6 +3468,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2477611402688588398, guid: 15782614225494f4d9a0b1fd4c7543fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4900084993174541518, guid: 15782614225494f4d9a0b1fd4c7543fc, type: 3}
       propertyPath: m_Name
       value: BGM
